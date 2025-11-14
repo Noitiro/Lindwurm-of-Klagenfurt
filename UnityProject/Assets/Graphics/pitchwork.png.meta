@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aa84bcb90bbed5946ba23683d53621fc
+guid: 6a7855ca357f0804ca0b56bc2363477a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6507260603375455686
-    second: test-dragon-walk-idle-1_0
+      213: -6667376871830524684
+    second: pitchwork_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,9 +40,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: test-dragon-walk-idle-1_0
+      name: pitchwork_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 40
-        width: 120
-        height: 71
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3279ea45f091b5a0800000000000000
-      internalID: -6507260603375455686
+      spriteID: 4fce2e27f08b873a0800000000000000
+      internalID: -6667376871830524684
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      test-dragon-walk-idle-1_0: -6507260603375455686
+      pitchwork_0: -6667376871830524684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -27,9 +27,9 @@ public class PlayerMovement : MonoBehaviour {
         input = inputSystemActions.Player.Move.ReadValue<Vector2>();
         input.Normalize();
         if(input.x < 0) {
-            rb.transform.localScale = new Vector3(5,5,5);
+            rb.transform.localScale = new Vector3(1,1,1);
         }else if(input.x > 0) {
-            rb.transform.localScale = new Vector3(-5, 5, 5);
+            rb.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
