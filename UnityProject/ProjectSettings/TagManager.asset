@@ -42,5 +42,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 1158436893
+    locked: 0
+  - name: Addons
+    uniqueID: 2725471577
+    locked: 0
+  - name: Player
+    uniqueID: 1861031177
+    locked: 0
   m_RenderingLayers:
   - Default
