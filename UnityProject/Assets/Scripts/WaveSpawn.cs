@@ -1,7 +1,8 @@
-using UnityEngine;
 using System.Collections;
-using UnityEditorInternal;
+using System.Xml.Xsl;
 using Unity.VisualScripting;
+using UnityEditorInternal;
+using UnityEngine;
 
 public class WaveSpawn : MonoBehaviour
 {   
@@ -18,9 +19,10 @@ public class WaveSpawn : MonoBehaviour
     public Wave[] waves;
     private int nextWave = 0;
     public float timeBetweenWaves = 5f;
-    public float countdown;
+    private float countdown;
     public SpawnState state = SpawnState.COUNTING;
     private float  searchCountdown = 1f;
+    public Transform[] spawnpoints;
 
     void Start()
     {
@@ -39,8 +41,10 @@ public class WaveSpawn : MonoBehaviour
         }
         if (countdown <= 0f)
         {
-            if(state != SpawnState.SPAWNING) {
-                if (nextWave < waves.Length) {
+            if(state != SpawnState.SPAWNING) 
+        {
+                if (nextWave < waves.Length) 
+                {
                     StartCoroutine(SpawnWave(waves[nextWave]));
                 }
             }
@@ -55,8 +59,13 @@ public class WaveSpawn : MonoBehaviour
         state = SpawnState.COUNTING;
         countdown = timeBetweenWaves;
         nextWave++;
-        if (nextWave >= waves.Length) {
-
+        if (nextWave >= waves.Length) 
+        {
+            nextWave = 0;
+            Debug.Log("All waves LOOOP");
+            ////// TUTAJ KONIEC FALL
+        }else {
+            nextWave++;
         }
     }
     bool EnemyIsAlive()
@@ -87,8 +96,9 @@ public class WaveSpawn : MonoBehaviour
     }
     void SpawnEnemy (GameObject _enemy)
     {
-        Instantiate(_enemy, transform.position, transform.rotation);
+        Transform _sp = spawnpoints[Random.Range(0, spawnpoints.Length)];
         Debug.Log("Spawning Enemy: " + _enemy.name);
+        Instantiate(_enemy, _sp.position, _sp.rotation);
     }
 }
 
