@@ -3,9 +3,9 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour {
     [SerializeField] private int damage = 1;
     public void AttackEnemy(GameObject enemy) {
-        EnemiesHealth health = enemy.GetComponent<EnemiesHealth>();
-        if (health != null) {
-            health.TakeDamage(damage);
+        IDamageable damageable = enemy.GetComponent<IDamageable>();
+        if (damageable != null) {
+            damageable.Damage(damage);
         }
     }
 
