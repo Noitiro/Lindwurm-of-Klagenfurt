@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: aa84bcb90bbed5946ba23683d53621fc
+guid: e36f2fa61e5168c43929c11fdb3f50da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6507260603375455686
-    second: test-dragon-walk-idle-1_0
+      213: 7265813586516431896
+    second: Bridge_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: test-dragon-walk-idle-1_0
+      name: Bridge_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 40
-        width: 120
-        height: 71
+        x: 29
+        y: 0
+        width: 70
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3279ea45f091b5a0800000000000000
-      internalID: -6507260603375455686
+      spriteID: 814d48406fa55d460800000000000000
+      internalID: 7265813586516431896
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      test-dragon-walk-idle-1_0: -6507260603375455686
+      Bridge_0: 7265813586516431896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
