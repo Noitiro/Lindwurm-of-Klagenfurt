@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEditorInternal;
+using Unity.VisualScripting;
 
 public class WaveSpawn : MonoBehaviour
 {   
@@ -9,7 +10,6 @@ public class WaveSpawn : MonoBehaviour
     [System.Serializable]
     public class Wave
     {
-
         public string name;
         public GameObject enemyPrefab;
         public int enemyCount;
@@ -20,7 +20,8 @@ public class WaveSpawn : MonoBehaviour
     public float timeBetweenWaves = 5f;
     public float countdown;
     public SpawnState state = SpawnState.COUNTING;
-    
+    private float  searchCountdown = 1f;
+
     void Start()
     {
         countdown = timeBetweenWaves;
@@ -28,10 +29,66 @@ public class WaveSpawn : MonoBehaviour
 
     void Update()
     {
+        if(state ==SpawnState.WAITING)
+        {
+            if (!EnemyIsAlive()) 
+                {
+                WaveCompleted();
+            }
+            return;
+        }
         if (countdown <= 0f)
         {
-            if(State )
+            if(state != SpawnState.SPAWNING) {
+                if (nextWave < waves.Length) {
+                    StartCoroutine(SpawnWave(waves[nextWave]));
+                }
+            }
         }
+        else
+        {
+            countdown -= Time.deltaTime;
+        }
+    }
+    void WaveCompleted() {
+        Debug.Log("Wave Comleted");
+        state = SpawnState.COUNTING;
+        countdown = timeBetweenWaves;
+        nextWave++;
+        if (nextWave >= waves.Length) {
+
+        }
+    }
+    bool EnemyIsAlive()
+    {
+        searchCountdown -= Time.deltaTime;
+        if (searchCountdown <= 0f)
+        {
+            searchCountdown = 1f;
+            if (GameObject.FindGameObjectWithTag("Enemy") == null)
+            {
+                return false;
+        }   
+        }
+        return true;
+    }
+
+    IEnumerator SpawnWave (Wave _wave)
+    {
+        Debug.Log("Spawning wave" + _wave.name);
+        state = SpawnState.SPAWNING;
+        for (int i = 0; i <= _wave.enemyCount; i++)
+        {
+            SpawnEnemy(_wave.enemyPrefab);
+            yield return new WaitForSeconds(1f / _wave.spawnRate);
+        }
+        state = SpawnState.WAITING;
+        yield break;
+    }
+    void SpawnEnemy (GameObject _enemy)
+    {
+        Instantiate(_enemy, transform.position, transform.rotation);
+        Debug.Log("Spawning Enemy: " + _enemy.name);
     }
 }
 
