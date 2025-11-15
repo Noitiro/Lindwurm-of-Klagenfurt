@@ -64,8 +64,6 @@ public class WaveSpawn : MonoBehaviour
             nextWave = 0;
             Debug.Log("All waves LOOOP");
             ////// TUTAJ KONIEC FALL
-        }else {
-            nextWave++;
         }
     }
     bool EnemyIsAlive()
@@ -86,7 +84,7 @@ public class WaveSpawn : MonoBehaviour
     {
         Debug.Log("Spawning wave" + _wave.name);
         state = SpawnState.SPAWNING;
-        for (int i = 0; i <= _wave.enemyCount; i++)
+        for (int i = 0; i < _wave.enemyCount; i++)
         {
             SpawnEnemy(_wave.enemyPrefab);
             yield return new WaitForSeconds(1f / _wave.spawnRate);
