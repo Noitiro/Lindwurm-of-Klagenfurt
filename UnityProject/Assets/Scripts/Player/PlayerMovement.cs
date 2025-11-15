@@ -1,14 +1,16 @@
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    [SerializeField] private float speed = 0.5f;
+
     private Rigidbody2D rb;
     private Vector2 input;
 
     PlayerController playerController;
+    PlayerManager playerManager;
 
     private void Awake() {
         playerController = new PlayerController();
+        playerManager = new PlayerManager();
     }
 
     private void OnEnable() {
@@ -21,12 +23,22 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
+
+        playerController.Player.Sprint.performed += context => {
+            playerManager.Speed = playerManager.SprintSpeed;
+            Debug.Log("Speed: " + playerManager.Speed);
+        };
+        playerController.Player.Sprint.canceled += context => {
+            playerManager.Speed = playerManager.NormalSpeed;
+            Debug.Log("Speed: " + playerManager.Speed);
+        };
     }
 
     void Update() {
         input = playerController.Player.Move.ReadValue<Vector2>();
         input.Normalize();
-        if(input.x < 0) {
+
+        if (input.x < 0) {
             rb.transform.localScale = new Vector3(1,1,1);
         }else if(input.x > 0) {
             rb.transform.localScale = new Vector3(-1, 1, 1);
@@ -34,6 +46,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        rb.linearVelocity = input * speed;
+
+        rb.linearVelocity = input * playerManager.Speed;
     }
 }
