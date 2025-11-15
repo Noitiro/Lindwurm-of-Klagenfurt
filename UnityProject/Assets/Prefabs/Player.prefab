@@ -142,8 +142,6 @@ MonoBehaviour:
   normalSpeed: 3
   sprintSpeed: 5
   speed: 3
-  startingHealth: 100
-  currentHealth: 0
 --- !u!114 &2055787945919290544
 MonoBehaviour:
   m_ObjectHideFlags: 0
