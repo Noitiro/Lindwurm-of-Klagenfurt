@@ -17,6 +17,7 @@ public class EnemiesHealth : MonoBehaviour {
     }
 
     private void Die() {
+        Debug.Log("Przeciwnik zginął!");
         Destroy(gameObject);
     }
 

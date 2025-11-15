@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 4149091614100292672}
   - component: {fileID: 1366156498353738464}
   - component: {fileID: 5384241342514562538}
+  - component: {fileID: -3454310792301377941}
   - component: {fileID: 7189621953484527065}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +105,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbebc20505ffc410dbc6c7a05eada55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesFollowsAI
+--- !u!114 &-3454310792301377941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567840216310226737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e6d9c230f1442448400745a6471945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemiesHealth
+  maxHealth: 100
 --- !u!195 &7189621953484527065
 NavMeshAgent:
   m_ObjectHideFlags: 0
