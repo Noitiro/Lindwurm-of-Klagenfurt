@@ -131,4 +131,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbebc20505ffc410dbc6c7a05eada55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesFollows
-  speed: 2
+  target: {fileID: 0}
