@@ -1,24 +1,41 @@
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour {
-    [SerializeField] private int maxHealth = 100;
-    private int currentHealth;
+public class PlayerHealth : MonoBehaviour
+{
+    [SerializeField] private float startingHealth;
+    public float currentHealth { get; private set; }
+    PlayerController playerController;
+    private Animator anim;
 
-    void Start() {
-        currentHealth = maxHealth;
+    private void Awake() {
+        playerController = new PlayerController();
+        anim = GetComponent<Animator>();
+        currentHealth = startingHealth;
     }
 
-    public void TakeDamage(int damageAmount) {
-        currentHealth -= damageAmount;
-        Debug.Log("HP Gracza: " + currentHealth);
+    private void OnEnable() {
+        playerController.Enable();
+    }
 
-        if (currentHealth <= 0) {
-            Die();
+    private void OnDisable() {
+        playerController.Disable();
+    }
+
+    private void Start() {
+        playerController.Player.Attack.performed += context => {
+            TakeDamage(1);
+        };
+
+    }
+
+    public void TakeDamage(float damage) {
+        currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
+        Debug.Log("Player damage: " + damage);
+        if (currentHealth > 0) {
+            anim.SetTrigger("hurt");
+        }else {
+            anim.SetTrigger("die");
         }
-    }
-
-    private void Die() {
-        Debug.Log("Gracz zginął!");
-        gameObject.SetActive(false);
+        //s
     }
 }
