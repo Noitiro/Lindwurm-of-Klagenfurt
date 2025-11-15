@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6a7855ca357f0804ca0b56bc2363477a
+guid: 55b579ee628f89346bb3b2bdbeb435a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6667376871830524684
-    second: pitchwork_0
+      213: 5104081354170750823
+    second: test-dragon-walk-idle-2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,18 +40,18 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pitchwork_0
+      name: test-dragon-walk-idle-2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 7
+        y: 39
+        width: 117
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4fce2e27f08b873a0800000000000000
-      internalID: -6667376871830524684
+      spriteID: 767da04f2f655d640800000000000000
+      internalID: 5104081354170750823
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pitchwork_0: -6667376871830524684
+      test-dragon-walk-idle-2_0: 5104081354170750823
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

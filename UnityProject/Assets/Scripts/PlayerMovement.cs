@@ -5,18 +5,18 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb;
     private Vector2 input;
 
-    InputSystem_Actions inputSystemActions;
+    PlayerController playerController;
 
     private void Awake() {
-        inputSystemActions = new InputSystem_Actions();
+        playerController = new PlayerController();
     }
 
     private void OnEnable() {
-        inputSystemActions.Enable();
+        playerController.Enable();
     }
 
     private void OnDisable() {
-        inputSystemActions.Disable(); 
+        playerController.Disable(); 
     }
 
     void Start() {
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Update() {
-        input = inputSystemActions.Player.Move.ReadValue<Vector2>();
+        input = playerController.Player.Move.ReadValue<Vector2>();
         input.Normalize();
         if(input.x < 0) {
             rb.transform.localScale = new Vector3(1,1,1);
