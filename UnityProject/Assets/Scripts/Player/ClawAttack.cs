@@ -5,7 +5,7 @@ public class ClawAttack : MonoBehaviour {
     [SerializeField] private Transform attackTransform;
     [SerializeField] private float attackRange = 0.5f;
     [SerializeField] private LayerMask attackableLayer;
-    [SerializeField] private float damageAmount = 1f;
+    [SerializeField] private float damageAmount = 100f;
 
     [SerializeField] private float attackCooldown = 1f;   
     private bool canAttack = true;
@@ -39,6 +39,7 @@ public class ClawAttack : MonoBehaviour {
             IDamageable damageable = hits[i].collider.GetComponent<IDamageable>();
             if (damageable != null)
             {
+                Debug.Log("Claw Attack hit: " + hits[i].collider.name);
                 damageable.Damage(damageAmount);
             }
         }
@@ -52,6 +53,7 @@ public class ClawAttack : MonoBehaviour {
             audioSource.PlayOneShot(clawSound);
         }
         Attack();
+        Debug.Log("Claw Attack performed");
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }

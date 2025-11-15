@@ -112,15 +112,15 @@ MonoBehaviour:
   waves:
   - name: Pierwsza kurwa
     enemyPrefab: {fileID: 1567840216310226737, guid: c0a9f2f0bb64fbe479d6bfda590f1f71, type: 3}
-    enemyCount: 2
+    enemyCount: 30
     spawnRate: 1
   - name: Druga kurwa
     enemyPrefab: {fileID: 1567840216310226737, guid: c0a9f2f0bb64fbe479d6bfda590f1f71, type: 3}
-    enemyCount: 2
+    enemyCount: 50
     spawnRate: 1
   - name: Trzecia kurwa
-    enemyPrefab: {fileID: 7545875859104229336, guid: b062bcfc8af4240cab86699417f0cf74, type: 3}
-    enemyCount: 2
+    enemyPrefab: {fileID: 1567840216310226737, guid: c0a9f2f0bb64fbe479d6bfda590f1f71, type: 3}
+    enemyCount: 80
     spawnRate: 1
   timeBetweenWaves: 5
   state: 2

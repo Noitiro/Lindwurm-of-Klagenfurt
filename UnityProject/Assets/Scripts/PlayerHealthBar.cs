@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour
 {
-    PlayerManager playerManager;
-
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private Image totalHealthBar;
     [SerializeField] private Image currentHealthBar;
