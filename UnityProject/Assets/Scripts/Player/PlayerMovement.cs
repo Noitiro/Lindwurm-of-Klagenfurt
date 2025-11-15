@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void FixedUpdate() {
+
         rb.linearVelocity = input * playerManager.Speed;
     }
 }
