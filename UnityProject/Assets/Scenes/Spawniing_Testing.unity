@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 1905521631}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -368,7 +368,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1b4e064eae22646a266554f924a99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 10
 --- !u!50 &1905521627
 Rigidbody2D:
   serializedVersion: 5
@@ -530,7 +529,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9375, y: 0.5546875}
+    oldSize: {x: 0.9448819, y: 0.5590551}
     newSize: {x: 120, y: 71}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
