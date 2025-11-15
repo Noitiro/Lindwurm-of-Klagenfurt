@@ -16,6 +16,7 @@ public class EnemiesFollows : MonoBehaviour {
         GameObject player = GameObject.Find("Player");
         if (player != null) {
             target = player.transform;
+
         }
     }
 
