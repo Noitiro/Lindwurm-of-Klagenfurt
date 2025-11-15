@@ -36,5 +36,6 @@ public class PlayerHealth : MonoBehaviour
         }else {
             anim.SetTrigger("die");
         }
+        //s
     }
 }
