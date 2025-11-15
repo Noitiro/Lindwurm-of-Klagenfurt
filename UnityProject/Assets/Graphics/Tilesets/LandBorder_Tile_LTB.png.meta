@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5ff87f9f6d5527347a9331a432d8725a
+guid: 337377fd8cb09dd4f8aa5c9bbe1b9063
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8488165631624535881
-    second: grasscenter_0
+      213: 4201839684670245655
+    second: LandBorder_Tile_LTB_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grasscenter_0
+      name: LandBorder_Tile_LTB_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b0275c845af33a80800000000000000
-      internalID: -8488165631624535881
+      spriteID: 71bc8ef4eeeef4a30800000000000000
+      internalID: 4201839684670245655
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      grasscenter_0: -8488165631624535881
+      LandBorder_Tile_LTB_0: 4201839684670245655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
