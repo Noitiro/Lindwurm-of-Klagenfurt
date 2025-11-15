@@ -9,7 +9,7 @@ public class EnemyAttack : MonoBehaviour {
         if (other.CompareTag("Player") && canAttack) {
 
             PlayerHealth health = other.GetComponent<PlayerHealth>();
-            
+
             if (health != null) {
                 health.TakeDamage(damage);
 

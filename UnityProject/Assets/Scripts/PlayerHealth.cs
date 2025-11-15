@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
-{
+public class PlayerHealth : MonoBehaviour {
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     PlayerController playerController;
@@ -33,7 +32,8 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Player damage: " + damage);
         if (currentHealth > 0) {
             anim.SetTrigger("hurt");
-        }else {
+        }
+        else {
             anim.SetTrigger("die");
         }
     }

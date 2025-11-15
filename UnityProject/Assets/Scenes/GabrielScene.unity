@@ -27688,6 +27688,7 @@ GameObject:
   - component: {fileID: 1905521634}
   - component: {fileID: 1905521633}
   - component: {fileID: 1905521626}
+  - component: {fileID: 1905521635}
   - component: {fileID: 1905521630}
   - component: {fileID: 1905521631}
   m_Layer: 0
@@ -27862,7 +27863,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -27908,6 +27909,19 @@ MonoBehaviour:
   speed: 3
   startingHealth: 100
   currentHealth: 0
+--- !u!114 &1905521635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905521625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0c393dbfc2e4af9a91835c975d57a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DragonAbility
+  abilityCooldown: 5
 --- !u!1 &2024961723
 GameObject:
   m_ObjectHideFlags: 0
