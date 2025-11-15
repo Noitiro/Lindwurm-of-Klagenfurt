@@ -1,11 +1,26 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour {
-    void Start() {
+public class EnemiesHealth : MonoBehaviour {
+    [SerializeField] private int maxHealth = 100;
+    private int currentHealth;
 
+    private void Awake() {
+        currentHealth = maxHealth;
     }
 
-    void Update() {
+    public void TakeDamage(int amount) {
+        currentHealth -= amount;
 
+        if (currentHealth <= 0) {
+            Die();
+        }
+    }
+
+    private void Die() {
+        Destroy(gameObject);
+    }
+
+    public int GetCurrentHealth() {
+        return currentHealth;
     }
 }
