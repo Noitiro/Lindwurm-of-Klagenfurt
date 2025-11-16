@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4149091614100292672}
   - component: {fileID: 1366156498353738464}
   - component: {fileID: 5384241342514562538}
-  - component: {fileID: -3454310792301377941}
-  - component: {fileID: -1846444349851238291}
+  - component: {fileID: 8015917422007921770}
+  - component: {fileID: 3648838895693049661}
   - component: {fileID: 7189621953484527065}
   - component: {fileID: 8473770254952126640}
   - component: {fileID: 7780661935258129176}
@@ -35,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.26, y: -0.5, z: 0}
-  m_LocalScale: {x: 0.38699666, y: 0.3638, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,8 +84,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1861031177
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 297761703447499198, guid: b63ed3d353648da4e8c39cb4254cf132, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbebc20505ffc410dbc6c7a05eada55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesFollowsAI
---- !u!114 &-3454310792301377941
+--- !u!114 &8015917422007921770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,24 +119,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567840216310226737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e6d9c230f1442448400745a6471945, type: 3}
+  m_Script: {fileID: 11500000, guid: acfc1973a70264ecbb329cf1a7c5e300, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemiesHealth
-  maxHealth: 150
---- !u!114 &-1846444349851238291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567840216310226737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4a5e5811c844754ad21f405289aa5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  m_EditorClassIdentifier: Assembly-CSharp::ArcherAttack
   damage: 1
   attackCooldown: 1.5
+--- !u!114 &3648838895693049661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567840216310226737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2426e12c09cdc47f9bec7aa7d863f78b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArcherHealth
+  maxHealth: 100
 --- !u!195 &7189621953484527065
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 1.2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -231,7 +231,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!95 &6772844600573202795
 Animator:
   serializedVersion: 7
