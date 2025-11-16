@@ -45137,10 +45137,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8512551728307829008, guid: c90edfdabc20bbe43aecd5837d65fa5d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 647566586489992641, guid: c90edfdabc20bbe43aecd5837d65fa5d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1953325930}
+    - targetCorrespondingSourceObject: {fileID: 647566586489992641, guid: c90edfdabc20bbe43aecd5837d65fa5d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1953325929}
   m_SourcePrefab: {fileID: 100100000, guid: c90edfdabc20bbe43aecd5837d65fa5d, type: 3}
 --- !u!1 &1420562526
 GameObject:
@@ -45341,11 +45348,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -21.74
       objectReference: {fileID: 0}
+    - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+      propertyPath: waves.Array.data[0].enemyCount
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+--- !u!4 &1612557880 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6254217031040775327, guid: c90edfdabc20bbe43aecd5837d65fa5d, type: 3}
+  m_PrefabInstance: {fileID: 1268301582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1628039093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 647566586489992641, guid: c90edfdabc20bbe43aecd5837d65fa5d, type: 3}
+  m_PrefabInstance: {fileID: 1268301582}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1678777753
 GameObject:
   m_ObjectHideFlags: 0
@@ -45534,12 +45555,49 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2055787945919290544, guid: c90edfdabc20bbe43aecd5837d65fa5d, type: 3}
   m_PrefabInstance: {fileID: 1268301582}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1628039093}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5aa88569cee5da245bb17968a14d3bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!114 &1953325929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628039093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0522405e6c18144e85e6913101cc5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClawAttack
+  attackCooldown: 1
+  animationLockTime: 0.5
+  damageAmount: 100
+  attackTransform: {fileID: 1612557880}
+  attackRange: 0.5
+  attackableLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  clawSound: {fileID: 0}
+  animationTrigger: ClawAttack
+--- !u!114 &1953325930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628039093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f895d2a0ea2e442a9f7468df440dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackSelector
+  currentAttackType: 0
+  currentState: 0
+  clawAttack: {fileID: 1953325929}
 --- !u!1 &1985946840
 GameObject:
   m_ObjectHideFlags: 0
