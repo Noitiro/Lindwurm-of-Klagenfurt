@@ -86,8 +86,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1861031177
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -6507260603375455686, guid: aa84bcb90bbed5946ba23683d53621fc, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
@@ -453,7 +453,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 1.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
