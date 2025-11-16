@@ -45153,7 +45153,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: -7716425496803289439, guid: e7d2a61d1c8877e459442a2001d23c45, type: 3}
       - {fileID: -3885999788820115870, guid: e7d2a61d1c8877e459442a2001d23c45, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -2, y: 2, z: 0}
@@ -46200,14 +46200,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 5140504243560395006, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7177736648653462081, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.74
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+      propertyPath: timeBetweenWaves
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[0].enemyCount
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+      propertyPath: waves.Array.data[0].enemyPrefab
+      value: 
+      objectReference: {fileID: 1567840216310226737, guid: 515c8a9a6bac64608ae6656585159cf3, type: 3}
+    - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+      propertyPath: waves.Array.data[1].enemyPrefab
+      value: 
+      objectReference: {fileID: 1567840216310226737, guid: 515c8a9a6bac64608ae6656585159cf3, type: 3}
+    - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+      propertyPath: waves.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 1567840216310226737, guid: 515c8a9a6bac64608ae6656585159cf3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -47494,7 +47514,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1861031177
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 320630363890189158, guid: 811e408effcf41740bb92870ba380d12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -47515,7 +47535,7 @@ Transform:
   m_GameObject: {fileID: 647566587758201551}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.65, y: -0.475, z: 0}
+  m_LocalPosition: {x: 0.59, y: -0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
