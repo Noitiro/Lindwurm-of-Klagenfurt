@@ -43469,7 +43469,7 @@ Tilemap:
       m_AnimatedSprites:
       - {fileID: 934947165513112153, guid: e7d2a61d1c8877e459442a2001d23c45, type: 3}
       - {fileID: 2582939316287118629, guid: e7d2a61d1c8877e459442a2001d23c45, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -46184,7 +46184,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.007874, y: 1.007874}
+    oldSize: {x: 1.005988, y: 0.7664671}
     newSize: {x: 120, y: 71}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -46390,7 +46390,7 @@ SpriteRenderer:
   m_SortingLayerID: 1861031177
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 320630363890189158, guid: 811e408effcf41740bb92870ba380d12, type: 3}
+  m_Sprite: {fileID: -1271197328234302763, guid: 0f91c82335b117144a49506004e6c85a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -46411,8 +46411,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.65, y: -0.475, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1272854566}
   - {fileID: 1461904104}
