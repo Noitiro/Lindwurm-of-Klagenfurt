@@ -11,15 +11,15 @@ GameObject:
   - component: {fileID: 4149091614100292672}
   - component: {fileID: 1366156498353738464}
   - component: {fileID: 5384241342514562538}
-  - component: {fileID: 8015917422007921770}
-  - component: {fileID: 3648838895693049661}
+  - component: {fileID: 7921795815019898442}
+  - component: {fileID: 2401616095865102423}
   - component: {fileID: 7189621953484527065}
   - component: {fileID: 8473770254952126640}
   - component: {fileID: 7780661935258129176}
   - component: {fileID: 6772844600573202795}
   - component: {fileID: 1779186689632178228}
   m_Layer: 6
-  m_Name: Knight
+  m_Name: Archer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbebc20505ffc410dbc6c7a05eada55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesFollowsAI
---- !u!114 &8015917422007921770
+--- !u!114 &7921795815019898442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,24 +119,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567840216310226737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acfc1973a70264ecbb329cf1a7c5e300, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ArcherAttack
-  damage: 1
-  attackCooldown: 1.5
---- !u!114 &3648838895693049661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567840216310226737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2426e12c09cdc47f9bec7aa7d863f78b, type: 3}
+  m_Script: {fileID: 11500000, guid: c08cfc3800ec64487a6e3781bc1ab251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArcherHealth
-  maxHealth: 100
+--- !u!114 &2401616095865102423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567840216310226737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54bacf01695a441e82e1adabc1114c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArcherAttack
+  attackCooldown: 2
+  arrowPrefab: {fileID: 3373715332947199531, guid: a1809311069fd50488d6dbd921ef8cb1, type: 3}
+  arrowSpawnPoint: {fileID: 4149091614100292672}
 --- !u!195 &7189621953484527065
 NavMeshAgent:
   m_ObjectHideFlags: 0
