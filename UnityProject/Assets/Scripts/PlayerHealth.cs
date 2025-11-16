@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Windows;
 
@@ -18,18 +20,23 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
     }
 
+    IEnumerator coldownDie() {
+        yield return new WaitForSeconds(0.9f);
+        GameOverScreen.SetActive(true);
+    }
+
     public void Damage(float damage) {
+        currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
+        Debug.Log("Player damage: " + damage);
 
         if (currentHealth > 0) {
-       //     rb.AddForce = new Vector3 (rb.position.x-0.2f, rb.position.y);
-            currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
-            Debug.Log("Player damage: " + damage);
+
+            //   rb.AddForce = new Vector3 (rb.position.x-0.2f, rb.position.y);
             anim.SetTrigger("hurt");
         } 
-        else { 
+        else {
             anim.SetTrigger("die");
-            
-            GameOverScreen.SetActive(true);
+            StartCoroutine(coldownDie());
         }
     }
 }
