@@ -111,23 +111,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveSpawn
   waves:
   - name: Pierwsza kurwa
-    enemyPrefab: {fileID: 1567840216310226737, guid: c0a9f2f0bb64fbe479d6bfda590f1f71, type: 3}
-    enemyCount: 30
+    enemyGroups:
+    - enemyPrefab: {fileID: 0}
+      count: 0
+    - enemyPrefab: {fileID: 0}
+      count: 0
+    - enemyPrefab: {fileID: 0}
+      count: 0
     spawnRate: 1
   - name: Druga kurwa
-    enemyPrefab: {fileID: 1567840216310226737, guid: c0a9f2f0bb64fbe479d6bfda590f1f71, type: 3}
-    enemyCount: 50
+    enemyGroups:
+    - enemyPrefab: {fileID: 0}
+      count: 0
+    - enemyPrefab: {fileID: 0}
+      count: 0
+    - enemyPrefab: {fileID: 0}
+      count: 0
     spawnRate: 1
   - name: Trzecia kurwa
-    enemyPrefab: {fileID: 1567840216310226737, guid: c0a9f2f0bb64fbe479d6bfda590f1f71, type: 3}
-    enemyCount: 80
+    enemyGroups:
+    - enemyPrefab: {fileID: 0}
+      count: 0
+    - enemyPrefab: {fileID: 0}
+      count: 0
+    - enemyPrefab: {fileID: 0}
+      count: 0
     spawnRate: 1
-  timeBetweenWaves: 5
-  state: 2
   spawnpoints:
   - {fileID: 3749272050449001534}
   - {fileID: 7177736648653462081}
   - {fileID: 1559167163081391146}
+  timeBetweenWaves: 5
+  state: 2
 --- !u!1 &6971719312717155585
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4149091614100292672}
   - component: {fileID: 1366156498353738464}
   - component: {fileID: 5384241342514562538}
-  - component: {fileID: -3454310792301377941}
-  - component: {fileID: 5696317380129210208}
+  - component: {fileID: 7921795815019898442}
+  - component: {fileID: 2401616095865102423}
   - component: {fileID: 7189621953484527065}
   - component: {fileID: 8473770254952126640}
   - component: {fileID: 7780661935258129176}
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbebc20505ffc410dbc6c7a05eada55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesFollowsAI
---- !u!114 &-3454310792301377941
+--- !u!114 &7921795815019898442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,11 +119,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567840216310226737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e6d9c230f1442448400745a6471945, type: 3}
+  m_Script: {fileID: 11500000, guid: c08cfc3800ec64487a6e3781bc1ab251, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemiesHealth
-  maxHealth: 100
---- !u!114 &5696317380129210208
+  m_EditorClassIdentifier: Assembly-CSharp::ArcherHealth
+--- !u!114 &2401616095865102423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,11 +131,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567840216310226737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4a5e5811c844754ad21f405289aa5d, type: 3}
+  m_Script: {fileID: 11500000, guid: d54bacf01695a441e82e1adabc1114c0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  damage: 1
-  attackCooldown: 1.5
+  m_EditorClassIdentifier: Assembly-CSharp::ArcherAttack
+  attackCooldown: 2
+  arrowPrefab: {fileID: 3373715332947199531, guid: a1809311069fd50488d6dbd921ef8cb1, type: 3}
+  arrowSpawnPoint: {fileID: 4149091614100292672}
 --- !u!195 &7189621953484527065
 NavMeshAgent:
   m_ObjectHideFlags: 0
