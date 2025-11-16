@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float startingHealth = 100;
+    [SerializeField] private float startingHealth = 200;
     public float currentHealth { get; private set; }
     private Animator anim;
 

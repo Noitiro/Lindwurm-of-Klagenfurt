@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1366156498353738464}
   - component: {fileID: 5384241342514562538}
   - component: {fileID: -3454310792301377941}
-  - component: {fileID: -1846444349851238291}
+  - component: {fileID: 5696317380129210208}
   - component: {fileID: 7189621953484527065}
   - component: {fileID: 8473770254952126640}
   - component: {fileID: 7780661935258129176}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesHealth
   maxHealth: 100
---- !u!114 &-1846444349851238291
+--- !u!114 &5696317380129210208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
