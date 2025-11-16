@@ -6,7 +6,7 @@ public class AttackSelector : MonoBehaviour {
     public enum AttackType {
         Claw,
         Ice,
-        TailSwipe,
+        //TailSwipe,
         FireBreath
     }
 
@@ -20,9 +20,9 @@ public class AttackSelector : MonoBehaviour {
 
     [Header("Referencje do skrypt�w Atak�w")]
     [SerializeField] private ClawAttack clawAttack;
-    // [SerializeField] private IceAttack iceAttack;
-    // [SerializeField] private TailAttack tailAttack;
-    // [SerializeField] private FireBreathAttack fireBreathAttack;
+    [SerializeField] private IceAttack iceAttack;
+    //[SerializeField] private TailAttack tailAttack;
+    [SerializeField] private FireBreathAttack fireBreathAttack;
 
     private PlayerController playerController;
 
@@ -80,7 +80,6 @@ public class AttackSelector : MonoBehaviour {
 
     private void HandleAttackExecution(InputAction.CallbackContext context) {
         if (currentState == PlayerState.Idle) {
-            SetState(PlayerState.Attacking);
 
             switch (currentAttackType) {
                 case AttackType.Claw:
@@ -93,18 +92,27 @@ public class AttackSelector : MonoBehaviour {
                     break;
 
                 case AttackType.Ice:
-                    Debug.Log("Atak 'TailSwipe' nie jest jeszcze pod��czony.");
-                    SetState(PlayerState.Idle);
+                    if (iceAttack != null && iceAttack.IsReady()) {
+                        SetState(PlayerState.Attacking);
+                        iceAttack.ExecuteAttack(this);
+                    }
+                    else {
+                        Debug.Log("Atak Lodem jest na Cooldownie lub niepod��czony!");
+                    }
                     break;
-
-                case AttackType.TailSwipe:
-                    Debug.Log("Atak 'TailSwipe' nie jest jeszcze pod��czony.");
-                    SetState(PlayerState.Idle);
-                    break;
+                //case AttackType.TailSwipe:
+                //    Debug.Log("Atak 'TailSwipe' nie jest jeszcze pod��czony.");
+                //    SetState(PlayerState.Idle);
+                //    break;
 
                 case AttackType.FireBreath:
-                    Debug.Log("Atak 'FireBreath' nie jest jeszcze pod��czony.");
-                    SetState(PlayerState.Idle);
+                    if (fireBreathAttack != null && fireBreathAttack.IsReady()) {
+                        SetState(PlayerState.Attacking);
+                        fireBreathAttack.ExecuteAttack(this);
+                    }
+                    else {
+                        Debug.Log("Atak Ogniem jest na Cooldownie lub niepod��czony!");
+                    }
                     break;
             }
         }
