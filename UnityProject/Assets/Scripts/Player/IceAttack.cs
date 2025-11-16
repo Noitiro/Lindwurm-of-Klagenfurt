@@ -6,6 +6,7 @@ public class IceAttack : MonoBehaviour {
 
     [Tooltip("Całkowity czas odnowienia (np. 3 sekundy)")]
     [SerializeField] private float attackCooldown = 3f;
+    public float TotalCooldown { get { return attackCooldown; } }
 
     [Tooltip("Czas trwania animacji ataku (np. 0.5 sekundy)")]
     [SerializeField] private float animationLockTime = 0.5f;
@@ -28,8 +29,17 @@ public class IceAttack : MonoBehaviour {
 
     private Animator anim;
     private AudioSource audioSource;
-    private bool isReady = true;
 
+    public float CurrentCooldown { get; private set; }
+
+    private void Update() {
+        if (CurrentCooldown > 0) {
+            CurrentCooldown -= Time.deltaTime;
+        }
+        else if (CurrentCooldown < 0) {
+            CurrentCooldown = 0;
+        }
+    }
     private void Awake() {
         anim = GetComponentInParent<Animator>();
         audioSource = GetComponentInParent<AudioSource>();
@@ -37,30 +47,26 @@ public class IceAttack : MonoBehaviour {
         if (animationLockTime > attackCooldown) {
             Debug.LogWarning("Czas animacji jest dłuższy niż całkowity cooldown!");
         }
+        CurrentCooldown = 0f;
     }
 
     public bool IsReady() {
-        return isReady;
+        return CurrentCooldown <= 0;
     }
     public void ExecuteAttack(AttackSelector selector) {
+        if (!IsReady()) return; 
+        CurrentCooldown = attackCooldown;
         StartCoroutine(AttackCoroutine(selector));
     }
 
     private IEnumerator AttackCoroutine(AttackSelector selector) {
-        isReady = false;
         anim.SetTrigger(animationTrigger);
-
         if (iceSound != null && audioSource != null) {
             audioSource.PlayOneShot(iceSound);
         }
-
         PerformDamageCheck();
         yield return new WaitForSeconds(animationLockTime);
         selector.SetState(AttackSelector.PlayerState.Idle);
-        yield return new WaitForSeconds(attackCooldown - animationLockTime);
-        isReady = true;
-
-        Debug.Log("Ice Attack jest gotowy!");
     }
 
     private void PerformDamageCheck() {

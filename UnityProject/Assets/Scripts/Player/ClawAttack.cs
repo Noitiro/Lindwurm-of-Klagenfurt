@@ -51,14 +51,16 @@ public class ClawAttack : MonoBehaviour {
     }
 
     public bool IsReady() {
-        return isReady;
+        return CurrentCooldown <= 0;
     }
     public void ExecuteAttack(AttackSelector selector) {
-        StartCoroutine(AttackCoroutine(selector));
+        if (!IsReady()) return;
+        CurrentCooldown = attackCooldown;
+        
+                StartCoroutine(AttackCoroutine(selector));
     }
 
     private IEnumerator AttackCoroutine(AttackSelector selector) {
-        isReady = false;
         anim.SetTrigger(animationTrigger);
         if (clawSound != null && audioSource != null) {
             audioSource.PlayOneShot(clawSound);
@@ -69,10 +71,6 @@ public class ClawAttack : MonoBehaviour {
         yield return new WaitForSeconds(animationLockTime);
 
         selector.SetState(AttackSelector.PlayerState.Idle);
-
-        yield return new WaitForSeconds(attackCooldown - animationLockTime);
-        isReady = true;
-        Debug.Log("Claw Attack jest gotowy!");
     }
 
     private void PerformDamageCheck() {
