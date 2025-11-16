@@ -8,6 +8,12 @@ public class PlayerMovement : MonoBehaviour {
     PlayerController playerController;
     PlayerManager playerManager;
 
+    private float maxEnergy = 100f;
+    public float currentEnergy = 100f;
+    private float sprintCost = 20f;
+    private float regenRate = 10f;
+    private bool isSprinting = false;
+
     private void Awake() {
         playerController = new PlayerController();
         playerManager = new PlayerManager();
@@ -25,12 +31,10 @@ public class PlayerMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
 
         playerController.Player.Sprint.performed += context => {
-            playerManager.Speed = playerManager.SprintSpeed;
-            Debug.Log("Speed: " + playerManager.Speed);
+            isSprinting = true;
         };
         playerController.Player.Sprint.canceled += context => {
-            playerManager.Speed = playerManager.NormalSpeed;
-            Debug.Log("Speed: " + playerManager.Speed);
+            isSprinting = false;
         };
     }
 
@@ -43,6 +47,25 @@ public class PlayerMovement : MonoBehaviour {
         }else if(input.x > 0) {
             rb.transform.localScale = new Vector3(-1.6f, 1.6f, 1.6f);
         }
+
+        if (isSprinting && currentEnergy > 0f) {
+            playerManager.Speed = playerManager.SprintSpeed;
+            currentEnergy -= sprintCost * Time.deltaTime;
+
+            if (currentEnergy <= 0f) {
+                currentEnergy = 0f;
+                isSprinting = false;
+            }
+        }
+        else {
+            playerManager.Speed = playerManager.NormalSpeed;
+            currentEnergy += regenRate * Time.deltaTime;
+
+            if (currentEnergy > maxEnergy)
+                currentEnergy = maxEnergy;
+        }
+
+        Debug.Log("ENERGY: " + currentEnergy);
     }
 
     void FixedUpdate() {
