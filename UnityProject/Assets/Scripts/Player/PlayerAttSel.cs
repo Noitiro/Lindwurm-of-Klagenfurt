@@ -23,7 +23,9 @@ public class AttackSelector : MonoBehaviour {
     [SerializeField] private IceAttack iceAttack;
     //[SerializeField] private TailAttack tailAttack;
     [SerializeField] private FireBreathAttack fireBreathAttack;
-
+    public ClawAttack ClawAttackScript { get { return clawAttack; } }
+    public IceAttack IceAttackScript { get { return iceAttack; } }
+    public FireBreathAttack FireBreathAttackScript { get { return fireBreathAttack; } }
     private PlayerController playerController;
 
     public static event Action<AttackType> OnAttackSelected;
