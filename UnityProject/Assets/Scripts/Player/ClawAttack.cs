@@ -61,7 +61,7 @@ public class ClawAttack : MonoBehaviour {
     }
 
     private IEnumerator AttackCoroutine(AttackSelector selector) {
-        anim.SetTrigger(animationTrigger);
+        anim.SetTrigger("claw");
         if (clawSound != null && audioSource != null) {
             audioSource.PlayOneShot(clawSound);
         }

@@ -60,7 +60,7 @@ public class IceAttack : MonoBehaviour {
     }
 
     private IEnumerator AttackCoroutine(AttackSelector selector) {
-        anim.SetTrigger(animationTrigger);
+        anim.SetTrigger("ice");
         if (iceSound != null && audioSource != null) {
             audioSource.PlayOneShot(iceSound);
         }
