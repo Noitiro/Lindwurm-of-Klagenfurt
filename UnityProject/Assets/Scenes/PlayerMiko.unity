@@ -45776,7 +45776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -50, y: -50}
+  m_AnchoredPosition: {x: -50.000244, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: -1, y: -1}
 --- !u!114 &1766778927
@@ -46857,8 +46857,8 @@ SpriteRenderer:
   m_SortingLayerID: 1861031177
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6507260603375455686, guid: aa84bcb90bbed5946ba23683d53621fc, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 320630363890189158, guid: 811e408effcf41740bb92870ba380d12, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -46923,7 +46923,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9448819, y: 0.5590551}
+    oldSize: {x: 1.007874, y: 1.007874}
     newSize: {x: 120, y: 71}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
