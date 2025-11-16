@@ -5,6 +5,7 @@ public class ClawAttack : MonoBehaviour {
     [Header("Ustawienia Ataku")]
     [Tooltip("Ca�kowity czas odnowienia (np. 3 sekundy)")]
     [SerializeField] private float attackCooldown = 3f;
+    public float TotalCooldown { get { return attackCooldown; } }
 
     [Tooltip("Czas trwania animacji ataku (np. 0.5 sekundy)")]
     [SerializeField] private float animationLockTime = 0.5f;
@@ -29,8 +30,16 @@ public class ClawAttack : MonoBehaviour {
     private Animator anim;
     private AudioSource audioSource;
 
-    private bool isReady = true;
+    public float CurrentCooldown { get; private set; }
 
+    private void Update() {
+        if (CurrentCooldown > 0) {
+            CurrentCooldown -= Time.deltaTime;
+        }
+        else if (CurrentCooldown < 0) {
+            CurrentCooldown = 0; 
+        }
+    }
     private void Awake() {
         anim = GetComponentInParent<Animator>();
         audioSource = GetComponentInParent<AudioSource>();
@@ -38,6 +47,7 @@ public class ClawAttack : MonoBehaviour {
         if (animationLockTime > attackCooldown) {
             Debug.LogWarning("Czas animacji jest d�u�szy ni� ca�kowity cooldown!");
         }
+        CurrentCooldown = 0f;
     }
 
     public bool IsReady() {
