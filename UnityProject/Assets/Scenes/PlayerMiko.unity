@@ -45776,7 +45776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -50, y: -50}
+  m_AnchoredPosition: {x: -50.000244, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: -1, y: -1}
 --- !u!114 &1766778927
@@ -46433,6 +46433,8 @@ GameObject:
   - component: {fileID: 9173337074941672012}
   - component: {fileID: 2954179443203048623}
   - component: {fileID: 2055787946850919358}
+  - component: {fileID: 9173337074941672013}
+  - component: {fileID: 9173337074941672014}
   - component: {fileID: 9173337074941672011}
   - component: {fileID: 7334752672915194026}
   - component: {fileID: 9173337074941672010}
@@ -46857,8 +46859,8 @@ SpriteRenderer:
   m_SortingLayerID: 1861031177
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6507260603375455686, guid: aa84bcb90bbed5946ba23683d53621fc, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 320630363890189158, guid: 811e408effcf41740bb92870ba380d12, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -46923,7 +46925,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9448819, y: 0.5590551}
+    oldSize: {x: 1.007874, y: 1.007874}
     newSize: {x: 120, y: 71}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -46946,6 +46948,8 @@ MonoBehaviour:
   currentAttackType: 0
   currentState: 0
   clawAttack: {fileID: 710820307598555646}
+  iceAttack: {fileID: 9173337074941672013}
+  fireBreathAttack: {fileID: 9173337074941672014}
 --- !u!114 &9173337074941672012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46958,6 +46962,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1b4e064eae22646a266554f924a99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+--- !u!114 &9173337074941672013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647566587758201551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e34600478108641ad7be89b99f7fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IceAttack
+  attackCooldown: 3
+  animationLockTime: 0.5
+  damageAmount: 100
+  attackTransform: {fileID: 6254217030060903313}
+  attackRange: 0.5
+  attackableLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  iceSound: {fileID: 0}
+  animationTrigger: IceAttack
+--- !u!114 &9173337074941672014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647566587758201551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462774a121f9df1448a579ed59c29739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireBreathAttack
+  attackCooldown: 3
+  animationLockTime: 0.5
+  damageAmount: 100
+  attackTransform: {fileID: 6254217030060903313}
+  attackRange: 0.5
+  attackableLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  fireSound: {fileID: 0}
+  animationTrigger: FireAttack
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
