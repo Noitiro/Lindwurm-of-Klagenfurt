@@ -80,8 +80,6 @@ public class AttackSelector : MonoBehaviour {
 
     private void HandleAttackExecution(InputAction.CallbackContext context) {
         if (currentState == PlayerState.Idle) {
-            SetState(PlayerState.Attacking);
-
             switch (currentAttackType) {
                 case AttackType.Claw:
                     if (clawAttack != null && clawAttack.IsReady()) {

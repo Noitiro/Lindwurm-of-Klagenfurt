@@ -1,16 +1,14 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class LoadingScene : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+public class LoadingScene : MonoBehaviour {
+
+    public void LoadMap() {
+        SceneManager.LoadScene(0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void Exit() {
+        Application.Quit();
+        Debug.Log("Exit");
     }
 }

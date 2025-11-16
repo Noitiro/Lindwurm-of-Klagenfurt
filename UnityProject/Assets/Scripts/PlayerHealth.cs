@@ -5,6 +5,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private float startingHealth = 200;
     public float currentHealth { get; private set; }
     private Animator anim;
+    [SerializeField] private GameObject GameOverScreen;
 
     private void Awake() {
         anim = GetComponent<Animator>();
@@ -17,7 +18,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         if (currentHealth > 0)
             anim.SetTrigger("hurt");
-        else
+        else { 
             anim.SetTrigger("die");
+            
+            GameOverScreen.SetActive(true);
+        }
     }
 }
