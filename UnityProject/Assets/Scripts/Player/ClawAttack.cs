@@ -80,7 +80,7 @@ public class ClawAttack : MonoBehaviour {
 
     private void OnDrawGizmosSelected() {
         if (attackTransform != null) {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(attackTransform.position, attackRange);
         }
     }
