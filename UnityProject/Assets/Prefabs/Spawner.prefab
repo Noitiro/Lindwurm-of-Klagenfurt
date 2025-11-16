@@ -110,32 +110,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveSpawn
   waves:
-  - name: Pierwsza kurwa
+  - name: '#1'
     enemyGroups:
-    - enemyPrefab: {fileID: 0}
+    - enemyPrefab: {fileID: 1567840216310226737, guid: c0a9f2f0bb64fbe479d6bfda590f1f71, type: 3}
+      count: 12
+    - enemyPrefab: {fileID: 1567840216310226737, guid: 0417436695e09421e83c0c1ccfd559bf, type: 3}
       count: 0
-    - enemyPrefab: {fileID: 0}
-      count: 0
-    - enemyPrefab: {fileID: 0}
+    - enemyPrefab: {fileID: 1567840216310226737, guid: 515c8a9a6bac64608ae6656585159cf3, type: 3}
       count: 0
     spawnRate: 1
-  - name: Druga kurwa
+  - name: '#2'
     enemyGroups:
-    - enemyPrefab: {fileID: 0}
-      count: 0
-    - enemyPrefab: {fileID: 0}
-      count: 0
-    - enemyPrefab: {fileID: 0}
-      count: 0
+    - enemyPrefab: {fileID: 1567840216310226737, guid: c0a9f2f0bb64fbe479d6bfda590f1f71, type: 3}
+      count: 10
+    - enemyPrefab: {fileID: 1567840216310226737, guid: 0417436695e09421e83c0c1ccfd559bf, type: 3}
+      count: 3
+    - enemyPrefab: {fileID: 1567840216310226737, guid: 515c8a9a6bac64608ae6656585159cf3, type: 3}
+      count: 4
     spawnRate: 1
-  - name: Trzecia kurwa
+  - name: '#3'
     enemyGroups:
-    - enemyPrefab: {fileID: 0}
-      count: 0
-    - enemyPrefab: {fileID: 0}
-      count: 0
-    - enemyPrefab: {fileID: 0}
-      count: 0
+    - enemyPrefab: {fileID: 1567840216310226737, guid: c0a9f2f0bb64fbe479d6bfda590f1f71, type: 3}
+      count: 5
+    - enemyPrefab: {fileID: 1567840216310226737, guid: 0417436695e09421e83c0c1ccfd559bf, type: 3}
+      count: 6
+    - enemyPrefab: {fileID: 1567840216310226737, guid: 515c8a9a6bac64608ae6656585159cf3, type: 3}
+      count: 7
     spawnRate: 1
   spawnpoints:
   - {fileID: 3749272050449001534}
