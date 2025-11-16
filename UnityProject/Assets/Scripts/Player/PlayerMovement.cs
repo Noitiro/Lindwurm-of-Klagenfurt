@@ -39,9 +39,9 @@ public class PlayerMovement : MonoBehaviour {
         input.Normalize();
 
         if (input.x < 0) {
-            rb.transform.localScale = new Vector3(1,1,1);
+            rb.transform.localScale = new Vector3(1.6f,1.6f,1.6f);
         }else if(input.x > 0) {
-            rb.transform.localScale = new Vector3(-1, 1, 1);
+            rb.transform.localScale = new Vector3(-1.6f, 1.6f, 1.6f);
         }
     }
 
