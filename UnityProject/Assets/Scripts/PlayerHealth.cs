@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
 
         if (currentHealth > 0) {
-            rb.transform.localPosition = new Vector3 (rb.position.x-0.2f, rb.position.y);
+       //     rb.AddForce = new Vector3 (rb.position.x-0.2f, rb.position.y);
             currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
             Debug.Log("Player damage: " + damage);
             anim.SetTrigger("hurt");
