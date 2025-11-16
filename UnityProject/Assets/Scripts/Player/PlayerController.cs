@@ -123,7 +123,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""852140f2-7766-474d-8707-702459ba45f3"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
@@ -178,6 +178,42 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""8c0d7b98-745f-4a9f-ad70-9aba9c3263ea"",
                     ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectAttack1"",
+                    ""type"": ""Button"",
+                    ""id"": ""621e6954-1feb-4edb-b988-52122c33593c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectAttack2"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3365cb2-3a5c-4a09-bc66-cd810e9a2a7b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectAttack3"",
+                    ""type"": ""Button"",
+                    ""id"": ""1fe65814-8cbb-449e-aea8-52e632130bcf"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectAttack4"",
+                    ""type"": ""Button"",
+                    ""id"": ""f697dcc3-219e-4d34-9452-0d814cecb321"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -577,6 +613,50 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""ClawAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac559b88-3703-48c4-ba3a-72679b188245"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""SelectAttack1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c460c50-af9d-45d6-910a-129f991d05ad"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""SelectAttack2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4d1c6ff2-7e39-4a6a-afda-b0506ee3844e"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""SelectAttack3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2cf4b86c-3383-4b51-b55b-6614bbedccb7"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""SelectAttack4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1174,6 +1254,10 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_ClawAttack = m_Player.FindAction("ClawAttack", throwIfNotFound: true);
+        m_Player_SelectAttack1 = m_Player.FindAction("SelectAttack1", throwIfNotFound: true);
+        m_Player_SelectAttack2 = m_Player.FindAction("SelectAttack2", throwIfNotFound: true);
+        m_Player_SelectAttack3 = m_Player.FindAction("SelectAttack3", throwIfNotFound: true);
+        m_Player_SelectAttack4 = m_Player.FindAction("SelectAttack4", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1277,6 +1361,10 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_ClawAttack;
+    private readonly InputAction m_Player_SelectAttack1;
+    private readonly InputAction m_Player_SelectAttack2;
+    private readonly InputAction m_Player_SelectAttack3;
+    private readonly InputAction m_Player_SelectAttack4;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1328,6 +1416,22 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/ClawAttack".
         /// </summary>
         public InputAction @ClawAttack => m_Wrapper.m_Player_ClawAttack;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SelectAttack1".
+        /// </summary>
+        public InputAction @SelectAttack1 => m_Wrapper.m_Player_SelectAttack1;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SelectAttack2".
+        /// </summary>
+        public InputAction @SelectAttack2 => m_Wrapper.m_Player_SelectAttack2;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SelectAttack3".
+        /// </summary>
+        public InputAction @SelectAttack3 => m_Wrapper.m_Player_SelectAttack3;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/SelectAttack4".
+        /// </summary>
+        public InputAction @SelectAttack4 => m_Wrapper.m_Player_SelectAttack4;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1384,6 +1488,18 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @ClawAttack.started += instance.OnClawAttack;
             @ClawAttack.performed += instance.OnClawAttack;
             @ClawAttack.canceled += instance.OnClawAttack;
+            @SelectAttack1.started += instance.OnSelectAttack1;
+            @SelectAttack1.performed += instance.OnSelectAttack1;
+            @SelectAttack1.canceled += instance.OnSelectAttack1;
+            @SelectAttack2.started += instance.OnSelectAttack2;
+            @SelectAttack2.performed += instance.OnSelectAttack2;
+            @SelectAttack2.canceled += instance.OnSelectAttack2;
+            @SelectAttack3.started += instance.OnSelectAttack3;
+            @SelectAttack3.performed += instance.OnSelectAttack3;
+            @SelectAttack3.canceled += instance.OnSelectAttack3;
+            @SelectAttack4.started += instance.OnSelectAttack4;
+            @SelectAttack4.performed += instance.OnSelectAttack4;
+            @SelectAttack4.canceled += instance.OnSelectAttack4;
         }
 
         /// <summary>
@@ -1425,6 +1541,18 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @ClawAttack.started -= instance.OnClawAttack;
             @ClawAttack.performed -= instance.OnClawAttack;
             @ClawAttack.canceled -= instance.OnClawAttack;
+            @SelectAttack1.started -= instance.OnSelectAttack1;
+            @SelectAttack1.performed -= instance.OnSelectAttack1;
+            @SelectAttack1.canceled -= instance.OnSelectAttack1;
+            @SelectAttack2.started -= instance.OnSelectAttack2;
+            @SelectAttack2.performed -= instance.OnSelectAttack2;
+            @SelectAttack2.canceled -= instance.OnSelectAttack2;
+            @SelectAttack3.started -= instance.OnSelectAttack3;
+            @SelectAttack3.performed -= instance.OnSelectAttack3;
+            @SelectAttack3.canceled -= instance.OnSelectAttack3;
+            @SelectAttack4.started -= instance.OnSelectAttack4;
+            @SelectAttack4.performed -= instance.OnSelectAttack4;
+            @SelectAttack4.canceled -= instance.OnSelectAttack4;
         }
 
         /// <summary>
@@ -1795,6 +1923,34 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnClawAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectAttack1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectAttack1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectAttack2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectAttack2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectAttack3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectAttack3(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SelectAttack4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSelectAttack4(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
