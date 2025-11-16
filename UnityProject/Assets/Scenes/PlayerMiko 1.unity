@@ -45838,7 +45838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -50.000183, y: -50}
+  m_AnchoredPosition: {x: -50.00049, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: -1, y: -1}
 --- !u!114 &1766778927
@@ -46533,7 +46533,7 @@ MonoBehaviour:
   animationLockTime: 0.5
   damageAmount: 10
   attackTransform: {fileID: 6254217030060903313}
-  attackRange: 0.23
+  attackRange: 0.32
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -46749,7 +46749,7 @@ Transform:
   m_GameObject: {fileID: 3811918136168337646}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.567, y: -0.06, z: 0}
+  m_LocalPosition: {x: -0.641, y: -0.06, z: 0}
   m_LocalScale: {x: 0.59340996, y: 0.59340996, z: 0.59340996}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46989,7 +46989,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.007874, y: 1.007874}
+    oldSize: {x: 1.005988, y: 0.7664671}
     newSize: {x: 120, y: 71}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
