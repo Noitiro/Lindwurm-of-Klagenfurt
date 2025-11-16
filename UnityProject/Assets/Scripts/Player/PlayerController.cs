@@ -217,6 +217,15 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeAttack"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""b2cd5bb2-6db4-4ee1-80d4-d53754771d2d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -657,6 +666,17 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""SelectAttack4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c73d9ee7-5860-4122-abe7-3e86b131ac51"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""ChangeAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1258,6 +1278,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         m_Player_SelectAttack2 = m_Player.FindAction("SelectAttack2", throwIfNotFound: true);
         m_Player_SelectAttack3 = m_Player.FindAction("SelectAttack3", throwIfNotFound: true);
         m_Player_SelectAttack4 = m_Player.FindAction("SelectAttack4", throwIfNotFound: true);
+        m_Player_ChangeAttack = m_Player.FindAction("ChangeAttack", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1365,6 +1386,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SelectAttack2;
     private readonly InputAction m_Player_SelectAttack3;
     private readonly InputAction m_Player_SelectAttack4;
+    private readonly InputAction m_Player_ChangeAttack;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1433,6 +1455,10 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @SelectAttack4 => m_Wrapper.m_Player_SelectAttack4;
         /// <summary>
+        /// Provides access to the underlying input action "Player/ChangeAttack".
+        /// </summary>
+        public InputAction @ChangeAttack => m_Wrapper.m_Player_ChangeAttack;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -1500,6 +1526,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @SelectAttack4.started += instance.OnSelectAttack4;
             @SelectAttack4.performed += instance.OnSelectAttack4;
             @SelectAttack4.canceled += instance.OnSelectAttack4;
+            @ChangeAttack.started += instance.OnChangeAttack;
+            @ChangeAttack.performed += instance.OnChangeAttack;
+            @ChangeAttack.canceled += instance.OnChangeAttack;
         }
 
         /// <summary>
@@ -1553,6 +1582,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @SelectAttack4.started -= instance.OnSelectAttack4;
             @SelectAttack4.performed -= instance.OnSelectAttack4;
             @SelectAttack4.canceled -= instance.OnSelectAttack4;
+            @ChangeAttack.started -= instance.OnChangeAttack;
+            @ChangeAttack.performed -= instance.OnChangeAttack;
+            @ChangeAttack.canceled -= instance.OnChangeAttack;
         }
 
         /// <summary>
@@ -1951,6 +1983,13 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSelectAttack4(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeAttack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeAttack(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

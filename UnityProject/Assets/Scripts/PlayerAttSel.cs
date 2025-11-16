@@ -1,13 +1,13 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 
 public class AttackSelector : MonoBehaviour {
     public enum AttackType {
-        Claw,  
-        Ice,   
-        TailSwipe, 
-        FireBreath 
+        Claw,
+        Ice,
+        TailSwipe,
+        FireBreath
     }
 
     public enum PlayerState { Idle, Attacking }
@@ -18,7 +18,7 @@ public class AttackSelector : MonoBehaviour {
     [SerializeField] private PlayerState currentState = PlayerState.Idle;
 
 
-    [Header("Referencje do skryptów Ataków")]
+    [Header("Referencje do skryptï¿½w Atakï¿½w")]
     [SerializeField] private ClawAttack clawAttack;
     // [SerializeField] private IceAttack iceAttack;
     // [SerializeField] private TailAttack tailAttack;
@@ -30,38 +30,47 @@ public class AttackSelector : MonoBehaviour {
 
     private void Awake() {
         playerController = new PlayerController();
-
-        
-        //if (clawAttack == null || iceAttack == null || tailAttack == null || FireBreathAttack == null) {
-        //    Debug.LogError("Nie wszystkie skrypty ataków s¹ przypisane do AttackSelector!");
-        //    this.enabled = false;
-        //}
     }
 
     private void OnEnable() {
         playerController.Enable();
 
-        // klawisze 1-4
-        playerController.Player.SelectAttack1.performed += ctx => SelectAttack(AttackType.Claw);
-        playerController.Player.SelectAttack2.performed += ctx => SelectAttack(AttackType.Ice);
-        playerController.Player.SelectAttack3.performed += ctx => SelectAttack(AttackType.TailSwipe);
-        playerController.Player.SelectAttack4.performed += ctx => SelectAttack(AttackType.FireBreath);
+        playerController.Player.ChangeAttack.performed += HandleScroll;
 
-        // myszka
         playerController.Player.Attack.performed += HandleAttackExecution;
     }
 
     private void OnDisable() {
         playerController.Disable();
-        playerController.Player.SelectAttack1.performed -= ctx => SelectAttack(AttackType.Claw);
-        playerController.Player.SelectAttack2.performed -= ctx => SelectAttack(AttackType.Ice);
-        playerController.Player.SelectAttack3.performed -= ctx => SelectAttack(AttackType.TailSwipe);
-        playerController.Player.SelectAttack4.performed -= ctx => SelectAttack(AttackType.FireBreath);
+
+        playerController.Player.ChangeAttack.performed -= HandleScroll;
+
         playerController.Player.Attack.performed -= HandleAttackExecution;
     }
+    private void HandleScroll(InputAction.CallbackContext context) {
+        float scrollValue = context.ReadValue<Vector2>().y;
 
+        if (scrollValue == 0) return;
+
+        int currentIndex = (int)currentAttackType;
+        int attackCount = Enum.GetNames(typeof(AttackType)).Length;
+
+        if (scrollValue > 0) {
+            currentIndex++;
+            if (currentIndex >= attackCount) {
+                currentIndex = 0;
+            }
+        } else if (scrollValue < 0) {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = attackCount - 1;
+            }
+        }
+
+        SelectAttack((AttackType)currentIndex);
+    }
     private void SelectAttack(AttackType newAttack) {
-    
+
         if (currentState != PlayerState.Idle) return;
 
         currentAttackType = newAttack;
@@ -75,38 +84,31 @@ public class AttackSelector : MonoBehaviour {
 
             switch (currentAttackType) {
                 case AttackType.Claw:
-                    if (clawAttack.IsReady()) {
-                        SetState(PlayerState.Attacking); // Ustaw GLOBALN¥ blokadê
-                        clawAttack.ExecuteAttack(this);  // Uruchom atak
-                    }
-                    else {
-                        Debug.Log("Atak Pazurami jest na Cooldownie!");
-                        SetState(PlayerState.Idle); // Wa¿ne: Zwolnij blokadê, jeœli atak nie jest gotowy
+                    if (clawAttack != null && clawAttack.IsReady()) {
+                        SetState(PlayerState.Attacking);
+                        clawAttack.ExecuteAttack(this);
+                    } else {
+                        Debug.Log("Atak Pazurami jest na Cooldownie lub niepodï¿½ï¿½czony!");
                     }
                     break;
 
                 case AttackType.Ice:
-                    Debug.Log("Atak 'TailSwipe' nie jest jeszcze pod³¹czony.");
-                    SetState(PlayerState.Idle); 
+                    Debug.Log("Atak 'TailSwipe' nie jest jeszcze podï¿½ï¿½czony.");
+                    SetState(PlayerState.Idle);
                     break;
 
                 case AttackType.TailSwipe:
-                    Debug.Log("Atak 'TailSwipe' nie jest jeszcze pod³¹czony.");
-                    SetState(PlayerState.Idle); 
+                    Debug.Log("Atak 'TailSwipe' nie jest jeszcze podï¿½ï¿½czony.");
+                    SetState(PlayerState.Idle);
                     break;
 
                 case AttackType.FireBreath:
-                    Debug.Log("Atak 'FireBreath' nie jest jeszcze pod³¹czony.");
-                    SetState(PlayerState.Idle); 
+                    Debug.Log("Atak 'FireBreath' nie jest jeszcze podï¿½ï¿½czony.");
+                    SetState(PlayerState.Idle);
                     break;
             }
         }
     }
-
-    // --- Metoda Publiczna (dla skryptów ataków) ---
-
-    // Twoje skrypty (ClawAttack, IceAttack) MUSZ¥ wywo³aæ tê funkcjê,
-    // gdy zakoñcz¹ swój cooldown, aby "zwolniæ" gracza.
     public void SetState(PlayerState newState) {
         currentState = newState;
         Debug.Log("Nowy stan gracza: " + newState);
