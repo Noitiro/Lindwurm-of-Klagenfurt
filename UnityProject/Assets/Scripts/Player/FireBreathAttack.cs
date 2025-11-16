@@ -49,7 +49,7 @@ public class FireBreathAttack : MonoBehaviour {
 
     private IEnumerator AttackCoroutine(AttackSelector selector) {
         isReady = false;
-        anim.SetTrigger(animationTrigger);
+        anim.SetTrigger("fire");
         if (fireSound != null && audioSource != null) {
             audioSource.PlayOneShot(fireSound);
         }
