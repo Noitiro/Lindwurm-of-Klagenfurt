@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 07600814741ba764f88e8f123cf2f5c0
+guid: b873eef272bb58c4d86db2485b7a0d19
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5045983596787183272
-    second: footman1_0
+      213: -6199770485943969990
+    second: footman1 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: footman1_0
+      name: footman1 1_0
       rect:
         serializedVersion: 2
         x: 23
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8aea2f4b85fe60640800000000000000
-      internalID: 5045983596787183272
+      spriteID: a37db50479df5f9a0800000000000000
+      internalID: -6199770485943969990
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      footman1_0: 5045983596787183272
+      footman1 1_0: -6199770485943969990
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

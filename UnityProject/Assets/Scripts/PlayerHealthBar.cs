@@ -8,10 +8,10 @@ public class PlayerHealthBar : MonoBehaviour
     [SerializeField] private Image currentHealthBar;
 
     private void Start() {
-        totalHealthBar.fillAmount = playerHealth.currentHealth / 20;
+        totalHealthBar.fillAmount = playerHealth.currentHealth / 40;
     }
 
     private void Update() {
-        currentHealthBar.fillAmount = playerHealth.currentHealth / 20;
+        currentHealthBar.fillAmount = playerHealth.currentHealth / 40;
     }
 }

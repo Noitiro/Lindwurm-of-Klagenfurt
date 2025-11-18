@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 07600814741ba764f88e8f123cf2f5c0
+guid: bd2f7fccbd80e7a4195feb4ba9d8a24f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5045983596787183272
-    second: footman1_0
+      213: -6362084584963566334
+    second: Retry_Off_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 127
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: footman1_0
+      name: Retry_Off_0
       rect:
         serializedVersion: 2
-        x: 23
+        x: 0
         y: 0
-        width: 75
-        height: 116
+        width: 710
+        height: 217
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8aea2f4b85fe60640800000000000000
-      internalID: 5045983596787183272
+      spriteID: 205124a17c555b7a0800000000000000
+      internalID: -6362084584963566334
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      footman1_0: 5045983596787183272
+      Retry_Off_0: -6362084584963566334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
