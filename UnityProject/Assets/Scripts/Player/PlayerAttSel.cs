@@ -56,7 +56,7 @@ public class AttackSelector : MonoBehaviour {
             scrollValue = input.y;
         }
         else if (input.x != 0) {
-            scrollValue = input.x;
+            scrollValue = -input.x;
         }
         if (scrollValue == 0) return;
 
