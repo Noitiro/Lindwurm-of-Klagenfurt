@@ -65,7 +65,6 @@ public class PlayerMovement : MonoBehaviour {
                 currentEnergy = maxEnergy;
         }
 
-        Debug.Log("ENERGY: " + currentEnergy);
     }
 
     void FixedUpdate() {

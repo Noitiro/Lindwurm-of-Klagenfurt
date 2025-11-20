@@ -13,7 +13,7 @@ public class AttackSelector : MonoBehaviour {
     public enum PlayerState { Idle, Attacking }
 
     [Header("Monitor Stanu")]
-    [SerializeField] private AttackType currentAttackType = AttackType.Claw;
+    [SerializeField] public AttackType CurrentAttackType = AttackType.Claw;
 
     [SerializeField] private PlayerState currentState = PlayerState.Idle;
 
@@ -50,19 +50,26 @@ public class AttackSelector : MonoBehaviour {
         playerController.Player.Attack.performed -= HandleAttackExecution;
     }
     private void HandleScroll(InputAction.CallbackContext context) {
-        float scrollValue = context.ReadValue<Vector2>().y;
-
+        Vector2 input = context.ReadValue<Vector2>();
+        float scrollValue = 0f;
+        if (input.y != 0) {
+            scrollValue = input.y;
+        }
+        else if (input.x != 0) {
+            scrollValue = input.x;
+        }
         if (scrollValue == 0) return;
 
-        int currentIndex = (int)currentAttackType;
+        int currentIndex = (int)CurrentAttackType;
         int attackCount = Enum.GetNames(typeof(AttackType)).Length;
 
-        if (scrollValue > 0) {
+        if (scrollValue > 0) { 
             currentIndex++;
             if (currentIndex >= attackCount) {
                 currentIndex = 0;
             }
-        } else if (scrollValue < 0) {
+        }
+        else if (scrollValue < 0) { 
             currentIndex--;
             if (currentIndex < 0) {
                 currentIndex = attackCount - 1;
@@ -75,7 +82,7 @@ public class AttackSelector : MonoBehaviour {
 
         if (currentState != PlayerState.Idle) return;
 
-        currentAttackType = newAttack;
+        CurrentAttackType = newAttack;
         Debug.Log("Wybrano atak: " + newAttack);
         OnAttackSelected?.Invoke(newAttack);
     }
@@ -83,7 +90,7 @@ public class AttackSelector : MonoBehaviour {
     private void HandleAttackExecution(InputAction.CallbackContext context) {
         if (currentState == PlayerState.Idle) {
 
-            switch (currentAttackType) {
+            switch (CurrentAttackType) {
                 case AttackType.Claw:
                     if (clawAttack != null && clawAttack.IsReady()) {
                         SetState(PlayerState.Attacking);

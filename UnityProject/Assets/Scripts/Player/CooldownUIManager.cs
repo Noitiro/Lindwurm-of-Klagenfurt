@@ -1,57 +1,123 @@
 using UnityEngine;
-using TMPro; // Potrzebne do obs≥ugi TextMeshPro
+using TMPro;
+using UnityEngine.UI;
+using System;
 
 public class SimpleCooldownUI : MonoBehaviour {
-    [Header("Referencja do Gracza")]
-    [Tooltip("Przeciπgnij tu obiekt Gracza, ktÛry ma 'AttackSelector'")]
-    [SerializeField] private AttackSelector playerAttackSelector;
+    private AttackSelector playerAttackSelector;
 
-    [Header("Pola Tekstowe")]
+    [Header("Pola Tekstowe (Liczniki)")]
     [SerializeField] private TextMeshProUGUI clawCooldownText;
     [SerializeField] private TextMeshProUGUI iceCooldownText;
     [SerializeField] private TextMeshProUGUI fireCooldownText;
 
-    // Prywatne referencje do skryptÛw atakÛw
+    [Header("Podúwietlenie AtakÛw (Obrazki)")]
+    [SerializeField] private Image clawHighlightImage;
+    [SerializeField] private Image iceHighlightImage;
+    [SerializeField] private Image fireHighlightImage;
+
+    [Header("Ustawienia Podúwietlenia")]
+    [SerializeField] private Color highlightedColor = Color.white;
+    [SerializeField] private Color defaultColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+    [SerializeField] private float selectedScale = 0.5f;
+    [SerializeField] private float defaultScale = 0.5f;
+    [SerializeField] private float transitionSpeed = 15f;
+
+    private Image[] highlightImages;
+    private Color[] targetColors;
+    private Vector3[] targetScales;
+
+    // Referencje do skryptÛw atakÛw
     private ClawAttack clawAttack;
     private IceAttack iceAttack;
     private FireBreathAttack fireBreathAttack;
 
     void Start() {
-        // Sprawdzenie, czy podpiπ≥eú AttackSelector
-        if (playerAttackSelector == null) {
-            Debug.LogError("Nie podpiÍto 'playerAttackSelector'!");
-            this.enabled = false;
-            return;
+        highlightImages = new Image[] { clawHighlightImage, iceHighlightImage, fireHighlightImage };
+        targetColors = new Color[3];
+        targetScales = new Vector3[3];
+
+        for (int i = 0; i < 3; i++) {
+            targetColors[i] = defaultColor;
+            targetScales[i] = Vector3.one * defaultScale;
+            if (highlightImages[i] != null) {
+                highlightImages[i].color = defaultColor;
+                highlightImages[i].transform.localScale = Vector3.one * defaultScale;
+            }
+            FindPlayer();
         }
-
-        // Pobierz skrypty atakÛw z AttackSelectora
-        // (Upewnij siÍ, øe w AttackSelector doda≥eú publiczne w≥aúciwoúci)
-        clawAttack = playerAttackSelector.ClawAttackScript;
-        iceAttack = playerAttackSelector.IceAttackScript;
-        fireBreathAttack = playerAttackSelector.FireBreathAttackScript;
-
-        // Zresetuj teksty na starcie
-        UpdateText(clawAttack, clawCooldownText);
-        UpdateText(iceAttack, iceCooldownText);
-        UpdateText(fireBreathAttack, fireCooldownText);
     }
 
     void Update() {
-        // Aktualizuj wszystkie teksty w kaødej klatce
+        if (playerAttackSelector == null) {
+            FindPlayer();
+            if (playerAttackSelector == null) return;
+        }
+
+        // Aktualizuj teksty
         UpdateText(clawAttack, clawCooldownText);
         UpdateText(iceAttack, iceCooldownText);
         UpdateText(fireBreathAttack, fireCooldownText);
+
+        // Animacja ikonek
+        for (int i = 0; i < highlightImages.Length; i++) {
+            if (highlightImages[i] == null) continue;
+
+            highlightImages[i].color = Color.Lerp(highlightImages[i].color, targetColors[i], Time.deltaTime * transitionSpeed);
+            highlightImages[i].transform.localScale = Vector3.Lerp(highlightImages[i].transform.localScale, targetScales[i], Time.deltaTime * transitionSpeed);
+        }
     }
 
-    /// <summary>
-    /// G≥Ûwna funkcja aktualizujπca tekst na podstawie cooldownu
-    /// </summary>
+    // --- NOWA FUNKCJA: ZNAJDè GRACZA ---
+    private void FindPlayer() {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null) {
+            // Znaleziono gracza, pobierz jego komponenty
+            playerAttackSelector = player.GetComponent<AttackSelector>();
+
+            if (playerAttackSelector != null) {
+                // Podepnij event
+                AttackSelector.OnAttackSelected -= HandleAttackSelectionChanged; // Dla bezpieczeÒstwa najpierw odejmij
+                AttackSelector.OnAttackSelected += HandleAttackSelectionChanged;
+
+                // Pobierz skrypty atakÛw
+                clawAttack = playerAttackSelector.ClawAttackScript;
+                iceAttack = playerAttackSelector.IceAttackScript;
+                fireBreathAttack = playerAttackSelector.FireBreathAttackScript;
+
+                // Zaktualizuj podúwietlenie dla nowego gracza
+                HandleAttackSelectionChanged(playerAttackSelector.CurrentAttackType);
+
+                // Debug.Log("UI: Po≥πczono z nowym Graczem!");
+            }
+        }
+    }
+
+    private void OnDestroy() {
+        AttackSelector.OnAttackSelected -= HandleAttackSelectionChanged;
+    }
+
+    private void HandleAttackSelectionChanged(AttackSelector.AttackType newAttack) {
+        int selectedIndex = (int)newAttack;
+
+        for (int i = 0; i < highlightImages.Length; i++) {
+            if (highlightImages[i] == null) continue;
+
+            if (i == selectedIndex) {
+                targetColors[i] = highlightedColor;
+                targetScales[i] = Vector3.one * selectedScale;
+            }
+            else {
+                targetColors[i] = defaultColor;
+                targetScales[i] = Vector3.one * defaultScale;
+            }
+        }
+    }
+
     private void UpdateText(MonoBehaviour attackScript, TextMeshProUGUI textElement) {
-        // Sprawdü, czy atak i tekst sπ pod≥πczone
         if (attackScript == null || textElement == null) return;
 
-        // Pobierz wartoúci z konkretnego skryptu ataku
-        // (Musimy rzutowaÊ typ, aby dostaÊ siÍ do 'CurrentCooldown')
         float currentCooldown = 0f;
 
         if (attackScript is ClawAttack)
@@ -61,16 +127,12 @@ public class SimpleCooldownUI : MonoBehaviour {
         else if (attackScript is FireBreathAttack)
             currentCooldown = ((FireBreathAttack)attackScript).CurrentCooldown;
 
-
-        // Zdecyduj, co pokazaÊ
         if (currentCooldown > 0) {
-            // --- Atak jest na cooldownie ---
-            textElement.gameObject.SetActive(true); // Pokaø tekst
-            textElement.text = currentCooldown.ToString("F1"); // Pokaø np. "2.1"
+            textElement.gameObject.SetActive(true);
+            textElement.text = currentCooldown.ToString("F1");
         }
         else {
-            // --- Atak jest gotowy ---
-            textElement.gameObject.SetActive(false); // Ukryj tekst
+            textElement.gameObject.SetActive(false);
         }
     }
 }
