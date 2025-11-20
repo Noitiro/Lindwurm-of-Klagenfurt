@@ -6,8 +6,8 @@ public class AttackSelector : MonoBehaviour {
     public enum AttackType {
         Claw,
         Ice,
-        //TailSwipe,
-        FireBreath
+        FireBreath,
+        TailSwipe
     }
 
     public enum PlayerState { Idle, Attacking }
@@ -21,10 +21,11 @@ public class AttackSelector : MonoBehaviour {
     [Header("Referencje do skrypt�w Atak�w")]
     [SerializeField] private ClawAttack clawAttack;
     [SerializeField] private IceAttack iceAttack;
-    //[SerializeField] private TailAttack tailAttack;
+    [SerializeField] private TailAttack tailAttack;
     [SerializeField] private FireBreathAttack fireBreathAttack;
     public ClawAttack ClawAttackScript { get { return clawAttack; } }
     public IceAttack IceAttackScript { get { return iceAttack; } }
+    public TailAttack TailAttackScript { get { return tailAttack; } }
     public FireBreathAttack FireBreathAttackScript { get { return fireBreathAttack; } }
     private PlayerController playerController;
 
@@ -56,7 +57,7 @@ public class AttackSelector : MonoBehaviour {
             scrollValue = input.y;
         }
         else if (input.x != 0) {
-            scrollValue = input.x;
+            scrollValue = -input.x;
         }
         if (scrollValue == 0) return;
 
@@ -109,10 +110,15 @@ public class AttackSelector : MonoBehaviour {
                         Debug.Log("Atak Lodem jest na Cooldownie lub niepod��czony!");
                     }
                     break;
-                //case AttackType.TailSwipe:
-                //    Debug.Log("Atak 'TailSwipe' nie jest jeszcze pod��czony.");
-                //    SetState(PlayerState.Idle);
-                //    break;
+                case AttackType.TailSwipe:
+                    if (tailAttack != null && tailAttack.IsReady()) {
+                        SetState(PlayerState.Attacking);
+                        tailAttack.ExecuteAttack(this);
+                    }
+                    else {
+                        Debug.Log("Atak Ogonem jest na Cooldownie!");
+                    }
+                    break;
 
                 case AttackType.FireBreath:
                     if (fireBreathAttack != null && fireBreathAttack.IsReady()) {
