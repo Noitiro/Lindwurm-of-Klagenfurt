@@ -45,14 +45,20 @@ TagManager:
   - name: Ground
     uniqueID: 1158436893
     locked: 0
-  - name: Addons
+  - name: WalkInFront
     uniqueID: 2725471577
+    locked: 0
+  - name: Collision
+    uniqueID: 840821571
     locked: 0
   - name: Player
     uniqueID: 1861031177
     locked: 0
-  - name: Arrow
-    uniqueID: 840821571
+  - name: WalkBehind
+    uniqueID: 2165152979
+    locked: 0
+  - name: Decor
+    uniqueID: 330249197
     locked: 0
   m_RenderingLayers:
   - Default
