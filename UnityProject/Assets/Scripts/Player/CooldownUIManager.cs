@@ -10,11 +10,13 @@ public class SimpleCooldownUI : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI clawCooldownText;
     [SerializeField] private TextMeshProUGUI iceCooldownText;
     [SerializeField] private TextMeshProUGUI fireCooldownText;
+    [SerializeField] private TextMeshProUGUI tailCooldownText;
 
     [Header("Podœwietlenie Ataków (Obrazki)")]
     [SerializeField] private Image clawHighlightImage;
     [SerializeField] private Image iceHighlightImage;
     [SerializeField] private Image fireHighlightImage;
+    [SerializeField] private Image tailHighlightImage;
 
     [Header("Ustawienia Podœwietlenia")]
     [SerializeField] private Color highlightedColor = Color.white;
@@ -27,17 +29,17 @@ public class SimpleCooldownUI : MonoBehaviour {
     private Color[] targetColors;
     private Vector3[] targetScales;
 
-    // Referencje do skryptów ataków
     private ClawAttack clawAttack;
     private IceAttack iceAttack;
     private FireBreathAttack fireBreathAttack;
+    private TailAttack tailAttack;
 
     void Start() {
-        highlightImages = new Image[] { clawHighlightImage, iceHighlightImage, fireHighlightImage };
-        targetColors = new Color[3];
-        targetScales = new Vector3[3];
+        highlightImages = new Image[] { clawHighlightImage, iceHighlightImage, fireHighlightImage, tailHighlightImage };
+        targetColors = new Color[4];
+        targetScales = new Vector3[4];
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             targetColors[i] = defaultColor;
             targetScales[i] = Vector3.one * defaultScale;
             if (highlightImages[i] != null) {
@@ -58,6 +60,7 @@ public class SimpleCooldownUI : MonoBehaviour {
         UpdateText(clawAttack, clawCooldownText);
         UpdateText(iceAttack, iceCooldownText);
         UpdateText(fireBreathAttack, fireCooldownText);
+        UpdateText(tailAttack, tailCooldownText);
 
         // Animacja ikonek
         for (int i = 0; i < highlightImages.Length; i++) {
@@ -68,28 +71,23 @@ public class SimpleCooldownUI : MonoBehaviour {
         }
     }
 
-    // --- NOWA FUNKCJA: ZNAJD GRACZA ---
     private void FindPlayer() {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null) {
-            // Znaleziono gracza, pobierz jego komponenty
             playerAttackSelector = player.GetComponent<AttackSelector>();
 
             if (playerAttackSelector != null) {
-                // Podepnij event
-                AttackSelector.OnAttackSelected -= HandleAttackSelectionChanged; // Dla bezpieczeñstwa najpierw odejmij
+                AttackSelector.OnAttackSelected -= HandleAttackSelectionChanged;
                 AttackSelector.OnAttackSelected += HandleAttackSelectionChanged;
 
-                // Pobierz skrypty ataków
                 clawAttack = playerAttackSelector.ClawAttackScript;
                 iceAttack = playerAttackSelector.IceAttackScript;
                 fireBreathAttack = playerAttackSelector.FireBreathAttackScript;
+                tailAttack = playerAttackSelector.TailAttackScript;
 
-                // Zaktualizuj podœwietlenie dla nowego gracza
                 HandleAttackSelectionChanged(playerAttackSelector.CurrentAttackType);
 
-                // Debug.Log("UI: Po³¹czono z nowym Graczem!");
             }
         }
     }
@@ -126,6 +124,8 @@ public class SimpleCooldownUI : MonoBehaviour {
             currentCooldown = ((IceAttack)attackScript).CurrentCooldown;
         else if (attackScript is FireBreathAttack)
             currentCooldown = ((FireBreathAttack)attackScript).CurrentCooldown;
+        else if (attackScript is TailAttack)
+            currentCooldown = ((TailAttack)attackScript).CurrentCooldown;
 
         if (currentCooldown > 0) {
             textElement.gameObject.SetActive(true);
