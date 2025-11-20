@@ -1,15 +1,13 @@
 using System.Collections;
-using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Windows;
 
-public class PlayerHealth : MonoBehaviour, IDamageable
-{
+public class PlayerHealth : MonoBehaviour, IDamageable {
     [SerializeField] private float startingHealth = 200;
     public float currentHealth { get; private set; }
     private Animator anim;
     [SerializeField] private GameObject GameOverScreen;
     private Rigidbody2D rb;
+    private bool isDead = false;
 
     private void Awake() {
         anim = GetComponent<Animator>();
@@ -25,18 +23,28 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         GameOverScreen.SetActive(true);
     }
 
+    public void KillPlayer() {
+        if (isDead) return;
+
+        isDead = true;
+        currentHealth = 0; 
+        Debug.Log("Wymuszona œmieræ gracza!");
+
+        anim.SetTrigger("die");
+        StartCoroutine(coldownDie());
+    }
+
     public void Damage(float damage) {
+        if (isDead) return;
+
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, startingHealth);
         Debug.Log("Player damage: " + damage);
 
         if (currentHealth > 0) {
-
-            //   rb.AddForce = new Vector3 (rb.position.x-0.2f, rb.position.y);
             anim.SetTrigger("hurt");
-        } 
+        }
         else {
-            anim.SetTrigger("die");
-            StartCoroutine(coldownDie());
+            KillPlayer();
         }
     }
 }
