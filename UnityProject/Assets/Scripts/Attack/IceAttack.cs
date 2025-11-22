@@ -10,7 +10,7 @@ public class IceAttack : BaseAttack {
         }
 
         List<Collider2D> hits = new List<Collider2D>();
-        attackHitbox.OverlapCollider(contactFilter, hits);
+        attackHitbox.Overlap(contactFilter, hits);
 
         List<IDamageable> targets = GetUniqueTargets(hits);
 
