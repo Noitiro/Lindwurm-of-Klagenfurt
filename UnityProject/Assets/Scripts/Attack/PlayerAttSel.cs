@@ -9,6 +9,9 @@ public class AttackSelector : MonoBehaviour {
         FireBreath,
         TailSwipe
     }
+    private void Start() {
+        EnablePreview(CurrentAttackType);
+    }
 
     public enum PlayerState { Idle, Attacking }
 
@@ -80,12 +83,15 @@ public class AttackSelector : MonoBehaviour {
         SelectAttack((AttackType)currentIndex);
     }
     private void SelectAttack(AttackType newAttack) {
-
         if (currentState != PlayerState.Idle) return;
+
+        DisablePreview(CurrentAttackType);
 
         CurrentAttackType = newAttack;
         Debug.Log("Wybrano atak: " + newAttack);
         OnAttackSelected?.Invoke(newAttack);
+
+        EnablePreview(CurrentAttackType);
     }
 
     private void HandleAttackExecution(InputAction.CallbackContext context) {
@@ -135,5 +141,22 @@ public class AttackSelector : MonoBehaviour {
     public void SetState(PlayerState newState) {
         currentState = newState;
         Debug.Log("Nowy stan gracza: " + newState);
+    }
+    private void EnablePreview(AttackType type) {
+        switch (type) {
+            case AttackType.Claw: if (clawAttack) clawAttack.TogglePreview(true); break;
+            case AttackType.Ice: if (iceAttack) iceAttack.TogglePreview(true); break;
+            case AttackType.FireBreath: if (fireBreathAttack) fireBreathAttack.TogglePreview(true); break;
+            case AttackType.TailSwipe: if (tailAttack) tailAttack.TogglePreview(true); break;
+        }
+    }
+
+    private void DisablePreview(AttackType type) {
+        switch (type) {
+            case AttackType.Claw: if (clawAttack) clawAttack.TogglePreview(false); break;
+            case AttackType.Ice: if (iceAttack) iceAttack.TogglePreview(false); break;
+            case AttackType.FireBreath: if (fireBreathAttack) fireBreathAttack.TogglePreview(false); break;
+            case AttackType.TailSwipe: if (tailAttack) tailAttack.TogglePreview(false); break;
+        }
     }
 }
