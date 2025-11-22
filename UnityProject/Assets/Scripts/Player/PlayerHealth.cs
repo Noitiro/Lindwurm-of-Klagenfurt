@@ -5,7 +5,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable {
     [SerializeField] private float startingHealth = 200;
     public float currentHealth { get; private set; }
     private Animator anim;
-    [SerializeField] private GameObject GameOverScreen;
+    [SerializeField] private Canvas GameOverScreen;
     private Rigidbody2D rb;
     private bool isDead = false;
 
@@ -16,11 +16,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable {
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
+        GameOverScreen = GetComponentInChildren<Canvas>();
     }
 
     IEnumerator coldownDie() {
         yield return new WaitForSeconds(0.9f);
-        GameOverScreen.SetActive(true);
+        GameOverScreen.gameObject.SetActive(true);
     }
 
     public void KillPlayer() {
