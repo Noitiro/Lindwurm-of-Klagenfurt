@@ -14,7 +14,6 @@ public class WaveSpawn : MonoBehaviour {
         }
 
         public EnemyGroup[] enemyGroups;
-        [SerializeField] public PlayerHealth playerHealth;
         public float spawnRate;
     }
 
@@ -26,6 +25,7 @@ public class WaveSpawn : MonoBehaviour {
     private float countdown;
     public SpawnState state = SpawnState.COUNTING;
     private float searchCountdown = 1f;
+    [SerializeField] public PlayerHealth playerHealth;
 
 
     void Start() {
