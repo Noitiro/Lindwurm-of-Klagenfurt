@@ -86,6 +86,21 @@ public abstract class BaseAttack : MonoBehaviour {
 
         selector.SetState(AttackSelector.PlayerState.Idle);
     }
+    protected List<IDamageable> GetUniqueTargets(List<Collider2D> rawHits) {
+        List<IDamageable> uniqueTargets = new List<IDamageable>();
+
+        foreach (var hit in rawHits) {
+            IDamageable target = hit.GetComponentInParent<IDamageable>();
+
+            if (target != null) {
+                if (!uniqueTargets.Contains(target)) {
+                    uniqueTargets.Add(target);
+                }
+            }
+        }
+
+        return uniqueTargets;
+    }
 
     protected abstract void PerformAttackLogic();
 }
