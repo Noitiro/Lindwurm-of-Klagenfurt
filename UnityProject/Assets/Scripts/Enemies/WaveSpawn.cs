@@ -14,7 +14,6 @@ public class WaveSpawn : MonoBehaviour {
         }
 
         public EnemyGroup[] enemyGroups;
-
         public float spawnRate;
     }
 
@@ -26,6 +25,7 @@ public class WaveSpawn : MonoBehaviour {
     private float countdown;
     public SpawnState state = SpawnState.COUNTING;
     private float searchCountdown = 1f;
+    [SerializeField] public PlayerHealth playerHealth;
 
 
     void Start() {
@@ -64,8 +64,14 @@ public class WaveSpawn : MonoBehaviour {
 
         nextWave++;
         if (nextWave >= waves.Length) {
-            nextWave = 0;
-            Debug.Log("Wszystkie fale ukoñczone! Zapêtlanie...");
+            Debug.Log("Wszystkie fale ukoñczone! Koniec gry.");
+
+            state = SpawnState.COUNTING;
+            this.enabled = false;
+
+            if (playerHealth != null) {
+                playerHealth.KillPlayer();
+            }
         }
     }
 
