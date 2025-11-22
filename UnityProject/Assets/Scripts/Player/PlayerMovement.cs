@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Awake() {
         playerController = new PlayerController();
-        playerManager = new PlayerManager();
+        playerManager = gameObject.AddComponent<PlayerManager>();
     }
 
     private void OnEnable() {
