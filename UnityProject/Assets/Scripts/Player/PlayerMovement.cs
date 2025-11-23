@@ -14,11 +14,14 @@ public class PlayerMovement : MonoBehaviour {
     private float sprintCost = 20f;
     private float regenRate = 10f;
     private bool isSprinting = false;
+    private Animator anim;
+
     [SerializeField] Image stamina;
 
     private void Awake() {
         playerController = new PlayerController();
         playerManager = gameObject.AddComponent<PlayerManager>();
+        anim = GetComponent<Animator>();
     }
 
     private void OnEnable() {
@@ -34,9 +37,11 @@ public class PlayerMovement : MonoBehaviour {
 
         playerController.Player.Sprint.performed += context => {
             isSprinting = true;
+            anim.SetBool("sprint", isSprinting);
         };
         playerController.Player.Sprint.canceled += context => {
             isSprinting = false;
+            anim.SetBool("sprint", isSprinting);
         };
     }
 
@@ -45,8 +50,10 @@ public class PlayerMovement : MonoBehaviour {
         input.Normalize();
 
         if (input.x < 0) {
+            anim.SetBool("move", true);
             rb.transform.localScale = new Vector3(1.6f,1.6f,1.6f);
         }else if(input.x > 0) {
+            anim.SetBool("move", true);
             rb.transform.localScale = new Vector3(-1.6f, 1.6f, 1.6f);
         }
 
