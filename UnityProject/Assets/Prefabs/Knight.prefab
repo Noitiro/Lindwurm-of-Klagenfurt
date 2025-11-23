@@ -225,7 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2426e12c09cdc47f9bec7aa7d863f78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArcherHealth
-  maxHealth: 100
+  maxHealth: 400
+  enemyType: 2
   damagePopupPrefab: {fileID: 8607342335731929091, guid: caebd68f5ec574145aa4f5779ed7ca68, type: 3}
 --- !u!114 &7991362757195509231
 MonoBehaviour:

@@ -9,13 +9,18 @@ public class AttackSelector : MonoBehaviour {
         FireBreath,
         TailSwipe
     }
+    public enum EnemyType {
+        Normal,
+        Ice,
+        Armored 
+    }
     private void Start() {
         EnablePreview(CurrentAttackType);
     }
 
     public enum PlayerState { Idle, Attacking }
 
-    [Header("Monitor Stanu")]
+    [Header("Monitor StanuS")]
     [SerializeField] public AttackType CurrentAttackType = AttackType.Claw;
 
     [SerializeField] private PlayerState currentState = PlayerState.Idle;

@@ -1,6 +1,7 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using static AttackSelector;
 
 public abstract class BaseAttack : MonoBehaviour {
     [Header("Ustawienia Bazowe")]
@@ -15,7 +16,18 @@ public abstract class BaseAttack : MonoBehaviour {
     [Header("Efekty")]
     [SerializeField] protected AudioClip attackSound;
     [SerializeField] protected string animationTrigger;
+    [Header("Modyfikatory Obra¿eñ")]
+    [Tooltip("Rozrzut obra¿eñ w %. Np. 0.1 oznacza +/- 10% (90-110)")]
+    [SerializeField] protected float damageVariance = 0.1f;
 
+    [Tooltip("Szansa na trafienie krytyczne (0-1). 0.2 = 20%")]
+    [SerializeField] protected float critChance = 0.1f;
+
+    [Tooltip("Mno¿nik obra¿eñ przy krytyku. 2.0 = podwójne obra¿enia")]
+    [SerializeField] protected float critMultiplier = 2.0f;
+
+    [Header("Typ Ataku (¯ywio³)")]
+    [SerializeField] protected EnemyType strongAgainst = EnemyType.Normal;
     private SpriteRenderer aimVisuals;
 
     public float TotalCooldown => attackCooldown;
@@ -100,6 +112,32 @@ public abstract class BaseAttack : MonoBehaviour {
         }
 
         return uniqueTargets;
+    }
+    protected float CalculateDamage(BaseEnemyHealth targetEnemy) {
+        float finalDamage = damageAmount;
+
+        float varianceModifier = Random.Range(1f - damageVariance, 1f + damageVariance);
+        finalDamage *= varianceModifier;
+
+        bool isCrit = Random.value < critChance; 
+        if (isCrit) {
+            finalDamage *= critMultiplier;
+            Debug.Log("<color=red>KRYTYK!</color>");
+        }
+
+        if (targetEnemy != null) {
+            if (strongAgainst == EnemyType.Ice && targetEnemy.enemyType == EnemyType.Ice) {
+                finalDamage *= 2f; 
+                Debug.Log("<color=orange>Super Efektywne!</color>");
+            }
+
+            if (strongAgainst == EnemyType.Normal && targetEnemy.enemyType == EnemyType.Armored) {
+                finalDamage *= 0.5f;
+                Debug.Log("Pancerz zablokowa³ czêœæ obra¿eñ.");
+            }
+        }
+
+        return finalDamage;
     }
 
     protected abstract void PerformAttackLogic();

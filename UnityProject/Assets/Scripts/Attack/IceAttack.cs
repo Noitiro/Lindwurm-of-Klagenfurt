@@ -15,9 +15,12 @@ public class IceAttack : BaseAttack {
         List<IDamageable> targets = GetUniqueTargets(hits);
 
         foreach (var target in targets) {
-            target.Damage(damageAmount);
-            Debug.Log("Lód zamroził: ");
+            BaseEnemyHealth enemyScript = target as BaseEnemyHealth;
+
+            float calculatedDmg = CalculateDamage(enemyScript);
+
+            target.Damage(calculatedDmg);
         }
-        
+
     }
 }
