@@ -19,9 +19,8 @@ public class FireBreathAttack : BaseAttack {
 
             target.Damage(calculatedDmg);
 
-            // --- DODANY EFEKT ---
             if (target is Component targetComponent) {
-                ApplyHitFeedback(targetComponent.transform.position);
+                ApplyHitFeedback(targetComponent.gameObject);
             }
         }
     }

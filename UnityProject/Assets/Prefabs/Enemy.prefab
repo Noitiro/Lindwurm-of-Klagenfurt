@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7780661935258129176}
   - component: {fileID: 6772844600573202795}
   - component: {fileID: 1779186689632178228}
+  - component: {fileID: 2487135657448191745}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -294,6 +295,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.007874, y: 1.0078741}
   m_Direction: 0
+--- !u!114 &2487135657448191745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567840216310226737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3787f0b30b6117244aa79c3703be7896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKnockback
 --- !u!1 &5357016774705991877
 GameObject:
   m_ObjectHideFlags: 0
