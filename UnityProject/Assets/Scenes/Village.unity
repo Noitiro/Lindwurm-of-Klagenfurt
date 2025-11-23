@@ -1762,7 +1762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &848149537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,7 +1822,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848149536}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -3914,6 +3914,10 @@ MonoBehaviour:
     m_Bits: 64
   attackSound: {fileID: 0}
   animationTrigger: claw
+  damageVariance: 0.1
+  critChance: 0.1
+  critMultiplier: 2
+  strongAgainst: 0
 --- !u!114 &1790663768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3935,6 +3939,10 @@ MonoBehaviour:
     m_Bits: 64
   attackSound: {fileID: 0}
   animationTrigger: fire
+  damageVariance: 0.1
+  critChance: 0.1
+  critMultiplier: 2
+  strongAgainst: 0
 --- !u!114 &1790663769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3956,6 +3964,10 @@ MonoBehaviour:
     m_Bits: 64
   attackSound: {fileID: 0}
   animationTrigger: ice
+  damageVariance: 0.1
+  critChance: 0.1
+  critMultiplier: 2
+  strongAgainst: 0
 --- !u!114 &1790663770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3977,6 +3989,10 @@ MonoBehaviour:
     m_Bits: 64
   attackSound: {fileID: 0}
   animationTrigger: 
+  damageVariance: 0.1
+  critChance: 0.1
+  critMultiplier: 2
+  strongAgainst: 0
 --- !u!114 &1790663771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3990,6 +4006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   startingHealth: 40
+  GameOverScreen: {fileID: 0}
 --- !u!114 &1790663772
 MonoBehaviour:
   m_ObjectHideFlags: 0

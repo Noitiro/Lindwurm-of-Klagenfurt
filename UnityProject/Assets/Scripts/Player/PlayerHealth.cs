@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable {
     public float currentHealth { get; private set; }
     private bool isDead = false;
     private Animator anim;
-    private Canvas GameOverScreen;
+    [SerializeField] private Canvas GameOverScreen;
 
     private void Awake() {
         anim = GetComponent<Animator>();
