@@ -9,7 +9,6 @@ public class IceAttack : BaseAttack {
         }
 
         List<Collider2D> hits = new List<Collider2D>();
-        // Pamiętaj: Używamy OverlapCollider, nie Overlap!
         attackHitbox.Overlap(contactFilter, hits);
 
         List<IDamageable> targets = GetUniqueTargets(hits);
@@ -20,9 +19,8 @@ public class IceAttack : BaseAttack {
 
             target.Damage(calculatedDmg);
 
-            // --- DODANY EFEKT ---
             if (target is Component targetComponent) {
-                ApplyHitFeedback(targetComponent.transform.position);
+                ApplyHitFeedback(targetComponent.gameObject);
             }
         }
     }

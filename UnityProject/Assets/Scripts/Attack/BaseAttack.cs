@@ -33,7 +33,8 @@ public abstract class BaseAttack : MonoBehaviour {
     [SerializeField] protected GameObject hitEffectPrefab; 
     [SerializeField] protected float shakeIntensity = 0.1f; 
     [SerializeField] protected float shakeDuration = 0.15f;
-
+    [Tooltip("Si³a odrzutu. 0 = brak, 5 = œredni, 10 = mocny")]
+    [SerializeField] protected float knockbackForce = 0f;
     public float TotalCooldown => attackCooldown;
     public float CurrentCooldown { get; private set; }
 
@@ -143,13 +144,20 @@ public abstract class BaseAttack : MonoBehaviour {
 
         return finalDamage;
     }
-    protected void ApplyHitFeedback(Vector3 position) {
+    protected void ApplyHitFeedback(GameObject targetObject) {
         if (hitEffectPrefab != null) {
-            Instantiate(hitEffectPrefab, position, Quaternion.identity);
+            Instantiate(hitEffectPrefab, targetObject.transform.position, Quaternion.identity);
         }
 
         if (CameraShake.Instance != null) {
             CameraShake.Instance.Shake(shakeDuration, shakeIntensity);
+        }
+
+        if (knockbackForce > 0) {
+            EnemyKnockback knockbackScript = targetObject.GetComponent<EnemyKnockback>();
+            if (knockbackScript != null) {
+                knockbackScript.ApplyKnockback(transform, knockbackForce);
+            }
         }
     }
 

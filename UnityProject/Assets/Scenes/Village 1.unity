@@ -3999,6 +3999,7 @@ MonoBehaviour:
   hitEffectPrefab: {fileID: 0}
   shakeIntensity: 0.02
   shakeDuration: 0.15
+  knockbackForce: 5
 --- !u!114 &1790663768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4027,6 +4028,7 @@ MonoBehaviour:
   hitEffectPrefab: {fileID: 0}
   shakeIntensity: 0.05
   shakeDuration: 0.15
+  knockbackForce: 2
 --- !u!114 &1790663769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4055,6 +4057,7 @@ MonoBehaviour:
   hitEffectPrefab: {fileID: 0}
   shakeIntensity: 0.05
   shakeDuration: 0.15
+  knockbackForce: 0
 --- !u!114 &1790663770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4083,6 +4086,7 @@ MonoBehaviour:
   hitEffectPrefab: {fileID: 3373715332947199531, guid: a1809311069fd50488d6dbd921ef8cb1, type: 3}
   shakeIntensity: 0.025
   shakeDuration: 0.15
+  knockbackForce: 10
 --- !u!114 &1790663771
 MonoBehaviour:
   m_ObjectHideFlags: 0

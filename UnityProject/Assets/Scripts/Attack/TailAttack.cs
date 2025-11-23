@@ -18,7 +18,7 @@ public class TailAttack : BaseAttack {
             float calculatedDmg = CalculateDamage(enemyScript);
             target.Damage(calculatedDmg);
             if (target is Component targetComponent) {
-                ApplyHitFeedback(targetComponent.transform.position);
+                ApplyHitFeedback(targetComponent.gameObject);
             }
         }
     }

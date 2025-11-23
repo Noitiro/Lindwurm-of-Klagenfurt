@@ -20,7 +20,7 @@ public class ClawAttack : BaseAttack {
             target.Damage(calculatedDmg);
 
             if (target is Component targetComponent) {
-                ApplyHitFeedback(targetComponent.transform.position);
+                ApplyHitFeedback(targetComponent.gameObject);
             }
         }
     }
