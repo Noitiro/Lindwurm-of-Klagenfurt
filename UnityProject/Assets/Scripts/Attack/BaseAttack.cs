@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using static AttackSelector;
 
 public abstract class BaseAttack : MonoBehaviour {
@@ -28,7 +29,7 @@ public abstract class BaseAttack : MonoBehaviour {
 
     [Header("Typ Ataku (¯ywio³)")]
     [SerializeField] protected EnemyType strongAgainst = EnemyType.Normal;
-    private SpriteRenderer aimVisuals;
+    private Light2D aimVisuals;
     [Header("Trzêsienie")]
     [SerializeField] protected GameObject hitEffectPrefab; 
     [SerializeField] protected float shakeIntensity = 0.1f; 
@@ -54,7 +55,7 @@ public abstract class BaseAttack : MonoBehaviour {
         if (attackHitbox != null) {
             attackHitbox.isTrigger = true;
 
-            aimVisuals = attackHitbox.GetComponent<SpriteRenderer>();
+            aimVisuals = attackHitbox.GetComponent<Light2D>();
 
             if (aimVisuals != null) {
                 aimVisuals.enabled = false;
