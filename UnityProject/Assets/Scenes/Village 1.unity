@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 117717984}
   - component: {fileID: 117717983}
   - component: {fileID: 117717982}
+  - component: {fileID: 117717985}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -388,6 +389,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &117717985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117717980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be490add19072541bc7fb2cb3debc97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
 --- !u!1 &153005260
 GameObject:
   m_ObjectHideFlags: 0
@@ -3972,7 +3985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClawAttack
   attackCooldown: 0.5
   animationLockTime: 0.5
-  damageAmount: 70
+  damageAmount: 150
   attackHitbox: {fileID: 2057685657}
   attackableLayer:
     serializedVersion: 2
@@ -3983,6 +3996,10 @@ MonoBehaviour:
   critChance: 0.1
   critMultiplier: 2
   strongAgainst: 0
+  hitEffectPrefab: {fileID: 0}
+  shakeIntensity: 0.02
+  shakeDuration: 0.15
+  knockbackForce: 5
 --- !u!114 &1790663768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4008,6 +4025,10 @@ MonoBehaviour:
   critChance: 0.1
   critMultiplier: 2
   strongAgainst: 1
+  hitEffectPrefab: {fileID: 0}
+  shakeIntensity: 0.05
+  shakeDuration: 0.15
+  knockbackForce: 2
 --- !u!114 &1790663769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4033,6 +4054,10 @@ MonoBehaviour:
   critChance: 0.1
   critMultiplier: 2
   strongAgainst: 2
+  hitEffectPrefab: {fileID: 0}
+  shakeIntensity: 0.05
+  shakeDuration: 0.15
+  knockbackForce: 0
 --- !u!114 &1790663770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4047,7 +4072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TailAttack
   attackCooldown: 1
   animationLockTime: 0.5
-  damageAmount: 80
+  damageAmount: 150
   attackHitbox: {fileID: 1403111995}
   attackableLayer:
     serializedVersion: 2
@@ -4058,6 +4083,10 @@ MonoBehaviour:
   critChance: 0.1
   critMultiplier: 2
   strongAgainst: 0
+  hitEffectPrefab: {fileID: 3373715332947199531, guid: a1809311069fd50488d6dbd921ef8cb1, type: 3}
+  shakeIntensity: 0.025
+  shakeDuration: 0.15
+  knockbackForce: 10
 --- !u!114 &1790663771
 MonoBehaviour:
   m_ObjectHideFlags: 0

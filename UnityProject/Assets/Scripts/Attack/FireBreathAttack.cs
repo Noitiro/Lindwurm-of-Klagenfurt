@@ -15,10 +15,13 @@ public class FireBreathAttack : BaseAttack {
 
         foreach (var target in targets) {
             BaseEnemyHealth enemyScript = target as BaseEnemyHealth;
-
             float calculatedDmg = CalculateDamage(enemyScript);
 
             target.Damage(calculatedDmg);
+
+            if (target is Component targetComponent) {
+                ApplyHitFeedback(targetComponent.gameObject);
+            }
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class IceAttack : BaseAttack {
     protected override void PerformAttackLogic() {
@@ -16,11 +15,13 @@ public class IceAttack : BaseAttack {
 
         foreach (var target in targets) {
             BaseEnemyHealth enemyScript = target as BaseEnemyHealth;
-
             float calculatedDmg = CalculateDamage(enemyScript);
 
             target.Damage(calculatedDmg);
-        }
 
+            if (target is Component targetComponent) {
+                ApplyHitFeedback(targetComponent.gameObject);
+            }
+        }
     }
 }
