@@ -29,6 +29,10 @@ public abstract class BaseAttack : MonoBehaviour {
     [Header("Typ Ataku (¯ywio³)")]
     [SerializeField] protected EnemyType strongAgainst = EnemyType.Normal;
     private SpriteRenderer aimVisuals;
+    [Header("Trzêsienie")]
+    [SerializeField] protected GameObject hitEffectPrefab; 
+    [SerializeField] protected float shakeIntensity = 0.1f; 
+    [SerializeField] protected float shakeDuration = 0.15f;
 
     public float TotalCooldown => attackCooldown;
     public float CurrentCooldown { get; private set; }
@@ -138,6 +142,15 @@ public abstract class BaseAttack : MonoBehaviour {
         }
 
         return finalDamage;
+    }
+    protected void ApplyHitFeedback(Vector3 position) {
+        if (hitEffectPrefab != null) {
+            Instantiate(hitEffectPrefab, position, Quaternion.identity);
+        }
+
+        if (CameraShake.Instance != null) {
+            CameraShake.Instance.Shake(shakeDuration, shakeIntensity);
+        }
     }
 
     protected abstract void PerformAttackLogic();
