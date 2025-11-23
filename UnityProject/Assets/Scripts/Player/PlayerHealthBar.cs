@@ -8,6 +8,7 @@ public class PlayerHealthBar : MonoBehaviour
     [SerializeField] private Image currentHealthBar;
 
     private void Start() {
+        playerHealth = GetComponent<PlayerHealth>();
         totalHealthBar.fillAmount = playerHealth.currentHealth / 40;
     }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour {
     private float sprintCost = 20f;
     private float regenRate = 10f;
     private bool isSprinting = false;
+    [SerializeField] Image stamina;
 
     private void Awake() {
         playerController = new PlayerController();
@@ -64,6 +66,8 @@ public class PlayerMovement : MonoBehaviour {
             if (currentEnergy > maxEnergy)
                 currentEnergy = maxEnergy;
         }
+
+        stamina.fillAmount = currentEnergy / 100f;
 
     }
 

@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 437231e60e59dd24280598145cb8d93f
   - enabled: 1
-    path: Assets/Scenes/PlayerMiko.unity
-    guid: baa4a0981e682fa46b5f7d96b7c216c8
+    path: Assets/Scenes/Village.unity
+    guid: 44b0865d7aa0d754ab5fca5270e88154
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
