@@ -15,10 +15,14 @@ public class FireBreathAttack : BaseAttack {
 
         foreach (var target in targets) {
             BaseEnemyHealth enemyScript = target as BaseEnemyHealth;
-
             float calculatedDmg = CalculateDamage(enemyScript);
 
             target.Damage(calculatedDmg);
+
+            // --- DODANY EFEKT ---
+            if (target is Component targetComponent) {
+                ApplyHitFeedback(targetComponent.transform.position);
+            }
         }
     }
 }
