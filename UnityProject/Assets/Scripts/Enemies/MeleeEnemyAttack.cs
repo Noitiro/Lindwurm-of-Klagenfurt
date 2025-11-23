@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class EnemyAttack : MonoBehaviour {
+public class MeleeEnemyAttack : MonoBehaviour {
     [SerializeField] private int damage = 1;
     [SerializeField] private float attackCooldown = 1.5f;
     private bool canAttack = true;
