@@ -1,9 +1,11 @@
 using UnityEngine;
+using static AttackSelector;
 
 public class BaseEnemyHealth : MonoBehaviour, IDamageable {
     [Header("Statystyki")]
     [SerializeField] protected float maxHealth = 100f;
-
+    [Header("Typ Przeciwnika")]
+    [SerializeField] public EnemyType enemyType = EnemyType.Normal;
     public float CurrentHealth { get; protected set; }
     public float MaxHealth => maxHealth;
 

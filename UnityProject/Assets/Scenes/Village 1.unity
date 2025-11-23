@@ -3972,13 +3972,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClawAttack
   attackCooldown: 0.5
   animationLockTime: 0.5
-  damageAmount: 50
+  damageAmount: 70
   attackHitbox: {fileID: 2057685657}
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
   attackSound: {fileID: 0}
   animationTrigger: claw
+  damageVariance: 0.11
+  critChance: 0.1
+  critMultiplier: 2
+  strongAgainst: 0
 --- !u!114 &1790663768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4000,6 +4004,10 @@ MonoBehaviour:
     m_Bits: 64
   attackSound: {fileID: 0}
   animationTrigger: fire
+  damageVariance: 0.33
+  critChance: 0.1
+  critMultiplier: 2
+  strongAgainst: 1
 --- !u!114 &1790663769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4021,6 +4029,10 @@ MonoBehaviour:
     m_Bits: 64
   attackSound: {fileID: 0}
   animationTrigger: ice
+  damageVariance: 0.22
+  critChance: 0.1
+  critMultiplier: 2
+  strongAgainst: 2
 --- !u!114 &1790663770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4035,13 +4047,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TailAttack
   attackCooldown: 1
   animationLockTime: 0.5
-  damageAmount: 100
+  damageAmount: 80
   attackHitbox: {fileID: 1403111995}
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
   attackSound: {fileID: 0}
   animationTrigger: 
+  damageVariance: 0.11
+  critChance: 0.1
+  critMultiplier: 2
+  strongAgainst: 0
 --- !u!114 &1790663771
 MonoBehaviour:
   m_ObjectHideFlags: 0

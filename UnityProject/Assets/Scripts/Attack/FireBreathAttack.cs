@@ -14,8 +14,11 @@ public class FireBreathAttack : BaseAttack {
         List<IDamageable> targets = GetUniqueTargets(hits);
 
         foreach (var target in targets) {
-            target.Damage(damageAmount);
-            Debug.Log("Ogień podpalił cel!");
+            BaseEnemyHealth enemyScript = target as BaseEnemyHealth;
+
+            float calculatedDmg = CalculateDamage(enemyScript);
+
+            target.Damage(calculatedDmg);
         }
     }
 }
