@@ -14,7 +14,11 @@ public class ClawAttack : BaseAttack {
         List<IDamageable> targets = GetUniqueTargets(hits); 
 
         foreach (var target in targets) {
-            target.Damage(damageAmount);
+            BaseEnemyHealth enemyScript = target as BaseEnemyHealth;
+
+            float calculatedDmg = CalculateDamage(enemyScript);
+
+            target.Damage(calculatedDmg);
         }
     }
 }

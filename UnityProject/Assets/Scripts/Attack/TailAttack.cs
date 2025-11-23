@@ -14,8 +14,11 @@ public class TailAttack : BaseAttack {
         List<IDamageable> targets = GetUniqueTargets(hits);
 
         foreach (var target in targets) {
-            target.Damage(damageAmount);
-            Debug.Log("Ogon za");
+            BaseEnemyHealth enemyScript = target as BaseEnemyHealth;
+
+            float calculatedDmg = CalculateDamage(enemyScript);
+
+            target.Damage(calculatedDmg);
         }
     }
 }
