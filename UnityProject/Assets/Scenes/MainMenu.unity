@@ -487,6 +487,16 @@ PlayableDirector:
     value: {fileID: 1264280870}
   - key: {fileID: -773751294291085641, guid: 5375096874f5c4045bcf774564739173, type: 2}
     value: {fileID: 505644248}
+  - key: {fileID: -828681975372571846, guid: 5375096874f5c4045bcf774564739173, type: 2}
+    value: {fileID: 1457675584}
+  - key: {fileID: 7322372159557290063, guid: 5375096874f5c4045bcf774564739173, type: 2}
+    value: {fileID: 1377764073}
+  - key: {fileID: -6437297711566162514, guid: 5375096874f5c4045bcf774564739173, type: 2}
+    value: {fileID: 1422256882}
+  - key: {fileID: -7816211106506321564, guid: 5375096874f5c4045bcf774564739173, type: 2}
+    value: {fileID: 1264280874}
+  - key: {fileID: -6941745538263296964, guid: 5375096874f5c4045bcf774564739173, type: 2}
+    value: {fileID: 505644252}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &299722407
@@ -587,6 +597,7 @@ GameObject:
   - component: {fileID: 505644251}
   - component: {fileID: 505644250}
   - component: {fileID: 505644249}
+  - component: {fileID: 505644252}
   m_Layer: 5
   m_Name: BrokenEmptyCage
   m_TagString: Untagged
@@ -713,6 +724,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: -300, y: 100}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!95 &505644252
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505644248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &802548880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1248,7 @@ GameObject:
   - component: {fileID: 1264280873}
   - component: {fileID: 1264280872}
   - component: {fileID: 1264280871}
+  - component: {fileID: 1264280874}
   m_Layer: 5
   m_Name: LindwurmFell
   m_TagString: Untagged
@@ -1251,7 +1285,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255541
+    rgba: 4144037813
   m_fontColor: {r: 0.7082921, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1340,6 +1374,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: -400, y: 100}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!95 &1264280874
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264280870}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1377764069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1407,7 @@ GameObject:
   - component: {fileID: 1377764072}
   - component: {fileID: 1377764071}
   - component: {fileID: 1377764070}
+  - component: {fileID: 1377764073}
   m_Layer: 5
   m_Name: DragonOnTheSwamp
   m_TagString: Untagged
@@ -1387,7 +1444,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255541
+    rgba: 65461
   m_fontColor: {r: 0.7082921, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1476,6 +1533,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: -400, y: 100}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!95 &1377764073
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377764069}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1422256878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,6 +1566,7 @@ GameObject:
   - component: {fileID: 1422256879}
   - component: {fileID: 1422256881}
   - component: {fileID: 1422256880}
+  - component: {fileID: 1422256882}
   m_Layer: 5
   m_Name: ArmedOntoTheSwamp
   m_TagString: Untagged
@@ -1542,7 +1622,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255541
+    rgba: 2348875701
   m_fontColor: {r: 0.7082921, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1612,6 +1692,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422256878}
   m_CullTransparentMesh: 1
+--- !u!95 &1422256882
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422256878}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1457675580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1623,6 +1725,7 @@ GameObject:
   - component: {fileID: 1457675581}
   - component: {fileID: 1457675583}
   - component: {fileID: 1457675582}
+  - component: {fileID: 1457675584}
   m_Layer: 5
   m_Name: Swamp
   m_TagString: Untagged
@@ -1678,7 +1781,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255541
+    rgba: 65461
   m_fontColor: {r: 0.7082921, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1748,6 +1851,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457675580}
   m_CullTransparentMesh: 1
+--- !u!95 &1457675584
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457675580}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1910692013
 GameObject:
   m_ObjectHideFlags: 0
