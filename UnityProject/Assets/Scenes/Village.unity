@@ -18744,9 +18744,9 @@ GameObject:
   m_Component:
   - component: {fileID: 906224197}
   - component: {fileID: 906224196}
-  - component: {fileID: 906224195}
   - component: {fileID: 906224199}
   - component: {fileID: 906224198}
+  - component: {fileID: 906224200}
   m_Layer: 6
   m_Name: home_sheet_0
   m_TagString: Untagged
@@ -18754,20 +18754,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &906224195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906224194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7933e4b1186d7c44b6ee474c8325f96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DestroyHouses
-  destroyHouseSprite: {fileID: -1220136615, guid: 181456ab8073b3449b899452cd82ef58, type: 3}
-  destroy: 0
 --- !u!212 &906224196
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18933,6 +18919,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6966373, y: 0.6030066}
   m_EdgeRadius: 0
+--- !u!95 &906224200
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906224194}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b0af0890c1a0004180b2f4e65407ddd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &920839631
 GameObject:
   m_ObjectHideFlags: 0
