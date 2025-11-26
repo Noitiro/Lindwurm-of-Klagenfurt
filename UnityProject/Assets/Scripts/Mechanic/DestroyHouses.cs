@@ -1,14 +1,14 @@
 using UnityEngine;
 
 public class DestroyHouses : MonoBehaviour, IDamageable {
-    [SerializeField] Sprite destroyHouseSprite;
-    [SerializeField] bool destroy = false;
-    private SpriteRenderer spriteRenderer;
+//    [SerializeField] Sprite destroyHouseSprite;
+//    [SerializeField] bool destroy = false;
+//    private SpriteRenderer spriteRenderer;
     private Animator anim;
 
 
     private void Awake() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+ //       spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
 
     }
