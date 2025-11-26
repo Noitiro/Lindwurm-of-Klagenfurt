@@ -17,6 +17,7 @@ public class WaveUI : MonoBehaviour {
 
         if (waveSpawner != null) {
             waveSpawner.OnWaveChanged += UpdateWaveText;
+            UpdateWaveText(waveSpawner.CurrentWaveNumber, waveSpawner.TotalWaves);
         }
     }
 
@@ -27,17 +28,20 @@ public class WaveUI : MonoBehaviour {
     }
 
     private void Update() {
-        waveText.transform.localScale = Vector3.Lerp(
-            waveText.transform.localScale,
-            Vector3.one,
-            Time.deltaTime * returnSpeed
-        );
+        if (waveText != null) {
+            waveText.transform.localScale = Vector3.Lerp(
+                waveText.transform.localScale,
+                Vector3.one,
+                Time.deltaTime * returnSpeed
+            );
+        }
     }
 
     private void UpdateWaveText(int currentWave, int totalWaves) {
-
-        waveText.text = $"WAVE {currentWave} / {totalWaves}";
-
-        waveText.transform.localScale = Vector3.one * pulseSize;
+        Debug.Log($"UI PRÓBUJE NAPISAÆ: WAVE {currentWave} / {totalWaves}");
+        if (waveText != null) {
+            waveText.text = $"WAVE {currentWave} / {totalWaves}";
+            waveText.transform.localScale = Vector3.one * pulseSize;
+        }
     }
 }

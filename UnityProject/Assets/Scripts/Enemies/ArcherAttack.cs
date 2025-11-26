@@ -39,7 +39,7 @@ public class ArcherAttack : MonoBehaviour {
     }
 
     IEnumerator ShootLoop() {
-        while (playerHealth != null && playerHealth.currentHealth > 0) {
+        while (playerHealth != null && playerHealth.CurrentHealth > 0) {
             Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowSpawnPoint.rotation);
             Debug.Log(gameObject.name + " wystrzeli³ strza³ê!");
 

@@ -19,6 +19,8 @@ public class WaveSpawn : MonoBehaviour {
     }
 
     public Wave[] waves;
+    public int CurrentWaveNumber => nextWave + 1;
+    public int TotalWaves => waves.Length;
     public Transform[] spawnpoints;
     public float timeBetweenWaves = 5f;
 
