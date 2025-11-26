@@ -3,59 +3,54 @@ using UnityEngine;
 public class Arrows : MonoBehaviour {
     [SerializeField] private int damage = 10;
     [SerializeField] private float speed = 5f;
-    // 'canAttack' nie było używane, więc usunąłem
 
-    private Vector2 targetPosition; // Pozycja, do której leci (ustalona w Start)
+    private Vector2 targetPosition;
     private bool playerFound = false;
 
     void Start() {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null) {
-            targetPosition = player.transform.position; // Zapisz pozycję gracza TYLKO RAZ
+            targetPosition = player.transform.position;
             playerFound = true;
-            Debug.Log("ZNALEZIONO LOKALIZAJCE!!!!!");
+            RotateTowardsTarget();
         }
         else {
-            Debug.LogError("Nie można znaleźć gracza!");
             Destroy(gameObject);
         }
 
-        // Dodaj zabezpieczenie, aby strzała zniknęła, jeśli w nic nie trafi
-        Destroy(gameObject, 10f); // Zniszcz strzałę po 10 sekundach
+        Destroy(gameObject, 10f);
     }
 
     void Update() {
-        if (!playerFound) {
-            return;
-        }
+        if (!playerFound) return;
 
-        // Przesuń strzałę w kierunku ZAPISANEJ pozycji
         transform.position = Vector2.MoveTowards(
             transform.position,
             targetPosition,
             speed * Time.deltaTime
         );
 
-        // Ta logika jest DOBRA - niszczy strzałę, jeśli CHYBI i dotrze do celu
         if (Vector2.Distance(transform.position, targetPosition) < 0.01f) {
             Destroy(gameObject);
-            Debug.Log("DOTARŁ (CHYBIŁ)!!!!!!!");
         }
     }
 
-    // --- KLUCZOWA POPRAWKA JEST TUTAJ ---
+    private void RotateTowardsTarget() {
+        Vector2 direction = targetPosition - (Vector2)transform.position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, 0, angle - 180);
+    }
+
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
-            // Poprawiony sposób pobierania IDamageable
-            IDamageable damageable = other.GetComponent<IDamageable>();
+            IDamageable damageable = other.GetComponent<IDamageable>(); 
             if (damageable != null) {
                 damageable.Damage(damage);
             }
-
-            // ZNISZCZ STRZAŁĘ NATYCHMIAST PO TRAFIENIU
             Destroy(gameObject);
-            Debug.Log("TRAFIONO GRACZA!");
         }
     }
 }
