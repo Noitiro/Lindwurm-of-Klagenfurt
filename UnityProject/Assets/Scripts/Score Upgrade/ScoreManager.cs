@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour {
     public event Action<int> OnScoreChanged;
 
     private void Awake() {
+        Debug.Log("1. ScoreManager siê budzi!");
         if (Instance == null) {
             Instance = this;
             //DontDestroyOnLoad(gameObject); //punkty miêdzy scenami

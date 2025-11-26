@@ -189,6 +189,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5055816865622950530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 74970449984638719}
+  - component: {fileID: 7575285271239333400}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &74970449984638719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5055816865622950530}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 68.27836, z: 0}
+  m_LocalScale: {x: 1.9222567, y: 1.9222567, z: 1.9222567}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7551329155490433536}
+  m_Father: {fileID: 7018756537549375768}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7575285271239333400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5055816865622950530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681a12eb014ad7e4aa51785967649a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
 --- !u!1 &5283251976681160652
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,7 +264,7 @@ RectTransform:
   m_Children:
   - {fileID: 3228623449081352035}
   - {fileID: 6671339975409676484}
-  - {fileID: 7551329155490433536}
+  - {fileID: 74970449984638719}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -461,11 +506,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7551329155490433536}
-  - component: {fileID: 4204688756351305703}
   - component: {fileID: 5345778701176071571}
   - component: {fileID: 7359716643238149957}
+  - component: {fileID: 773490034127840273}
   m_Layer: 0
-  m_Name: Score text
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,34 +523,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7391385675201454608}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5202219, y: 0.5202219, z: 0.5202219}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7018756537549375768}
+  m_Father: {fileID: 74970449984638719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -286}
+  m_AnchoredPosition: {x: 0, y: -184.30334}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4204688756351305703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7391385675201454608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ad40c6eb108f59459d01931d1dac14f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScoreUI
-  scoreText: {fileID: 0}
-  prefix: 'Gold: '
-  pulseSize: 1.5
-  returnSpeed: 5
 --- !u!222 &5345778701176071571
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -605,3 +634,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &773490034127840273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391385675201454608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad40c6eb108f59459d01931d1dac14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreUI
+  scoreText: {fileID: 7359716643238149957}
+  prefix: 'Gold: '
+  pulseSize: 1.5
+  returnSpeed: 5

@@ -10,9 +10,15 @@ public class ScoreUI : MonoBehaviour {
     [SerializeField] private float returnSpeed = 5f;
 
     private void Start() {
+        Debug.Log("2. ScoreUI startuje..."); 
         if (ScoreManager.Instance != null) {
-            UpdateScoreText(ScoreManager.Instance.CurrentScore);
+            Debug.Log("3. ScoreUI ZNALAZ£ Managera!");
+            scoreText.text = prefix + ScoreManager.Instance.CurrentScore.ToString();
+
             ScoreManager.Instance.OnScoreChanged += UpdateScoreText;
+        }
+        else {
+            Debug.LogError("3. ScoreUI NIE ZNALAZ£ Managera (Jest null)!");
         }
     }
 
@@ -32,6 +38,7 @@ public class ScoreUI : MonoBehaviour {
 
     private void UpdateScoreText(int newScore) {
         scoreText.text = prefix + newScore.ToString();
+
         scoreText.transform.localScale = Vector3.one * pulseSize;
     }
 }
