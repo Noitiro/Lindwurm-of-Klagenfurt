@@ -1,5 +1,6 @@
 using System.Collections;
-using UnityEngine; 
+using UnityEngine;
+using System;
 
 public class WaveSpawn : MonoBehaviour {
     public enum SpawnState { SPAWNING, WAITING, COUNTING };
@@ -27,13 +28,14 @@ public class WaveSpawn : MonoBehaviour {
     private float searchCountdown = 1f;
     [SerializeField] public PlayerHealth playerHealth;
 
-
+    public event Action<int, int> OnWaveChanged;
     void Start() {
         if (spawnpoints.Length == 0) {
             Debug.LogError("Brak przypisanych Spawn Pointów do Wave Spawnera!");
             this.enabled = false;
         }
         countdown = timeBetweenWaves;
+        UpdateWaveUI();
     }
 
     void Update() {
@@ -63,6 +65,7 @@ public class WaveSpawn : MonoBehaviour {
         countdown = timeBetweenWaves;
 
         nextWave++;
+        UpdateWaveUI();
         if (nextWave >= waves.Length) {
             Debug.Log("Wszystkie fale ukoñczone! Koniec gry.");
 
@@ -101,8 +104,14 @@ public class WaveSpawn : MonoBehaviour {
     }
 
     void SpawnEnemy(GameObject _enemy) {
-        Transform _sp = spawnpoints[Random.Range(0, spawnpoints.Length)];
+        Transform _sp = spawnpoints[UnityEngine.Random.Range(0, spawnpoints.Length)];
         Instantiate(_enemy, _sp.position, _sp.rotation);
         Debug.Log("Spawnowanie wroga: " + _enemy.name);
+    }
+    private void UpdateWaveUI() {
+        int displayWave = nextWave + 1;
+        if (displayWave > waves.Length) displayWave = waves.Length;
+
+        OnWaveChanged?.Invoke(displayWave, waves.Length);
     }
 }
