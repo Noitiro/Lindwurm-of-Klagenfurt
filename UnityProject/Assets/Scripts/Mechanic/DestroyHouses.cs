@@ -1,20 +1,16 @@
 using UnityEngine;
 
 public class DestroyHouses : MonoBehaviour, IDamageable {
-//    [SerializeField] Sprite destroyHouseSprite;
-//    [SerializeField] bool destroy = false;
-//    private SpriteRenderer spriteRenderer;
+    public bool destroy = false;
     private Animator anim;
 
-
     private void Awake() {
- //       spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-
     }
 
     public void DestroyHouse() {
         anim.SetTrigger("destroy");
+        destroy = true;
     }
 
     public void Damage(float amount) {
