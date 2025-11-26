@@ -2,6 +2,10 @@
 using UnityEngine;
 
 public class IceAttack : BaseAttack {
+    [Header("Specjalne Efekty Lodu")]
+    [SerializeField] private float slowFactor = 0.5f;
+    [SerializeField] private float slowDuration = 2f;
+
     protected override void PerformAttackLogic() {
         if (attackHitbox == null) {
             Debug.LogWarning("Brak przypisanego Hitboxa (Collidera)!");
@@ -9,7 +13,7 @@ public class IceAttack : BaseAttack {
         }
 
         List<Collider2D> hits = new List<Collider2D>();
-        attackHitbox.Overlap(contactFilter, hits);
+        attackHitbox.Overlap(contactFilter, hits); 
 
         List<IDamageable> targets = GetUniqueTargets(hits);
 
@@ -18,6 +22,10 @@ public class IceAttack : BaseAttack {
             float calculatedDmg = CalculateDamage(enemyScript);
 
             target.Damage(calculatedDmg);
+
+            if (enemyScript != null) {
+                enemyScript.ApplyFreeze(slowFactor, slowDuration);
+            }
 
             if (target is Component targetComponent) {
                 ApplyHitFeedback(targetComponent.gameObject);

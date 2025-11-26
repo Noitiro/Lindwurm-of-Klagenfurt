@@ -2,6 +2,12 @@
 using UnityEngine;
 
 public class FireBreathAttack : BaseAttack {
+
+    [Header("Specjalne Efekty Ognia")]
+    [SerializeField] private float burnDamage = 5f; 
+    [SerializeField] private int burnTicks = 3;     
+    [SerializeField] private float burnInterval = 1f; 
+
     protected override void PerformAttackLogic() {
         if (attackHitbox == null) {
             Debug.LogWarning("Brak przypisanego Hitboxa (Collidera)!");
@@ -9,7 +15,7 @@ public class FireBreathAttack : BaseAttack {
         }
 
         List<Collider2D> hits = new List<Collider2D>();
-        attackHitbox.Overlap(contactFilter, hits);
+        attackHitbox.Overlap(contactFilter, hits); 
 
         List<IDamageable> targets = GetUniqueTargets(hits);
 
@@ -18,6 +24,10 @@ public class FireBreathAttack : BaseAttack {
             float calculatedDmg = CalculateDamage(enemyScript);
 
             target.Damage(calculatedDmg);
+
+            if (enemyScript != null) {
+                enemyScript.ApplyBurn(burnDamage, burnTicks, burnInterval);
+            }
 
             if (target is Component targetComponent) {
                 ApplyHitFeedback(targetComponent.gameObject);
