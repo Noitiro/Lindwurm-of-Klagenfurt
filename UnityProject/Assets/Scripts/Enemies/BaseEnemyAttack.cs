@@ -6,6 +6,8 @@ public class BaseEnemyHealth : MonoBehaviour, IDamageable {
     [SerializeField] protected float maxHealth = 100f;
     [Header("Typ Przeciwnika")]
     [SerializeField] public EnemyType enemyType = EnemyType.Normal;
+    [Header("Nagroda")]
+    [SerializeField] protected int scoreValue = 1;
     public float CurrentHealth { get; protected set; }
     public float MaxHealth => maxHealth;
 
@@ -43,6 +45,9 @@ public class BaseEnemyHealth : MonoBehaviour, IDamageable {
 
     protected virtual void Die() {
         Debug.Log($"{gameObject.name} zgin¹³!");
+        if (ScoreManager.Instance != null) {
+            ScoreManager.Instance.AddScore(scoreValue);
+        }
         Destroy(gameObject);
     }
 }
