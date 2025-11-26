@@ -54,6 +54,9 @@ TagManager:
   - name: Player
     uniqueID: 1861031177
     locked: 0
+  - name: DestroyHouses
+    uniqueID: 3421583311
+    locked: 0
   - name: WalkBehind
     uniqueID: 2165152979
     locked: 0

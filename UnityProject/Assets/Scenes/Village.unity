@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 0915ed6e
+  m_ApplyToSortingLayers: 0915ed6ecf37f1cb
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -422,9 +422,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -873383985
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 126090008696324360, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -483,7 +488,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -873383985
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18843,7 +18852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &872602254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42363,7 +42372,7 @@ MonoBehaviour:
   m_Intensity: 0.9
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: ed33af13d39c0d8143eb1d32596573a2000000001d580c45
+  m_ApplyToSortingLayers: ed33af13d39c0d8143eb1d32596573a2000000001d580c45cf37f1cb
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -42649,7 +42658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -873383985
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42710,7 +42723,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -873383985
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42937,7 +42954,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -873383985
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43022,7 +43043,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 330249197
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -43774,7 +43795,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -2129814317
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -45018,7 +45039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906887773524427547, guid: 179c9256b8182fd4488ce6db02e2842f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -873383985
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46014,7 +46039,7 @@ MonoBehaviour:
   m_Intensity: 3.31
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 1d580c4543eb1d32
+  m_ApplyToSortingLayers: 1d580c4543eb1d32cf37f1cb
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -46284,7 +46309,7 @@ MonoBehaviour:
   m_Intensity: 3.64
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 1d580c4543eb1d32
+  m_ApplyToSortingLayers: 1d580c4543eb1d32cf37f1cb
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -46367,7 +46392,7 @@ MonoBehaviour:
   m_Intensity: 3.64
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 1d580c4543eb1d32
+  m_ApplyToSortingLayers: 1d580c4543eb1d32cf37f1cb
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -46482,7 +46507,7 @@ MonoBehaviour:
   m_Intensity: 3.64
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 1d580c4543eb1d32
+  m_ApplyToSortingLayers: 1d580c4543eb1d32cf37f1cb
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
