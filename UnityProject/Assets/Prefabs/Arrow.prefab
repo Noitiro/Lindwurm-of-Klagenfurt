@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 840821571
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4df13b65cd7e99e46acd33206dee6243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c211689f5914d5fb6d45cbe790a061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveToLastPlayerLocation
-  damage: 1
+  damage: 4
   speed: 2
 --- !u!61 &7956795535195878908
 BoxCollider2D:
