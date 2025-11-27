@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 0f91c82335b117144a49506004e6c85a
+guid: a6b9aa32319ff4c40b56dc974dc071df
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1271197328234302763
-    second: truedragon_sheet_0
+      213: -3517128069861543798
+    second: move_left_sheet_0
   - first:
-      213: -8505386543073973579
-    second: truedragon_sheet_1
+      213: -9065371230799373246
+    second: move_left_sheet_1
   - first:
-      213: -2558900603333596414
-    second: truedragon_sheet_2
+      213: -217452215095894989
+    second: move_left_sheet_2
   - first:
-      213: 6231826756240266032
-    second: truedragon_sheet_3
+      213: -1665715090340340344
+    second: move_left_sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,7 +122,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: truedragon_sheet_0
+      name: move_left_sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d23b2bd3cccb5ee0800000000000000
-      internalID: -1271197328234302763
+      spriteID: a80f85ea7a6a03fc0800000000000000
+      internalID: -3517128069861543798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: truedragon_sheet_1
+      name: move_left_sheet_1
       rect:
         serializedVersion: 2
         x: 168
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ba20b6a00cc6f980800000000000000
-      internalID: -8505386543073973579
+      spriteID: 24c582f55e4513280800000000000000
+      internalID: -9065371230799373246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: truedragon_sheet_2
+      name: move_left_sheet_2
       rect:
         serializedVersion: 2
         x: 0
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20ba4ca7575fc7cd0800000000000000
-      internalID: -2558900603333596414
+      spriteID: 33c569bcc547bfcf0800000000000000
+      internalID: -217452215095894989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: truedragon_sheet_3
+      name: move_left_sheet_3
       rect:
         serializedVersion: 2
         x: 168
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 033d97bca65eb7650800000000000000
-      internalID: 6231826756240266032
+      spriteID: 88d914f53f032e8e0800000000000000
+      internalID: -1665715090340340344
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d9abf928b1df11549adb53ed90dce00e
+    spriteID: 8ff65b6cc4f6f674099a903563634b27
     internalID: 0
     vertices: []
     indices: 
@@ -225,10 +225,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":168.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      truedragon_sheet_0: -1271197328234302763
-      truedragon_sheet_1: -8505386543073973579
-      truedragon_sheet_2: -2558900603333596414
-      truedragon_sheet_3: 6231826756240266032
+      move_left_sheet_0: -3517128069861543798
+      move_left_sheet_1: -9065371230799373246
+      move_left_sheet_2: -217452215095894989
+      move_left_sheet_3: -1665715090340340344
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

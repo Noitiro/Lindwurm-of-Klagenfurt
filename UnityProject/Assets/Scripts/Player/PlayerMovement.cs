@@ -49,13 +49,12 @@ public class PlayerMovement : MonoBehaviour {
         input = playerController.Player.Move.ReadValue<Vector2>();
         input.Normalize();
 
-        if (input.x < 0) {
-            anim.SetBool("move", true);
-            rb.transform.localScale = new Vector3(2.2f, 2.2f, 2.2f);
-        }else if(input.x > 0) {
-            anim.SetBool("move", true);
-            rb.transform.localScale = new Vector3(-2.2f, 2.2f, 2.2f);
+        if (input.x < 0 || input.x > 0) {
+            anim.SetBool("isWalk", true);
         }
+
+        anim.SetFloat("InputX", input.x);
+        anim.SetFloat("InputY", input.y);
 
         if (isSprinting && currentEnergy > 0f) {
             playerManager.Speed = playerManager.SprintSpeed;

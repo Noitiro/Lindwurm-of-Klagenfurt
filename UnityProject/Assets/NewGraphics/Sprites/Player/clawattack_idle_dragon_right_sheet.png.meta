@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 164c976dc6dc4c941b742de65c5f47e2
+guid: fc5a8a759f951e94389cca6b1b98bb17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5244508581622527051
-    second: "clawattack_idle_dragon_sheet \u2014 kopia_0"
+      213: 4109247016496374809
+    second: clawattack_idle_dragon_right_sheet_0
   - first:
-      213: -3561271190391173784
-    second: "clawattack_idle_dragon_sheet \u2014 kopia_1"
+      213: 1636287266994551023
+    second: clawattack_idle_dragon_right_sheet_1
   - first:
-      213: 12938033583350846
-    second: "clawattack_idle_dragon_sheet \u2014 kopia_2"
+      213: 2853212026950072068
+    second: clawattack_idle_dragon_right_sheet_2
   - first:
-      213: -342055236274289076
-    second: "clawattack_idle_dragon_sheet \u2014 kopia_3"
+      213: 7075512083332486909
+    second: clawattack_idle_dragon_right_sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,89 +122,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "clawattack_idle_dragon_sheet \u2014 kopia_0"
+      name: clawattack_idle_dragon_right_sheet_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 177
-        width: 28
-        height: 31
+        x: 0
+        y: 128
+        width: 168
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b443915b4cc38c840800000000000000
-      internalID: 5244508581622527051
+      spriteID: 914a998c36af60930800000000000000
+      internalID: 4109247016496374809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "clawattack_idle_dragon_sheet \u2014 kopia_1"
+      name: clawattack_idle_dragon_right_sheet_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 166
-        width: 121
-        height: 67
+        x: 168
+        y: 128
+        width: 168
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86dc6e388b2d39ec0800000000000000
-      internalID: -3561271190391173784
+      spriteID: fe874b3999245b610800000000000000
+      internalID: 1636287266994551023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "clawattack_idle_dragon_sheet \u2014 kopia_2"
+      name: clawattack_idle_dragon_right_sheet_2
       rect:
         serializedVersion: 2
-        x: 209
-        y: 167
-        width: 117
-        height: 72
+        x: 168
+        y: 0
+        width: 168
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e34e3dfa217fd2000800000000000000
-      internalID: 12938033583350846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "clawattack_idle_dragon_sheet \u2014 kopia_3"
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 39
-        width: 117
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c460f4c2396c04bf0800000000000000
-      internalID: -342055236274289076
+      spriteID: 4073b37b835a89720800000000000000
+      internalID: 2853212026950072068
       vertices: []
       indices: 
       edges: []
@@ -213,7 +191,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: eb6bdd2b570fec344987d981f55a33f0
     internalID: 0
     vertices: []
     indices: 
@@ -221,12 +199,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":168.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      "clawattack_idle_dragon_sheet \u2014 kopia_0": 5244508581622527051
-      "clawattack_idle_dragon_sheet \u2014 kopia_1": -3561271190391173784
-      "clawattack_idle_dragon_sheet \u2014 kopia_2": 12938033583350846
-      "clawattack_idle_dragon_sheet \u2014 kopia_3": -342055236274289076
+      clawattack_idle_dragon_right_sheet_0: 4109247016496374809
+      clawattack_idle_dragon_right_sheet_1: 1636287266994551023
+      clawattack_idle_dragon_right_sheet_2: 2853212026950072068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
