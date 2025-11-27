@@ -51,10 +51,10 @@ public class PlayerMovement : MonoBehaviour {
 
         if (input.x < 0) {
             anim.SetBool("move", true);
-            rb.transform.localScale = new Vector3(1.6f,1.6f,1.6f);
+            rb.transform.localScale = new Vector3(2.2f, 2.2f, 2.2f);
         }else if(input.x > 0) {
             anim.SetBool("move", true);
-            rb.transform.localScale = new Vector3(-1.6f, 1.6f, 1.6f);
+            rb.transform.localScale = new Vector3(-2.2f, 2.2f, 2.2f);
         }
 
         if (isSprinting && currentEnergy > 0f) {
