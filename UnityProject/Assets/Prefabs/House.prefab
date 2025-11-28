@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7933e4b1186d7c44b6ee474c8325f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyHouses
-  destroy: 0
+  hitsToDestroy: 3
+  burntColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
 --- !u!95 &5281562054942470714
 Animator:
   serializedVersion: 7
