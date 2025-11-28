@@ -1,8 +1,12 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using System;
 using static AttackSelector; 
 
 public class BaseEnemyHealth : MonoBehaviour, IDamageable {
+    public static int EnemiesAliveCount = 0;
+    public static event Action<int> OnEnemyCountChanged;
+
     [Header("Statystyki")]
     [SerializeField] protected float maxHealth = 100f;
     [Header("Typ Przeciwnika")]
@@ -21,6 +25,16 @@ public class BaseEnemyHealth : MonoBehaviour, IDamageable {
     private Coroutine burnCoroutine;
     private EnemiesFollowsAI movementScript;
 
+
+    protected virtual void OnEnable() {
+        EnemiesAliveCount++;
+        OnEnemyCountChanged?.Invoke(EnemiesAliveCount);
+    }
+    protected virtual void OnDisable() {
+        EnemiesAliveCount--;
+        if (EnemiesAliveCount < 0) EnemiesAliveCount = 0;
+        OnEnemyCountChanged?.Invoke(EnemiesAliveCount);
+    }
     protected virtual void Awake() {
         CurrentHealth = maxHealth;
         movementScript = GetComponent<EnemiesFollowsAI>();
@@ -89,7 +103,7 @@ public class BaseEnemyHealth : MonoBehaviour, IDamageable {
     }
 
     protected virtual void ShowDamagePopup(float amount) {
-        Vector3 randomOffset = new Vector3(Random.Range(-0.5f, 0.5f), 0.5f, 0);
+        Vector3 randomOffset = new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), 0.5f, 0);
         GameObject popup = Instantiate(damagePopupPrefab, transform.position + randomOffset, Quaternion.identity);
         popup.GetComponent<DamagePopup>()?.Setup(amount);
     }

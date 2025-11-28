@@ -17,7 +17,14 @@ public class PlayerMovement : MonoBehaviour {
     private Animator anim;
 
     [SerializeField] Image stamina;
+    public void UpgradeSpeed(float percent) {
+        // MIKO£AJ ZRÓB TO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        //  Speed *= (1f + percent);
+        //  Sprint *= (1f + percent);
+        // 
 
+        Debug.Log("Szybkoœæ gracza zwiêkszona!");
+    }
     private void Awake() {
         playerController = new PlayerController();
         playerManager = gameObject.AddComponent<PlayerManager>();

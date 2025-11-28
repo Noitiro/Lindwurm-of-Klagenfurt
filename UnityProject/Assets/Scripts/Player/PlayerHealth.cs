@@ -92,4 +92,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable {
         yield return new WaitForSeconds(0.9f);
         if (gameOverScreen != null) gameOverScreen.SetActive(true);
     }
+    public void UpgradeMaxHealth(float amount) {
+        maxHealth += amount; 
+        CurrentHealth += amount;
+        OnHealthChanged?.Invoke(CurrentHealth / maxHealth);
+    }
+
+    public void UpgradeRegen(float amount) {
+        regenAmount += amount;
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using UnityEngine.EventSystems;
 
 public class AttackSelector : MonoBehaviour {
     public enum AttackType {
@@ -100,6 +101,7 @@ public class AttackSelector : MonoBehaviour {
     }
 
     private void HandleAttackExecution(InputAction.CallbackContext context) {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         if (currentState == PlayerState.Idle) {
 
             switch (CurrentAttackType) {
@@ -145,7 +147,6 @@ public class AttackSelector : MonoBehaviour {
     }
     public void SetState(PlayerState newState) {
         currentState = newState;
-        Debug.Log("Nowy stan gracza: " + newState);
     }
     private void EnablePreview(AttackType type) {
         switch (type) {

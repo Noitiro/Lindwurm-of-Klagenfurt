@@ -163,4 +163,25 @@ public abstract class BaseAttack : MonoBehaviour {
     }
 
     protected abstract void PerformAttackLogic();
+    public void UpgradeDamage(float percent) {
+        damageAmount += damageAmount * percent;
+        Debug.Log($"{gameObject.name}: DMG zwiêkszony do {damageAmount}");
+    }
+    public void UpgradeArea(float percent) {
+        if (attackHitbox != null) {
+            Vector3 currentScale = attackHitbox.transform.localScale;
+            attackHitbox.transform.localScale = currentScale * (1f + percent);
+
+            Debug.Log($"{gameObject.name}: Wielkoœæ zwiêkszona!");
+        }
+    }
+    public void UpgradeKnockback(float amount) {
+        knockbackForce += amount;
+        Debug.Log($"{gameObject.name}: Odrzut zwiêkszony do {knockbackForce}");
+    }
+    public void UpgradeCrit(float amount) {
+        critChance += amount;
+        if (critChance > 1f) critChance = 1f; 
+        Debug.Log($"{gameObject.name}: Szansa na kryta: {critChance}");
+    }
 }
