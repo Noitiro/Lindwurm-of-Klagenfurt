@@ -1,90 +1,60 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.Windows;
 
 public class PlayerMovement : MonoBehaviour {
+    [SerializeField] private float moveSpeed = 5f;
 
+    private Vector2 moveInput;
     private Rigidbody2D rb;
-    private Vector2 input;
-
-    PlayerController playerController;
-    PlayerManager playerManager;
-
-    private float maxEnergy = 100f;
-    public float currentEnergy = 100f;
-    private float sprintCost = 20f;
-    private float regenRate = 10f;
-    private bool isSprinting = false;
     private Animator anim;
+    private PlayerController playerController;
 
-    [SerializeField] Image stamina;
-    public void UpgradeSpeed(float percent) {
-        // MIKO£AJ ZRÓB TO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //  Speed *= (1f + percent);
-        //  Sprint *= (1f + percent);
-        // 
-
-        Debug.Log("Szybkoœæ gracza zwiêkszona!");
-    }
     private void Awake() {
         playerController = new PlayerController();
-        playerManager = gameObject.AddComponent<PlayerManager>();
+    }
+    void Start() {
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-
     private void OnEnable() {
         playerController.Enable();
     }
 
     private void OnDisable() {
-        playerController.Disable(); 
+        playerController.Disable();
     }
 
-    void Start() {
-        rb = GetComponent<Rigidbody2D>();
-
-        playerController.Player.Sprint.performed += context => {
-            isSprinting = true;
-            anim.SetBool("sprint", isSprinting);
-        };
-        playerController.Player.Sprint.canceled += context => {
-            isSprinting = false;
-            anim.SetBool("sprint", isSprinting);
-        };
+    private void Update() {
+        Move();
+        rb.linearVelocity = moveInput * moveSpeed;
     }
 
-    void Update() {
-        input = playerController.Player.Move.ReadValue<Vector2>();
-        input.Normalize();
+    //---------------------------------------------
 
-        if (input.x < 0 || input.x > 0) {
+    private void Move() {
+        playerController.Player.Move.performed += context => {
             anim.SetBool("isWalk", true);
-        }
+        };
 
-        anim.SetFloat("InputX", input.x);
-        anim.SetFloat("InputY", input.y);
+        playerController.Player.Move.canceled += context => {
+            anim.SetBool("isWalk", false);
+            anim.SetFloat("LastInputX", moveInput.x);
+            anim.SetFloat("LastInputY", moveInput.y);
+        };
 
-        if (isSprinting && currentEnergy > 0f) {
-            playerManager.Speed = playerManager.SprintSpeed;
-            currentEnergy -= sprintCost * Time.deltaTime;
+        moveInput = playerController.Player.Move.ReadValue<Vector2>();
+        moveInput.Normalize();
 
-            if (currentEnergy <= 0f) {
-                currentEnergy = 0f;
-                isSprinting = false;
-            }
-        }
-        else {
-            playerManager.Speed = playerManager.NormalSpeed;
-            currentEnergy += regenRate * Time.deltaTime;
-
-            if (currentEnergy > maxEnergy)
-                currentEnergy = maxEnergy;
-        }
-
-        stamina.fillAmount = currentEnergy / 100f;
-
+        anim.SetFloat("InputX", moveInput.x);
+        anim.SetFloat("InputY", moveInput.y);
     }
 
-    void FixedUpdate() {
-        rb.linearVelocity = input * playerManager.Speed;
+    public void UpgradeSpeed(float percent) {
+        moveSpeed *= (1f + percent);
+        moveSpeed *= (1f + percent);
+
+        Debug.Log("Szybkoœæ gracza zwiêkszona!");
     }
 }
