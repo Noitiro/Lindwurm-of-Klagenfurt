@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &674833197936564783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5556153304350952872}
+  - component: {fileID: 8477461925095384333}
+  - component: {fileID: 317336845798255559}
+  m_Layer: 5
+  m_Name: HealthBarTotal (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5556153304350952872
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674833197936564783}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.19, y: 0.19, z: 0.19}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 7018756537549375768}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -280}
+  m_SizeDelta: {x: 3296.3047, y: 507}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8477461925095384333
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674833197936564783}
+  m_CullTransparentMesh: 1
+--- !u!114 &317336845798255559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674833197936564783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.06462288, g: 0, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d808f313f0460c644b7ed257678fc767, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1084818945983809703
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3228623449081352035}
+  - component: {fileID: 7186456050436191150}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -39,6 +115,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 221.25}
   m_SizeDelta: {x: 1820.3142, y: 1077.3234}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7186456050436191150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084818945983809703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da91c9880e402d948aac4bfaaf7cc8c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthBar
+  playerHealth: {fileID: 0}
+  currentHealthBar: {fileID: 905446843860370823}
 --- !u!1 &3565416800051131521
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +408,7 @@ RectTransform:
   m_Children:
   - {fileID: 3228623449081352035}
   - {fileID: 6671339975409676484}
+  - {fileID: 5556153304350952872}
   - {fileID: 3776953388372383616}
   - {fileID: 74970449984638719}
   m_Father: {fileID: 0}
@@ -354,15 +445,15 @@ RectTransform:
   m_GameObject: {fileID: 5372983340093534080}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.386419, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.19, y: 0.19, z: 0.19}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7018756537549375768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.000092, y: -329.99988}
-  m_SizeDelta: {x: 135, y: 98.9}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -280}
+  m_SizeDelta: {x: 3296.3047, y: 507}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5595806938618960665
 CanvasRenderer:
