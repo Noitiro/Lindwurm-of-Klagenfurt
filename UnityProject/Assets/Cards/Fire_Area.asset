@@ -17,5 +17,5 @@ MonoBehaviour:
   icon: {fileID: 0}
   cost: 3
   target: 2
-  type: 3
+  type: 1
   value: 0.1

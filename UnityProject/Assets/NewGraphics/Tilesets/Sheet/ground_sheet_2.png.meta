@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: db5a5dbbfd99b934a929f39c64599f73
+guid: 9406f2cff7521cc43b0a39f394ffdee8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3748071843501941247
-    second: "Bez tytu\u0142u_0"
-  - first:
-      213: -8940838646707375622
-    second: "Bez tytu\u0142u_1"
-  - first:
-      213: -436968902329294075
-    second: "Bez tytu\u0142u_2"
-  - first:
-      213: 6131416522501972994
-    second: "Bez tytu\u0142u_3"
+      213: -8773436711782427365
+    second: "ground_sheet \u2014 kopia_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,7 +113,73 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Bez tytu\u0142u_0"
+      name: ground_sheet_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3860aaee8724b024693fa74f079f40c2
+      internalID: -1649735695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_sheet_2_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db2476c6bed8894b8ede16acec7d488
+      internalID: 566186549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_sheet_2_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942b3ffbbda1ee841bea76d33bcd8d22
+      internalID: 767127112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_sheet_2_3
       rect:
         serializedVersion: 2
         x: 0
@@ -135,19 +192,19 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ff1a398cb73d30430800000000000000
-      internalID: 3748071843501941247
+      spriteID: 9f9301af0e375c845a8ec06a2df0b331
+      internalID: -1684177146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Bez tytu\u0142u_1"
+      name: ground_sheet_2_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 256
         y: 128
         width: 128
         height: 128
@@ -157,16 +214,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: af13ce41f92cbe380800000000000000
-      internalID: -8940838646707375622
+      spriteID: ecb9e141f7d85f84bb48ca70fb0f3f78
+      internalID: 1798080585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Bez tytu\u0142u_2"
+      name: ground_sheet_2_5
       rect:
         serializedVersion: 2
         x: 0
@@ -179,16 +236,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 50325c639139fe9f0800000000000000
-      internalID: -436968902329294075
+      spriteID: 8c6a5f1af27a5f54bbdb93c7b24cd2f9
+      internalID: 1412429003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Bez tytu\u0142u_3"
+      name: ground_sheet_2_6
       rect:
         serializedVersion: 2
         x: 128
@@ -201,10 +258,32 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 204e0b177da271550800000000000000
-      internalID: 6131416522501972994
+      spriteID: eda2e29ce3d1c67459d10c7386b39507
+      internalID: -372303423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground_sheet_2_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f697cf1f2c1ca042bf277159226217c
+      internalID: 187806154
       vertices: []
       indices: 
       edges: []
@@ -213,7 +292,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9524ca798b3e0494280622d6fbf4cc73
+    spriteID: 742874c2e967cd54d8ee4559a90d29c9
     internalID: 0
     vertices: []
     indices: 
@@ -225,10 +304,14 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      "Bez tytu\u0142u_0": 3748071843501941247
-      "Bez tytu\u0142u_1": -8940838646707375622
-      "Bez tytu\u0142u_2": -436968902329294075
-      "Bez tytu\u0142u_3": 6131416522501972994
+      ground_sheet_2_0: -1649735695
+      ground_sheet_2_1: 566186549
+      ground_sheet_2_2: 767127112
+      ground_sheet_2_3: -1684177146
+      ground_sheet_2_4: 1798080585
+      ground_sheet_2_5: 1412429003
+      ground_sheet_2_6: -372303423
+      ground_sheet_2_7: 187806154
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

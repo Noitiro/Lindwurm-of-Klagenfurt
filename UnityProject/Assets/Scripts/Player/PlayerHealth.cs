@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable {
     [SerializeField] private float regenRate = 1f;
 
     [Header("UI")]
-    [SerializeField] private GameObject gameOverScreen; 
+    [SerializeField] private Canvas gameOverScreen; 
 
     public event Action<float> OnHealthChanged;
 
@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable {
 
     private void Start() {
         OnHealthChanged?.Invoke(1f);
+        gameOverScreen = GetComponentInChildren<Canvas>();
     }
 
     public void Damage(float damage) {
@@ -42,7 +43,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable {
 
         Debug.Log("Player damage: " + damage);
 
-        if (CurrentHealth > 0) {
+        if (CurrentHealth > 1) {
             anim.SetTrigger("hurt");
             StartRegen();
         }
@@ -90,7 +91,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable {
 
     IEnumerator DeathSequence() {
         yield return new WaitForSeconds(0.9f);
-        if (gameOverScreen != null) gameOverScreen.SetActive(true);
+        if (gameOverScreen != null) gameOverScreen.enabled = true;
+        Time.timeScale = 0;
     }
     public void UpgradeMaxHealth(float amount) {
         maxHealth += amount; 

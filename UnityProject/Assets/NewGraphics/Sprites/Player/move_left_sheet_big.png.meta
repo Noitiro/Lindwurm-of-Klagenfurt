@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: db5a5dbbfd99b934a929f39c64599f73
+guid: a6b9aa32319ff4c40b56dc974dc071df
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3748071843501941247
-    second: "Bez tytu\u0142u_0"
+      213: -3517128069861543798
+    second: move_left_sheet_0
   - first:
-      213: -8940838646707375622
-    second: "Bez tytu\u0142u_1"
+      213: -9065371230799373246
+    second: move_left_sheet_1
   - first:
-      213: -436968902329294075
-    second: "Bez tytu\u0142u_2"
+      213: -217452215095894989
+    second: move_left_sheet_2
   - first:
-      213: 6131416522501972994
-    second: "Bez tytu\u0142u_3"
+      213: -1665715090340340344
+    second: move_left_sheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 168
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,12 +122,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Bez tytu\u0142u_0"
+      name: move_left_sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 128
-        width: 128
+        width: 168
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -137,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff1a398cb73d30430800000000000000
-      internalID: 3748071843501941247
+      spriteID: a80f85ea7a6a03fc0800000000000000
+      internalID: -3517128069861543798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Bez tytu\u0142u_1"
+      name: move_left_sheet_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 168
         y: 128
-        width: 128
+        width: 168
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -159,19 +159,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af13ce41f92cbe380800000000000000
-      internalID: -8940838646707375622
+      spriteID: 24c582f55e4513280800000000000000
+      internalID: -9065371230799373246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Bez tytu\u0142u_2"
+      name: move_left_sheet_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
+        width: 168
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -181,19 +181,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 50325c639139fe9f0800000000000000
-      internalID: -436968902329294075
+      spriteID: 33c569bcc547bfcf0800000000000000
+      internalID: -217452215095894989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "Bez tytu\u0142u_3"
+      name: move_left_sheet_3
       rect:
         serializedVersion: 2
-        x: 128
+        x: 168
         y: 0
-        width: 128
+        width: 168
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -203,8 +203,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 204e0b177da271550800000000000000
-      internalID: 6131416522501972994
+      spriteID: 88d914f53f032e8e0800000000000000
+      internalID: -1665715090340340344
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9524ca798b3e0494280622d6fbf4cc73
+    spriteID: 8ff65b6cc4f6f674099a903563634b27
     internalID: 0
     vertices: []
     indices: 
@@ -223,12 +223,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":168.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      "Bez tytu\u0142u_0": 3748071843501941247
-      "Bez tytu\u0142u_1": -8940838646707375622
-      "Bez tytu\u0142u_2": -436968902329294075
-      "Bez tytu\u0142u_3": 6131416522501972994
+      move_left_sheet_0: -3517128069861543798
+      move_left_sheet_1: -9065371230799373246
+      move_left_sheet_2: -217452215095894989
+      move_left_sheet_3: -1665715090340340344
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
