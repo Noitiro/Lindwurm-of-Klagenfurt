@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using static AttackSelector;
@@ -32,7 +33,7 @@ public abstract class BaseAttack : MonoBehaviour {
     private Light2D aimVisuals;
     [Header("Trzêsienie")]
     [SerializeField] protected GameObject hitEffectPrefab; 
-    [SerializeField] protected float shakeIntensity = 0.1f; 
+    [SerializeField] protected float shakeIntensity = 1f; 
     [SerializeField] protected float shakeDuration = 0.15f;
     [Tooltip("Si³a odrzutu. 0 = brak, 5 = œredni, 10 = mocny")]
     [SerializeField] protected float knockbackForce = 0f;
@@ -151,7 +152,7 @@ public abstract class BaseAttack : MonoBehaviour {
         }
 
         if (CameraShake.Instance != null) {
-            CameraShake.Instance.Shake(shakeDuration, shakeIntensity);
+            CameraShake.Instance.Shake(targetObject.gameObject.GetComponent<CinemachineImpulseSource>(), shakeDuration, shakeIntensity);
         }
 
         if (knockbackForce > 0) {

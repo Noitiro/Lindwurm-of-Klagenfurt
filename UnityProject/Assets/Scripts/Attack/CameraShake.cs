@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Cinemachine;
 
 public class CameraShake : MonoBehaviour {
     public static CameraShake Instance { get; private set; }
@@ -8,8 +9,9 @@ public class CameraShake : MonoBehaviour {
         Instance = this;
     }
 
-    public void Shake(float duration, float magnitude) {
-        StartCoroutine(ShakeCoroutine(duration, magnitude));
+    public void Shake(CinemachineImpulseSource impulseSource, float duration, float magnitude) {
+        impulseSource.GenerateImpulseWithForce(magnitude);
+        //StartCoroutine(ShakeCoroutine(duration, magnitude));
     }
 
     private IEnumerator ShakeCoroutine(float duration, float magnitude) {
