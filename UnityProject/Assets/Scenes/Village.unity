@@ -551,8 +551,7 @@ MonoBehaviour:
   critMultiplier: 2
   strongAgainst: 0
   hitEffectPrefab: {fileID: 0}
-  shakeIntensity: 0.02
-  shakeDuration: 0.15
+  force: 1
   knockbackForce: 5
 --- !u!114 &63306405
 MonoBehaviour:
@@ -580,8 +579,7 @@ MonoBehaviour:
   critMultiplier: 2
   strongAgainst: 1
   hitEffectPrefab: {fileID: 0}
-  shakeIntensity: 0.05
-  shakeDuration: 0.15
+  force: 1
   knockbackForce: 2
   burnDamage: 5
   burnTicks: 3
@@ -612,8 +610,7 @@ MonoBehaviour:
   critMultiplier: 2
   strongAgainst: 2
   hitEffectPrefab: {fileID: 0}
-  shakeIntensity: 0.05
-  shakeDuration: 0.15
+  force: 1
   knockbackForce: 0
   slowFactor: 0.5
   slowDuration: 2
@@ -643,8 +640,7 @@ MonoBehaviour:
   critMultiplier: 2
   strongAgainst: 0
   hitEffectPrefab: {fileID: 3373715332947199531, guid: a1809311069fd50488d6dbd921ef8cb1, type: 3}
-  shakeIntensity: 0.025
-  shakeDuration: 0.15
+  force: 1
   knockbackForce: 10
 --- !u!114 &63306408
 MonoBehaviour:
@@ -2740,7 +2736,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 40
+  field of view: 35
   orthographic: 0
   orthographic size: 2.5
   m_Depth: 0
@@ -81890,7 +81886,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 40
+    FieldOfView: 35
     OrthographicSize: 2.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -81938,15 +81934,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineImpulseListener
   ApplyAfter: 2
   ChannelMask: 1
-  Gain: 1
+  Gain: 0.05
   Use2DDistance: 0
   UseCameraSpace: 1
   SignalCombinationMode: 0
   ReactionSettings:
-    m_SecondaryNoise: {fileID: 0}
-    AmplitudeGain: 1
-    FrequencyGain: 1
-    Duration: 1
+    m_SecondaryNoise: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    AmplitudeGain: 3
+    FrequencyGain: 2
+    Duration: 0.5
     m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &989879704
 MonoBehaviour:
@@ -84074,7 +84070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2079888255
 MonoBehaviour:
   m_ObjectHideFlags: 0

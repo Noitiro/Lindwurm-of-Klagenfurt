@@ -9,8 +9,8 @@ public class CameraShake : MonoBehaviour {
         Instance = this;
     }
 
-    public void Shake(CinemachineImpulseSource impulseSource, float duration, float magnitude) {
-        impulseSource.GenerateImpulseWithForce(magnitude);
+    public void Shake(CinemachineImpulseSource impulseSource, float force) {
+        impulseSource.GenerateImpulseWithForce(force);
         //StartCoroutine(ShakeCoroutine(duration, magnitude));
     }
 
