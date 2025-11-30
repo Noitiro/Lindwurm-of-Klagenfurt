@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -8,7 +9,6 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float normalSpeed = 2f;
     [SerializeField] private float sprintSpeed = 3f;
     [SerializeField] Image staminaBar;
-    [SerializeField] GameObject parentHitbox;
 
     private float moveSpeed;
     private bool canSprint;
@@ -23,6 +23,10 @@ public class PlayerMovement : MonoBehaviour {
     private Animator anim;
     private PlayerController playerController;
 
+    private Transform flipPlayer;
+    private Vector3 flipPlayerRight;
+    private Vector3 flipPlayerLeft;
+
     private void Awake() {
         playerController = new PlayerController();
     }
@@ -30,6 +34,11 @@ public class PlayerMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         moveSpeed = normalSpeed;
+
+        flipPlayer = gameObject.transform;
+        flipPlayerLeft = new Vector3(flipPlayer.localScale.x, flipPlayer.localScale.y, flipPlayer.localScale.z);
+        flipPlayerRight = new Vector3(-flipPlayer.localScale.x, flipPlayer.localScale.y, flipPlayer.localScale.z);
+
     }
     private void OnEnable() {
         playerController.Enable();
@@ -62,9 +71,9 @@ public class PlayerMovement : MonoBehaviour {
         moveInput.Normalize();
 
         if(moveInput.x > 0) {
-            parentHitbox.transform.localScale = new Vector3(-1, 1, 1);
+            flipPlayer.localScale = flipPlayerRight;
         }else if(moveInput.x < 0) {
-            parentHitbox.transform.localScale = new Vector3(1, 1, 1);
+            flipPlayer.localScale = flipPlayerLeft;
         }
 
         anim.SetFloat("InputX", moveInput.x);
