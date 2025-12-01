@@ -1,9 +1,5 @@
-using System.Collections;
-using UnityEditor.Tilemaps;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using UnityEngine.Windows;
 
 public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float normalSpeed = 2f;
