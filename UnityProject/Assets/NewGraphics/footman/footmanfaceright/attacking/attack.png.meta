@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7b53990666255f04cb3028b5f92b5a7a
+guid: f5cb89f11376f6e4cbc7128434e5c5c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3748071843501941247
-    second: "Bez tytu\u0142u_0"
+      213: 827538889749247048
+    second: attack_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Bez tytu\u0142u_0"
+      name: attack_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 200
-        height: 94
+        width: 123
+        height: 129
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff1a398cb73d30430800000000000000
-      internalID: 3748071843501941247
+      spriteID: 84433595c320c7b00800000000000000
+      internalID: 827538889749247048
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "Bez tytu\u0142u_0": 3748071843501941247
+      attack_0: 827538889749247048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
