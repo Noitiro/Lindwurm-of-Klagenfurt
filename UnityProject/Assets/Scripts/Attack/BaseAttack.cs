@@ -15,6 +15,12 @@ public abstract class BaseAttack : MonoBehaviour {
     [SerializeField] protected Collider2D attackHitbox;
     [SerializeField] protected LayerMask attackableLayer;
 
+    [Header("Efekty ataku")]
+    [Tooltip("Animator na obiekcie")]
+    [SerializeField] protected Animator effectAnimator;
+    [Tooltip("Nazwa triggera")]
+    [SerializeField] protected string effectAnimTrigger;
+
     [Header("Efekty")]
     [SerializeField] protected AudioClip attackSound;
     [SerializeField] protected string animationTrigger;
@@ -92,13 +98,21 @@ public abstract class BaseAttack : MonoBehaviour {
             aimVisuals.enabled = false;
         }
 
-        if (!string.IsNullOrEmpty(animationTrigger)) anim.SetTrigger(animationTrigger);
-        if (attackSound != null && audioSource != null) audioSource.PlayOneShot(attackSound);
+        if (!string.IsNullOrEmpty(animationTrigger) && anim != null) {
+            anim.SetTrigger(animationTrigger);
+        }
+
+        if (attackSound != null && audioSource != null) {
+            audioSource.PlayOneShot(attackSound);
+        }
+        if (effectAnimator != null && !string.IsNullOrEmpty(effectAnimTrigger)) {
+            effectAnimator.gameObject.SetActive(true); 
+            effectAnimator.SetTrigger(effectAnimTrigger);
+        }
 
         PerformAttackLogic();
 
         yield return new WaitForSeconds(animationLockTime);
-
         if (aimVisuals != null) {
             aimVisuals.enabled = true;
         }
