@@ -1,20 +1,15 @@
 using UnityEngine;
 
-public class PlayerHead : MonoBehaviour
-{
-    [SerializeField] private float rotationSpeed;
-    [SerializeField] private Transform rotateAround;
+public class PlayerHead : MonoBehaviour {
+    [Header("Ustawienia")]
+    [SerializeField] private float rotationSpeed = 100f;
+    [SerializeField] private float maxAngle = 45f; 
+    [SerializeField] private float minAngle = -45f; 
     private PlayerController playerController;
-    private Vector2 moveHeadInput;
-
-    //private Animator anim;
+    private float currentAngle = 0f; 
 
     private void Awake() {
         playerController = new PlayerController();
-    }
-
-    private void Start() {
-    //    anim = GetComponentInChildren<Animator>();
     }
 
     private void OnEnable() {
@@ -25,19 +20,21 @@ public class PlayerHead : MonoBehaviour
         playerController.Disable();
     }
 
-    void Update()
-    {
+    void Update() {
         MoveHead();
     }
 
     private void MoveHead() {
-        moveHeadInput = playerController.Player.MoveHead.ReadValue<Vector2>();
-        moveHeadInput.Normalize();
+        float input = playerController.Player.MoveHead.ReadValue<Vector2>().y;
 
-        if(moveHeadInput.y > 0 && this.transform.rotation.z > -0.45f) {
-            this.transform.RotateAround(rotateAround.position, Vector3.forward, -rotationSpeed * Time.deltaTime);
-        } else if (moveHeadInput.y < 0 && this.transform.rotation.z < 0.45f) {
-            this.transform.RotateAround(rotateAround.position, Vector3.forward, rotationSpeed * Time.deltaTime);
-        }
+        if (input == 0) return;
+
+        float rotationAmount = -input * rotationSpeed * Time.deltaTime;
+
+        currentAngle += rotationAmount;
+
+        currentAngle = Mathf.Clamp(currentAngle, minAngle, maxAngle);
+
+        transform.localRotation = Quaternion.Euler(0, 0, currentAngle);
     }
 }
