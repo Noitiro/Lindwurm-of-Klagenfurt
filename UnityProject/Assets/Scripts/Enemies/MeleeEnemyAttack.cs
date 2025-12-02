@@ -66,49 +66,36 @@ public class MeleeEnemyAttack : MonoBehaviour {
     private IEnumerator AttackRoutine() {
         while (targetPlayer != null) {
 
-            // 1. FAZA ZAMACHU (WIND-UP)
+            // 1. FAZA ZAMACHU 
             if (agent != null) agent.speed = originalSpeed * windUpMoveSpeedMultiplier;
             if (alertIcon != null) alertIcon.SetActive(true);
             if (!string.IsNullOrEmpty(windUpAnimationTrigger) && anim != null) anim.SetTrigger(windUpAnimationTrigger);
 
-            // Czekamy... (Gracz mo¿e tu uciec!)
             yield return new WaitForSeconds(windUpTime);
 
-            // --- NOWOŒÆ: SPRAWDZENIE CZY GRACZ NADAL JEST ---
-            // Jeœli gracz wyszed³ z Triggera w trakcie zamachu -> PRZERWIJ ATAK
             if (targetPlayer == null) {
-                // Posprz¹taj po sobie i wyjdŸ
                 if (agent != null) agent.speed = originalSpeed;
                 if (alertIcon != null) alertIcon.SetActive(false);
                 attackCoroutine = null;
-                yield break; // Zakoñcz korutynê natychmiast
+                yield break; 
             }
-            // -----------------------------------------------
-
-            // 2. FAZA UDERZENIA (STRIKE)
+            // 2. FAZA UDERZENIA 
             if (agent != null) agent.speed = 0;
             if (alertIcon != null) alertIcon.SetActive(false);
             if (!string.IsNullOrEmpty(attackAnimationTrigger) && anim != null) anim.SetTrigger(attackAnimationTrigger);
-
-            // DŸwiêk zagra tylko, jeœli gracz nadal tu jest (dziêki sprawdzeniu wy¿ej)
             if (audioSource != null && attackSounds.Length > 0) {
                 AudioClip clipToPlay = attackSounds[Random.Range(0, attackSounds.Length)];
                 audioSource.pitch = Random.Range(minPitch, maxPitch);
                 audioSource.PlayOneShot(clipToPlay);
             }
-
-            // Zadaj obra¿enia (sprawdzamy te¿ dystans fizyczny dla pewnoœci)
             if (targetPlayer != null && Vector3.Distance(transform.position, (targetPlayer as Component).transform.position) < 6f) {
                 targetPlayer.Damage(damage);
             }
-
             // 3. FAZA ODPOCZYNKU
             yield return new WaitForSeconds(attackCooldown);
 
             if (agent != null) agent.speed = originalSpeed;
         }
-
-        // Sprz¹tanie po wyjœciu z pêtli
         if (agent != null) agent.speed = originalSpeed;
         if (alertIcon != null) alertIcon.SetActive(false);
         attackCoroutine = null;
