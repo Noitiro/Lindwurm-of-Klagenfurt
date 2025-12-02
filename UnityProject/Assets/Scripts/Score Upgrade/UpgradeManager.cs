@@ -43,7 +43,7 @@ public class UpgradeManager : MonoBehaviour {
             CloseMenu(); 
             return;
         }
-
+        CursorManager.ShowCursor();
         upgradePanel.SetActive(true);
         GenerateCards();
 
@@ -97,7 +97,7 @@ public class UpgradeManager : MonoBehaviour {
     private void CloseMenu() {
         Time.timeScale = 1f;
         upgradePanel.SetActive(false);
-   
+        CursorManager.HideCursor();
         if (waveSpawner != null) waveSpawner.NextWave();
     }
 
