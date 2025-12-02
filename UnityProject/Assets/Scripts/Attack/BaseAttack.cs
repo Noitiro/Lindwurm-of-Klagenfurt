@@ -170,7 +170,9 @@ public abstract class BaseAttack : MonoBehaviour {
 
             CameraShake.Instance.Shake(shakeDuration, force);
         }
-
+        if (HitStop.Instance != null) {
+            HitStop.Instance.Stop(0.05f);
+        }
         if (knockbackForce > 0) {
             EnemyKnockback knockbackScript = targetObject.GetComponent<EnemyKnockback>();
             if (knockbackScript != null) {
@@ -180,6 +182,15 @@ public abstract class BaseAttack : MonoBehaviour {
     }
 
     protected abstract void PerformAttackLogic();
+
+    public void ApplyUpgrade(UpgradeCardSO.UpgradeType type, float value) {
+        switch (type) {
+            case UpgradeCardSO.UpgradeType.Damage: UpgradeDamage(value); break;
+            case UpgradeCardSO.UpgradeType.AreaSize: UpgradeArea(value); break;
+            case UpgradeCardSO.UpgradeType.Knockback: UpgradeKnockback(value); break;
+            case UpgradeCardSO.UpgradeType.CritChance: UpgradeCrit(value); break;
+        }
+    }
     public void UpgradeDamage(float percent) {
         damageAmount += damageAmount * percent;
         Debug.Log($"{gameObject.name}: DMG zwiêkszony do {damageAmount}");
