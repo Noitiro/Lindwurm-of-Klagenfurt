@@ -107,10 +107,10 @@ public class PlayerMovement : MonoBehaviour {
 
     }
 
-    public void UpgradeSpeed(float percentNormalSpeed, float percentSprintSpeed) {
-        moveSpeed *= (1f + percentNormalSpeed);
-        normalSpeed *= (1f + percentNormalSpeed);
-        sprintSpeed *= (1f + percentSprintSpeed);
+    public void UpgradeSpeed(float percentSpeed) {
+        moveSpeed *= (1f + percentSpeed);
+        normalSpeed *= (1f + percentSpeed);
+        sprintSpeed *= (1f + percentSpeed);
 
         Debug.Log("Szybkoœæ gracza zwiêkszona!");
     }

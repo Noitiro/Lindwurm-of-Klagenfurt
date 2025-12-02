@@ -83869,10 +83869,10 @@ RectTransform:
   - {fileID: 1029860620}
   m_Father: {fileID: 1140185372}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 6, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1924, y: 1078}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &969402648
 MonoBehaviour:
@@ -84292,7 +84292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1008147398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -84463,16 +84463,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+      propertyPath: timeBetweenWaves
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[0].spawnRate
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[1].spawnRate
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[2].spawnRate
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[0].enemyGroups.Array.data[0].count
@@ -84488,15 +84492,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[1].enemyGroups.Array.data[0].count
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[1].enemyGroups.Array.data[1].count
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[1].enemyGroups.Array.data[2].count
-      value: 6
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+      propertyPath: waves.Array.data[2].enemyGroups.Array.data[0].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+      propertyPath: waves.Array.data[2].enemyGroups.Array.data[1].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
+      propertyPath: waves.Array.data[2].enemyGroups.Array.data[2].count
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84539,7 +84555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00003624, y: -325}
+  m_AnchoredPosition: {x: 0.00003624, y: -270}
   m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029860621
@@ -84758,11 +84774,26 @@ MonoBehaviour:
   cardsContainer: {fileID: 1665683316}
   cardPrefab: {fileID: 1973433218030603394, guid: b6c8743f29cfe4d4da833ffcbea47b9e, type: 3}
   allUpgrades:
+  - {fileID: 11400000, guid: 97f686d6fff51c14e826be9da35f5f7b, type: 2}
+  - {fileID: 11400000, guid: aab7ecb064ec88047ad341450ccca316, type: 2}
+  - {fileID: 11400000, guid: bcedc1c6cba93774fbf8ba0bb4943e22, type: 2}
+  - {fileID: 11400000, guid: f53bad2b370ceef49a73f464cb7eb589, type: 2}
   - {fileID: 11400000, guid: 7b88fd5ca196c6346869b02ba48c42d3, type: 2}
   - {fileID: 11400000, guid: d708f3e29d049634c8ee23229e86bcc3, type: 2}
   - {fileID: 11400000, guid: 09e6b0dc23ed7514686351cbb3c42f54, type: 2}
+  - {fileID: 11400000, guid: 54d5a34a224b8084f9a1fe6c8b2b94b8, type: 2}
+  - {fileID: 11400000, guid: f4d4c54b983e280479116e2199c9f846, type: 2}
+  - {fileID: 11400000, guid: 70a6708d6a0871d43a0b4fc54a9bf47c, type: 2}
+  - {fileID: 11400000, guid: 482e8673a903e9f4d92aea18cda9dc0c, type: 2}
+  - {fileID: 11400000, guid: e99edfadffecc3748a615c9b59433fc3, type: 2}
+  - {fileID: 11400000, guid: e18e9ddf72663f848981e324a0949f9c, type: 2}
+  - {fileID: 11400000, guid: 3839e48d0f7f30241941cfcd1e418fe0, type: 2}
+  - {fileID: 11400000, guid: 436317eb6519d7b428621a89eaa81828, type: 2}
+  - {fileID: 11400000, guid: 20fe9b4c07854ae4093a09bd175138c8, type: 2}
+  - {fileID: 11400000, guid: 4e363a57b35fc5447ad7d61f1039de8c, type: 2}
   playerAttacks: {fileID: 0}
   playerHealth: {fileID: 0}
+  playerMovement: {fileID: 0}
 --- !u!1 &1234491108
 GameObject:
   m_ObjectHideFlags: 0
@@ -85960,9 +85991,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 969402647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -610, y: -21}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 352, y: -21}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1665683317

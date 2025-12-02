@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d13f5fee97825f44395b0339b469a69d, type: 3}
-  m_Name: Fire_Damage
+  m_Name: Player_Regen
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCardSO
-  cardName: "Lindwurm\u2019s Blaze"
-  description: "Summon the infernal heat whispered about in Klagenfurt\u2019s oldest
-    tales. [+20% Damage]"
+  cardName: Draconic Blood
+  description: 'our wounds heal with supernatural speed. [+2 HP/sec Regen]'
   icon: {fileID: 0}
   cost: 3
-  target: 2
-  type: 0
-  value: 0.2
+  target: 4
+  type: 5
+  value: 2

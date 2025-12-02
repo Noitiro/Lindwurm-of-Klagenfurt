@@ -7,6 +7,7 @@ public class UpgradeCardSO : ScriptableObject {
     [TextArea] public string description;
     public Sprite icon;
     public int cost = 100;
+    public int maxPurchases = 1;
 
     [Header("Co ulepszamy?")]
     public UpgradeTarget target;

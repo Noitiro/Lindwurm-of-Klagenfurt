@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13f5fee97825f44395b0339b469a69d, type: 3}
   m_Name: Fire_Area
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCardSO
-  cardName: Great Fire
-  description: MAKE YOUR DRAGON BREATH GREAT AGAIN +10% DAMAGE AREA
+  cardName: Wildfire
+  description: 'Your flames spread uncontrollably, like a true wildfire [+30% Area
+    Size]'
   icon: {fileID: 0}
   cost: 3
   target: 2
   type: 1
-  value: 0.1
+  value: 0.3

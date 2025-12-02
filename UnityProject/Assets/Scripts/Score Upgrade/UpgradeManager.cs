@@ -10,11 +10,15 @@ public class UpgradeManager : MonoBehaviour {
     [SerializeField] private GameObject cardPrefab; 
 
     [Header("Baza Kart")]
-    [SerializeField] private List<UpgradeCardSO> allUpgrades; 
+    [SerializeField] private List<UpgradeCardSO> allUpgrades;
+
+    private List<UpgradeCardSO> availableCards;
+    private Dictionary<UpgradeCardSO, int> purchaseHistory = new Dictionary<UpgradeCardSO, int>();
 
     [Header("Referencja do Gracza")]
     [SerializeField] private AttackSelector playerAttacks;
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private PlayerMovement playerMovement; 
 
     private WaveSpawn waveSpawner; 
 
@@ -28,7 +32,10 @@ public class UpgradeManager : MonoBehaviour {
         if (player != null) {
             playerAttacks = player.GetComponent<AttackSelector>();
             playerHealth = player.GetComponent<PlayerHealth>();
+            playerMovement = player.GetComponent<PlayerMovement>();
         }
+        availableCards = new List<UpgradeCardSO>(allUpgrades);
+        purchaseHistory.Clear();
     }
 
     public void OpenUpgradeMenu() {
@@ -46,14 +53,14 @@ public class UpgradeManager : MonoBehaviour {
     private void GenerateCards() {
         foreach (Transform child in cardsContainer) Destroy(child.gameObject);
 
-        List<UpgradeCardSO> deck = new List<UpgradeCardSO>(allUpgrades);
+        List<UpgradeCardSO> deck = new List<UpgradeCardSO>(availableCards);
+        int cardsToDraw = Mathf.Min(3, deck.Count);
 
-        for (int i = 0; i < 3; i++) {
-            if (deck.Count == 0) break;
-
+        for (int i = 0; i < cardsToDraw; i++) {
             int randomIndex = Random.Range(0, deck.Count);
             UpgradeCardSO cardData = deck[randomIndex];
-            deck.RemoveAt(randomIndex); 
+            deck.RemoveAt(randomIndex);
+
             GameObject cardObj = Instantiate(cardPrefab, cardsContainer);
             cardObj.GetComponent<UpgradeCardUI>().Setup(cardData, this);
         }
@@ -63,7 +70,21 @@ public class UpgradeManager : MonoBehaviour {
         if (!ScoreManager.Instance.SpendScore(card.cost)) return;
 
         ApplyStats(card);
+        if (!purchaseHistory.ContainsKey(card)) {
+            purchaseHistory[card] = 0;
+        }
+        purchaseHistory[card]++;
 
+        Debug.Log($"Kupiono {card.cardName}. Razem: {purchaseHistory[card]} / {card.maxPurchases}");
+
+        if (card.maxPurchases != -1) {
+            if (purchaseHistory[card] >= card.maxPurchases) {
+                if (availableCards.Contains(card)) {
+                    availableCards.Remove(card);
+                    Debug.Log("Limit karty osi¹gniêty! Usuniêto ze sklepu.");
+                }
+            }
+        }
         CloseMenu();
     }
 
@@ -94,7 +115,7 @@ public class UpgradeManager : MonoBehaviour {
                 if (card.type == UpgradeCardSO.UpgradeType.Regen) playerHealth.UpgradeRegen(card.value);
 
                 // Speed w Player:
-                // if (card.type == UpgradeCardSO.UpgradeType.MoveSpeed) playerMovement.UpgradeSpeed(card.value);
+                 if (card.type == UpgradeCardSO.UpgradeType.MoveSpeed) playerMovement.UpgradeSpeed(card.value);
 
                 return;
         }
