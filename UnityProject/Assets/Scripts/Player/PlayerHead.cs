@@ -7,8 +7,14 @@ public class PlayerHead : MonoBehaviour
     private PlayerController playerController;
     private Vector2 moveHeadInput;
 
+    //private Animator anim;
+
     private void Awake() {
         playerController = new PlayerController();
+    }
+
+    private void Start() {
+    //    anim = GetComponentInChildren<Animator>();
     }
 
     private void OnEnable() {
