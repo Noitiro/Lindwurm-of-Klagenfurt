@@ -194,12 +194,12 @@ SpriteRenderer:
   m_SortingLayerID: 1861031177
   m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: 5045983596787183272, guid: 925af96a1491a3e499b3bd11a8f57011, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00123a0486ff3d742b007a35888e6b0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.007874, y: 1.007874}
+  m_Size: {x: 1.25, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -262,7 +262,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b6064644e21c8354bbdc04a88850b455, type: 3}
   minPitch: 0.7
   maxPitch: 1.1
-  attackAnimationTrigger: 
+  attackAnimationTrigger: knightAttack
 --- !u!195 &7189621953484527065
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -323,8 +323,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.23, y: 1.16}
-    newSize: {x: 1.007874, y: 1.007874}
+    oldSize: {x: 1.25, y: 1.25}
+    newSize: {x: 1.25, y: 1.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

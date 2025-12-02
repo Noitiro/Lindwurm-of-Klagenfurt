@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: KnightAttack
+  m_Name: PeasantAttack
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 00123a0486ff3d742b007a35888e6b0e, type: 3}
+      value: {fileID: 21300000, guid: 860476a4a872e1b4bbab6c43dc2886df, type: 3}
     - time: 0.2
-      value: {fileID: 21300000, guid: d152ca49a8722ed4cb7fb2c10a478000, type: 3}
+      value: {fileID: 21300000, guid: d0062c062271143469a5a4583d6ee809, type: 3}
     - time: 0.4
-      value: {fileID: 21300000, guid: 40a986ed9e538fc4a8f292f925e7323f, type: 3}
-    - time: 0.6
-      value: {fileID: 21300000, guid: 6df85641e1b39f34db8afac4f6509b7b, type: 3}
+      value: {fileID: 21300000, guid: e1f83e0358a09014daf7f52a1893bd78, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,16 +48,15 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 00123a0486ff3d742b007a35888e6b0e, type: 3}
-    - {fileID: 21300000, guid: d152ca49a8722ed4cb7fb2c10a478000, type: 3}
-    - {fileID: 21300000, guid: 40a986ed9e538fc4a8f292f925e7323f, type: 3}
-    - {fileID: 21300000, guid: 6df85641e1b39f34db8afac4f6509b7b, type: 3}
+    - {fileID: 21300000, guid: 860476a4a872e1b4bbab6c43dc2886df, type: 3}
+    - {fileID: 21300000, guid: d0062c062271143469a5a4583d6ee809, type: 3}
+    - {fileID: 21300000, guid: e1f83e0358a09014daf7f52a1893bd78, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.8
+    m_StopTime: 0.6
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

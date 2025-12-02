@@ -159,7 +159,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b4227e975e27dba4d80d4bb0a810bed1, type: 3}
   minPitch: 0.8
   maxPitch: 1.1
-  attackAnimationTrigger: 
+  attackAnimationTrigger: peasantAttacl
 --- !u!195 &7189621953484527065
 NavMeshAgent:
   m_ObjectHideFlags: 0
