@@ -226,6 +226,15 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveHead"",
+                    ""type"": ""Value"",
+                    ""id"": ""2e1e3456-cabc-486c-a9ec-223926dccaa4"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -699,6 +708,39 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ChangeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""b28f36ca-c38a-48ad-bdbe-568a678dff97"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveHead"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""a0c8555d-389d-4372-998d-01837d865d1f"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""MoveHead"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""e226679d-89be-4cb4-8703-bf0427b894f8"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""MoveHead"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -1301,6 +1343,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         m_Player_SelectAttack3 = m_Player.FindAction("SelectAttack3", throwIfNotFound: true);
         m_Player_SelectAttack4 = m_Player.FindAction("SelectAttack4", throwIfNotFound: true);
         m_Player_ChangeAttack = m_Player.FindAction("ChangeAttack", throwIfNotFound: true);
+        m_Player_MoveHead = m_Player.FindAction("MoveHead", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1409,6 +1452,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SelectAttack3;
     private readonly InputAction m_Player_SelectAttack4;
     private readonly InputAction m_Player_ChangeAttack;
+    private readonly InputAction m_Player_MoveHead;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1481,6 +1525,10 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @ChangeAttack => m_Wrapper.m_Player_ChangeAttack;
         /// <summary>
+        /// Provides access to the underlying input action "Player/MoveHead".
+        /// </summary>
+        public InputAction @MoveHead => m_Wrapper.m_Player_MoveHead;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -1551,6 +1599,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @ChangeAttack.started += instance.OnChangeAttack;
             @ChangeAttack.performed += instance.OnChangeAttack;
             @ChangeAttack.canceled += instance.OnChangeAttack;
+            @MoveHead.started += instance.OnMoveHead;
+            @MoveHead.performed += instance.OnMoveHead;
+            @MoveHead.canceled += instance.OnMoveHead;
         }
 
         /// <summary>
@@ -1607,6 +1658,9 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
             @ChangeAttack.started -= instance.OnChangeAttack;
             @ChangeAttack.performed -= instance.OnChangeAttack;
             @ChangeAttack.canceled -= instance.OnChangeAttack;
+            @MoveHead.started -= instance.OnMoveHead;
+            @MoveHead.performed -= instance.OnMoveHead;
+            @MoveHead.canceled -= instance.OnMoveHead;
         }
 
         /// <summary>
@@ -2012,6 +2066,13 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnChangeAttack(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MoveHead" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMoveHead(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
