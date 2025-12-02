@@ -1,33 +1,19 @@
 using UnityEngine;
-using System.Collections;
 using Unity.Cinemachine;
 
+[RequireComponent(typeof(CinemachineImpulseSource))]
 public class CameraShake : MonoBehaviour {
+
     public static CameraShake Instance { get; private set; }
+    private CinemachineImpulseSource impulseSource;
 
     private void Awake() {
         Instance = this;
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
-    public void Shake(CinemachineImpulseSource impulseSource, float force) {
-        impulseSource.GenerateImpulseWithForce(force);
-        //StartCoroutine(ShakeCoroutine(duration, magnitude));
-    }
+    public void Shake(float duration, float magnitude) {
 
-    private IEnumerator ShakeCoroutine(float duration, float magnitude) {
-        Vector3 originalPos = transform.localPosition;
-        float elapsed = 0.0f;
-
-        while (elapsed < duration) {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
-
-            transform.localPosition = new Vector3(originalPos.x + x, originalPos.y + y, originalPos.z);
-
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-
-        transform.localPosition = originalPos;
+        impulseSource.GenerateImpulseWithForce(magnitude);
     }
 }

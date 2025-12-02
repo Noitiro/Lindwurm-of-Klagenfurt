@@ -34,7 +34,7 @@ public abstract class BaseAttack : MonoBehaviour {
     [Header("Trzêsienie")]
     [SerializeField] protected GameObject hitEffectPrefab; 
     [SerializeField] protected float force = 0.01f; 
-    //[SerializeField] protected float shakeDuration = 0.15f;
+    [SerializeField] protected float shakeDuration = 0.15f;
     [Tooltip("Si³a odrzutu. 0 = brak, 5 = œredni, 10 = mocny")]
     [SerializeField] protected float knockbackForce = 0f;
     public float TotalCooldown => attackCooldown;
@@ -152,7 +152,9 @@ public abstract class BaseAttack : MonoBehaviour {
         }
 
         if (CameraShake.Instance != null) {
-            CameraShake.Instance.Shake(targetObject.gameObject.GetComponent<CinemachineImpulseSource>(), force);
+
+
+            CameraShake.Instance.Shake(shakeDuration, force);
         }
 
         if (knockbackForce > 0) {
