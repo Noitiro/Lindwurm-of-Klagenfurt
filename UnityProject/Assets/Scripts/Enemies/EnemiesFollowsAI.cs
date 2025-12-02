@@ -8,11 +8,20 @@ public class EnemiesFollowsAI : MonoBehaviour {
     private float defaultSpeed;
     private NavMeshAgent agent;
     private Coroutine slowCoroutine;
+    private Vector3 initialScale;
+    private Animator anim;
+
+    [Header("Tryb Odwracania")]
+    [Tooltip("Zmienia animacjê boolem 'IsFacingRight'. Jesli ODZNACZONE: Obraca obiekt fizycznie (Scale X).")]
+    [SerializeField] private bool useAnimationFlip = false;
+
+    [Tooltip("Tylko dla fizycznego odwracania: czy grafika patrzy w lewo")]
     [SerializeField] private bool spriteFacesLeft = false;
-    private Vector3 initialScale; 
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
@@ -34,20 +43,26 @@ public class EnemiesFollowsAI : MonoBehaviour {
             if (agent.enabled && agent.isOnNavMesh) {
                 agent.SetDestination(target.position);
             }
-            FlipEnemy();
+
+            float directionX = target.position.x - transform.position.x;
+
+            if (useAnimationFlip) {
+                if (anim != null) {
+                    bool isRight = directionX > 0;
+                    anim.SetBool("IsFacingRight", isRight);
+                }
+            }
+            else {
+                FlipEnemy(directionX);
+            }
         }
     }
 
-    private void FlipEnemy() {
-        float direction = target.position.x > transform.position.x ? 1f : -1f;
-
-        if (spriteFacesLeft) {
-            direction *= -1f;
-        }
-
+    private void FlipEnemy(float directionX) {
+        float direction = directionX > 0 ? 1f : -1f;
+        if (spriteFacesLeft) direction *= -1f;
         transform.localScale = new Vector3(Mathf.Abs(initialScale.x) * direction, initialScale.y, initialScale.z);
     }
-
     public void ApplySlow(float slowFactor, float duration) {
         if (slowCoroutine != null) StopCoroutine(slowCoroutine);
         slowCoroutine = StartCoroutine(SlowCoroutine(slowFactor, duration));
