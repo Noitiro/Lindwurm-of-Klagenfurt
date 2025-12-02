@@ -497,7 +497,7 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
-  attackSound: {fileID: 8300000, guid: 51f694cf0a569854bbed6d8b9bf0824f, type: 3}
+  attackSound: {fileID: 8300000, guid: b502166406716c94d89a4b333f24a14f, type: 3}
   animationTrigger: claw
   damageVariance: 0.11
   critChance: 0.1
@@ -525,7 +525,7 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
-  attackSound: {fileID: 8300000, guid: cf4ebe5f5791bf744a77339e6ad481a7, type: 3}
+  attackSound: {fileID: 8300000, guid: a20856a099eb0f943a17d895bf2dcf19, type: 3}
   animationTrigger: fire
   damageVariance: 0.33
   critChance: 0.1
@@ -556,7 +556,7 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
-  attackSound: {fileID: 8300000, guid: d32560b173a8ea546b7a2f4a2931bcf0, type: 3}
+  attackSound: {fileID: 8300000, guid: 740d51fc87d18e54dac5e6d409319b18, type: 3}
   animationTrigger: ice
   damageVariance: 0.22
   critChance: 0.1
@@ -586,7 +586,7 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
-  attackSound: {fileID: 8300000, guid: 51f694cf0a569854bbed6d8b9bf0824f, type: 3}
+  attackSound: {fileID: 8300000, guid: da3c05344af0541488d8bdd3c4765f7e, type: 3}
   animationTrigger: tail
   damageVariance: 0.11
   critChance: 0.1
@@ -84480,11 +84480,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[0].enemyGroups.Array.data[0].count
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[0].enemyGroups.Array.data[1].count
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[0].enemyGroups.Array.data[2].count
