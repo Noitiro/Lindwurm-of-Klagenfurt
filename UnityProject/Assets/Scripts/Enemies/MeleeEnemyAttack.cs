@@ -66,36 +66,54 @@ public class MeleeEnemyAttack : MonoBehaviour {
     private IEnumerator AttackRoutine() {
         while (targetPlayer != null) {
 
-            // 1. FAZA ZAMACHU 
-            if (agent != null) agent.speed = originalSpeed * windUpMoveSpeedMultiplier;
+            if (agent != null) {
+                agent.speed = originalSpeed * windUpMoveSpeedMultiplier;
+            }
+
             if (alertIcon != null) alertIcon.SetActive(true);
-            if (!string.IsNullOrEmpty(windUpAnimationTrigger) && anim != null) anim.SetTrigger(windUpAnimationTrigger);
+
+            if (!string.IsNullOrEmpty(windUpAnimationTrigger) && anim != null) {
+                anim.SetTrigger(windUpAnimationTrigger);
+            }
+
+            if (audioSource != null && attackSounds.Length > 0) {
+                AudioClip clipToPlay = attackSounds[Random.Range(0, attackSounds.Length)];
+                audioSource.clip = clipToPlay; // Przypisz klip
+                audioSource.pitch = Random.Range(minPitch, maxPitch);
+                audioSource.Play(); 
+            }
 
             yield return new WaitForSeconds(windUpTime);
+
 
             if (targetPlayer == null) {
                 if (agent != null) agent.speed = originalSpeed;
                 if (alertIcon != null) alertIcon.SetActive(false);
+
+
+                if (audioSource != null) audioSource.Stop();
+
                 attackCoroutine = null;
-                yield break; 
+                yield break;
             }
-            // 2. FAZA UDERZENIA 
+
+
             if (agent != null) agent.speed = 0;
             if (alertIcon != null) alertIcon.SetActive(false);
-            if (!string.IsNullOrEmpty(attackAnimationTrigger) && anim != null) anim.SetTrigger(attackAnimationTrigger);
-            if (audioSource != null && attackSounds.Length > 0) {
-                AudioClip clipToPlay = attackSounds[Random.Range(0, attackSounds.Length)];
-                audioSource.pitch = Random.Range(minPitch, maxPitch);
-                audioSource.PlayOneShot(clipToPlay);
+
+            if (!string.IsNullOrEmpty(attackAnimationTrigger) && anim != null) {
+                anim.SetTrigger(attackAnimationTrigger);
             }
+
             if (targetPlayer != null && Vector3.Distance(transform.position, (targetPlayer as Component).transform.position) < 6f) {
                 targetPlayer.Damage(damage);
             }
-            // 3. FAZA ODPOCZYNKU
+
             yield return new WaitForSeconds(attackCooldown);
 
             if (agent != null) agent.speed = originalSpeed;
         }
+
         if (agent != null) agent.speed = originalSpeed;
         if (alertIcon != null) alertIcon.SetActive(false);
         attackCoroutine = null;

@@ -254,8 +254,13 @@ MonoBehaviour:
   attackSounds:
   - {fileID: 8300000, guid: 7f22911b0f51c414282647e6bfdd6bac, type: 3}
   - {fileID: 8300000, guid: 7f22911b0f51c414282647e6bfdd6bac, type: 3}
+  - {fileID: 8300000, guid: b4227e975e27dba4d80d4bb0a810bed1, type: 3}
   - {fileID: 8300000, guid: 7f22911b0f51c414282647e6bfdd6bac, type: 3}
-  minPitch: 0.6
+  - {fileID: 8300000, guid: b4227e975e27dba4d80d4bb0a810bed1, type: 3}
+  - {fileID: 8300000, guid: b6064644e21c8354bbdc04a88850b455, type: 3}
+  - {fileID: 8300000, guid: b4227e975e27dba4d80d4bb0a810bed1, type: 3}
+  - {fileID: 8300000, guid: b6064644e21c8354bbdc04a88850b455, type: 3}
+  minPitch: 0.7
   maxPitch: 1.1
   attackAnimationTrigger: 
 --- !u!195 &7189621953484527065
