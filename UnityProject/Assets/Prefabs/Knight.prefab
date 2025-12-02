@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbebc20505ffc410dbc6c7a05eada55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesFollowsAI
+  spriteFacesLeft: 1
 --- !u!114 &3648838895693049661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +234,7 @@ MonoBehaviour:
   enemyType: 2
   scoreValue: 1
   damagePopupPrefab: {fileID: 8607342335731929091, guid: caebd68f5ec574145aa4f5779ed7ca68, type: 3}
+  flashDuration: 0.1
 --- !u!114 &7991362757195509231
 MonoBehaviour:
   m_ObjectHideFlags: 0
