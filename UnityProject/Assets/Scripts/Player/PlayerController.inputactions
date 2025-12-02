@@ -657,6 +657,17 @@
                     "action": "MoveHead",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "9dd9e30f-6db2-4a25-8e70-d37891e90d74",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "ScaleVector2(x=0,y=0.2)",
+                    "groups": "",
+                    "action": "MoveHead",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
