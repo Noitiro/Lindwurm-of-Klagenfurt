@@ -48,6 +48,7 @@ public class WaveSpawn : MonoBehaviour {
     IEnumerator StartFirstWave() {
         yield return new WaitForSeconds(timeBetweenWaves);
         StartCoroutine(SpawnWave(waves[nextWave]));
+        CursorManager.HideCursor();
     }
 
     void Update() {
