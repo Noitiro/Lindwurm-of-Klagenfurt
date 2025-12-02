@@ -18,7 +18,9 @@ public class ClawAttack : BaseAttack {
             float calculatedDmg = CalculateDamage(enemyScript);
 
             target.Damage(calculatedDmg);
-
+            if (target is BaseEnemyHealth enemy) {
+                enemy.Flash(Color.grey);
+            }
             if (target is Component targetComponent) {
                 ApplyHitFeedback(targetComponent.gameObject);
             }

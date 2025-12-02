@@ -43,7 +43,7 @@ public class UpgradeManager : MonoBehaviour {
             CloseMenu(); 
             return;
         }
-
+        CursorManager.ShowCursor();
         upgradePanel.SetActive(true);
         GenerateCards();
 
@@ -97,7 +97,7 @@ public class UpgradeManager : MonoBehaviour {
     private void CloseMenu() {
         Time.timeScale = 1f;
         upgradePanel.SetActive(false);
-   
+        CursorManager.HideCursor();
         if (waveSpawner != null) waveSpawner.NextWave();
     }
 
@@ -120,23 +120,8 @@ public class UpgradeManager : MonoBehaviour {
                 return;
         }
         if (targetAttack != null) {
-            switch (card.type) {
-                case UpgradeCardSO.UpgradeType.Damage:
-                    targetAttack.UpgradeDamage(card.value);
-                    break;
-
-                case UpgradeCardSO.UpgradeType.AreaSize:
-                    targetAttack.UpgradeArea(card.value);
-                    break;
-
-                case UpgradeCardSO.UpgradeType.Knockback:
-                    targetAttack.UpgradeKnockback(card.value); 
-                    break;
-
-                case UpgradeCardSO.UpgradeType.CritChance:
-                    targetAttack.UpgradeCrit(card.value); 
-                    break;
-            }
-        }
+            targetAttack.ApplyUpgrade(card.type, card.value);
+        
+    }
     }
 }

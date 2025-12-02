@@ -32,10 +32,12 @@ public class FireBreathAttack : BaseAttack {
             float calculatedDmg = CalculateDamage(enemyScript);
 
             target.Damage(calculatedDmg);
-
-            if (enemyScript != null) {
-                enemyScript.ApplyBurn(burnDamage, burnTicks, burnInterval);
-                Debug.Log("Podpalono wroga!");
+            if (target is BaseEnemyHealth enemy) {
+                enemy.Flash(Color.red);
+                if (enemyScript != null) {
+                    enemyScript.ApplyBurn(burnDamage, burnTicks, burnInterval);
+                    Debug.Log("Podpalono wroga!");
+                }
             }
 
             if (target is Component targetComponent) {

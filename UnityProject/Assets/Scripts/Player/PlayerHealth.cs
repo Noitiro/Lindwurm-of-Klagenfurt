@@ -93,6 +93,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable {
         yield return new WaitForSeconds(0.9f);
         if (gameOverScreen != null) gameOverScreen.enabled = true;
         Time.timeScale = 0;
+        CursorManager.ShowCursor();
     }
     public void UpgradeMaxHealth(float amount) {
         maxHealth += amount; 

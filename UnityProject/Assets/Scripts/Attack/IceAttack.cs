@@ -22,11 +22,12 @@ public class IceAttack : BaseAttack {
             float calculatedDmg = CalculateDamage(enemyScript);
 
             target.Damage(calculatedDmg);
-
-            if (enemyScript != null) {
-                enemyScript.ApplyFreeze(slowFactor, slowDuration);
+            if (target is BaseEnemyHealth enemy) {
+                enemy.Flash(Color.cyan);
+                if (enemyScript != null) {
+                    enemyScript.ApplyFreeze(slowFactor, slowDuration);
+                }
             }
-
             if (target is Component targetComponent) {
                 ApplyHitFeedback(targetComponent.gameObject);
             }
