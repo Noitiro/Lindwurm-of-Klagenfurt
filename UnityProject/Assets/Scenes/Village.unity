@@ -84468,15 +84468,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[0].spawnRate
-      value: 1
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[1].spawnRate
-      value: 1
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[2].spawnRate
-      value: 1
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8624972459486058761, guid: fc4bc320d9a4e7b499bcf3294e7fb6ee, type: 3}
       propertyPath: waves.Array.data[0].enemyGroups.Array.data[0].count

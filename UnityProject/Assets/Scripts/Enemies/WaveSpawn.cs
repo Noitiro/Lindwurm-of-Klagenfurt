@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 
 public class WaveSpawn : MonoBehaviour {
-    public enum SpawnState { SPAWNING, WAITING, SHOPPING }; // Zmieniliœmy nazwê stanu na SHOPPING
+    public enum SpawnState { SPAWNING, WAITING, SHOPPING };
 
     [System.Serializable]
     public class Wave {
@@ -25,7 +25,6 @@ public class WaveSpawn : MonoBehaviour {
 
     private int nextWave = 0;
 
-    // Zmieniamy domyœlny stan na WAITING, ¿eby Update nie szala³ na starcie
     public SpawnState state = SpawnState.WAITING;
     private float searchCountdown = 1f;
 
@@ -43,8 +42,6 @@ public class WaveSpawn : MonoBehaviour {
 
         UpdateWaveUI();
 
-        // --- NAPRAWA: Rêczne uruchomienie pierwszej fali ---
-        // Uruchamiamy falê 0 z opóŸnieniem timeBetweenWaves
         StartCoroutine(StartFirstWave());
     }
 
@@ -54,8 +51,6 @@ public class WaveSpawn : MonoBehaviour {
     }
 
     void Update() {
-        // Update sprawdza TYLKO czy wrogowie ¿yj¹.
-        // Nie odlicza czasu do nastêpnej fali, bo tym steruje Sklep.
         if (state == SpawnState.WAITING) {
             if (!EnemyIsAlive()) {
                 WaveCompleted();
@@ -65,32 +60,27 @@ public class WaveSpawn : MonoBehaviour {
 
     void WaveCompleted() {
         Debug.Log("Fala zakoñczona! Otwieram sklep.");
-
-        // Ustawiamy stan na "Zakupy" - w tym stanie Update nic nie robi
         state = SpawnState.SHOPPING;
 
         if (UpgradeManager.Instance != null) {
             UpgradeManager.Instance.OpenUpgradeMenu();
         }
         else {
-            // Jeœli nie ma managera (np. testy), idŸ dalej automatycznie
             NextWave();
         }
     }
 
-    // Ta funkcja jest wywo³ywana przez przycisk w Sklepie (UpgradeManager)
     public void NextWave() {
         nextWave++;
 
         if (nextWave >= waves.Length) {
             Debug.Log("Koniec gry - wszystkie fale pokonane!");
-            // Tutaj mo¿esz dodaæ logikê wygranej
-            // nextWave = 0; // Lub zapêtlenie
+
             this.enabled = false;
             return;
         }
 
-        UpdateWaveUI(); // Aktualizuj tekst UI
+        UpdateWaveUI();
         StartCoroutine(SpawnWave(waves[nextWave]));
     }
 
@@ -109,14 +99,25 @@ public class WaveSpawn : MonoBehaviour {
         Debug.Log("Spawnowanie fali: " + _wave.name);
         state = SpawnState.SPAWNING;
 
+        System.Collections.Generic.List<GameObject> enemiesToSpawn = new System.Collections.Generic.List<GameObject>();
+
         foreach (Wave.EnemyGroup group in _wave.enemyGroups) {
             for (int i = 0; i < group.count; i++) {
-                SpawnEnemy(group.enemyPrefab);
-                yield return new WaitForSeconds(1f / _wave.spawnRate);
+                enemiesToSpawn.Add(group.enemyPrefab);
             }
         }
+        while (enemiesToSpawn.Count > 0) {
+            int randomIndex = UnityEngine.Random.Range(0, enemiesToSpawn.Count);
+            GameObject selectedEnemy = enemiesToSpawn[randomIndex];
 
-        state = SpawnState.WAITING; // Teraz czekamy a¿ gracz wszystkich pokona
+            SpawnEnemy(selectedEnemy);
+
+            enemiesToSpawn.RemoveAt(randomIndex);
+
+            yield return new WaitForSeconds(1f / _wave.spawnRate);
+        }
+
+        state = SpawnState.WAITING;
         yield break;
     }
 
