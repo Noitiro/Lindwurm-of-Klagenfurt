@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 08e5c0731160d1d458ed913ce59f4464
+guid: 5e250403c1bb8474ab9dd5169614f083
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1340532279770573336
-    second: Grafika_bez_nazwy_0
+      213: 4471068245394927947
+    second: idle-2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grafika_bez_nazwy_0
+      name: idle-2_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 2
         y: 0
-        width: 252
+        width: 254
         height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e594567ef8756de0800000000000000
-      internalID: -1340532279770573336
+      spriteID: b413b4561ec6c0e30800000000000000
+      internalID: 4471068245394927947
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Grafika_bez_nazwy_0: -1340532279770573336
+      idle-2_0: 4471068245394927947
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
