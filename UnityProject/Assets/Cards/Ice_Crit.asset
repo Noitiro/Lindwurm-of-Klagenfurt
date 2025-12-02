@@ -15,8 +15,9 @@ MonoBehaviour:
   cardName: Frost Shatter
   description: 'Frozen enemies crack apart with ease under your blows. [+20% Crit
     Chance]'
-  icon: {fileID: 0}
+  icon: {fileID: 11478562, guid: 0209ddf28b679814a91d7311351d41b7, type: 3}
   cost: 3
+  maxPurchases: 1
   target: 1
   type: 3
   value: 0.2
