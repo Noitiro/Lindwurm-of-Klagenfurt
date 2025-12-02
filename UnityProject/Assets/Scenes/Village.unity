@@ -505,6 +505,7 @@ MonoBehaviour:
   strongAgainst: 0
   hitEffectPrefab: {fileID: 0}
   force: 1
+  shakeDuration: 0.15
   knockbackForce: 5
 --- !u!114 &63306405
 MonoBehaviour:
@@ -533,6 +534,7 @@ MonoBehaviour:
   strongAgainst: 1
   hitEffectPrefab: {fileID: 0}
   force: 1
+  shakeDuration: 0.15
   knockbackForce: 2
   burnDamage: 5
   burnTicks: 3
@@ -564,6 +566,7 @@ MonoBehaviour:
   strongAgainst: 2
   hitEffectPrefab: {fileID: 0}
   force: 1
+  shakeDuration: 0.15
   knockbackForce: 0
   slowFactor: 0.5
   slowDuration: 2
@@ -594,6 +597,7 @@ MonoBehaviour:
   strongAgainst: 0
   hitEffectPrefab: {fileID: 3373715332947199531, guid: a1809311069fd50488d6dbd921ef8cb1, type: 3}
   force: 1
+  shakeDuration: 0.15
   knockbackForce: 10
 --- !u!114 &63306408
 MonoBehaviour:
@@ -2060,7 +2064,6 @@ GameObject:
   - component: {fileID: 744366843}
   - component: {fileID: 744366842}
   - component: {fileID: 744366841}
-  - component: {fileID: 744366846}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -2218,18 +2221,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1775044814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &744366846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744366840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5be490add19072541bc7fb2cb3debc97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
 --- !u!1 &778329077
 GameObject:
   m_ObjectHideFlags: 0
@@ -84136,8 +84127,10 @@ GameObject:
   - component: {fileID: 989879702}
   - component: {fileID: 989879701}
   - component: {fileID: 989879700}
-  - component: {fileID: 989879703}
   - component: {fileID: 989879704}
+  - component: {fileID: 989879707}
+  - component: {fileID: 989879706}
+  - component: {fileID: 989879705}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -84234,30 +84227,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1775044814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &989879703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989879699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineImpulseListener
-  ApplyAfter: 2
-  ChannelMask: 1
-  Gain: 0.05
-  Use2DDistance: 0
-  UseCameraSpace: 1
-  SignalCombinationMode: 0
-  ReactionSettings:
-    m_SecondaryNoise: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
-    AmplitudeGain: 1
-    FrequencyGain: 0.5
-    Duration: 0.5
-    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!114 &989879704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84275,6 +84244,102 @@ MonoBehaviour:
   AmplitudeGain: 1
   FrequencyGain: 1
   m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &989879705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989879699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineImpulseListener
+  ApplyAfter: 2
+  ChannelMask: 1
+  Gain: 1
+  Use2DDistance: 0
+  UseCameraSpace: 1
+  SignalCombinationMode: 0
+  ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &989879706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989879699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCollisionImpulseSource
+  ImpulseDefinition:
+    ImpulseChannel: 1
+    ImpulseShape: 0
+    CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ImpulseDuration: 0.2
+    ImpulseType: 3
+    DissipationRate: 0
+    RawSignal: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+    AmplitudeGain: 1
+    FrequencyGain: 10
+    RepeatMode: 0
+    Randomize: 1
+    TimeEnvelope:
+      AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      AttackTime: 0
+      SustainTime: 0.2
+      DecayTime: 0.2
+      ScaleWithImpact: 1
+      HoldForever: 0
+    ImpactRadius: 100
+    DirectionMode: 0
+    DissipationMode: 2
+    DissipationDistance: 100
+    PropagationSpeed: 343
+  DefaultVelocity: {x: 0, y: -1, z: 0}
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  IgnoreTag: 
+  UseImpactDirection: 0
+  ScaleImpactWithMass: 0
+  ScaleImpactWithSpeed: 0
+--- !u!114 &989879707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989879699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be490add19072541bc7fb2cb3debc97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
 --- !u!1 &1008147397
 GameObject:
   m_ObjectHideFlags: 0
