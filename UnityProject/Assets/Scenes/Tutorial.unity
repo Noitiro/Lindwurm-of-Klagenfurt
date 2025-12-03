@@ -486,6 +486,8 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
+  effectAnimator: {fileID: 0}
+  effectAnimTrigger: 
   attackSound: {fileID: 8300000, guid: 51f694cf0a569854bbed6d8b9bf0824f, type: 3}
   animationTrigger: claw
   damageVariance: 0.11
@@ -515,6 +517,8 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
+  effectAnimator: {fileID: 0}
+  effectAnimTrigger: 
   attackSound: {fileID: 8300000, guid: 1217aa9ea78c75d41965b53294f2f9dc, type: 3}
   animationTrigger: fire
   damageVariance: 0.33
@@ -547,6 +551,8 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
+  effectAnimator: {fileID: 0}
+  effectAnimTrigger: 
   attackSound: {fileID: 8300000, guid: eb445b0e6b63af249b88e6225f3062be, type: 3}
   animationTrigger: ice
   damageVariance: 0.22
@@ -578,6 +584,8 @@ MonoBehaviour:
   attackableLayer:
     serializedVersion: 2
     m_Bits: 64
+  effectAnimator: {fileID: 0}
+  effectAnimTrigger: 
   attackSound: {fileID: 8300000, guid: 51f694cf0a569854bbed6d8b9bf0824f, type: 3}
   animationTrigger: tail
   damageVariance: 0.11
@@ -14279,7 +14287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2079888255
 MonoBehaviour:
   m_ObjectHideFlags: 0
