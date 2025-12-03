@@ -14374,7 +14374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadingScript
   canvasGroup: {fileID: 2079888256}
-  fadeDuration: 1
+  fadeDuration: 2
   fadeIn: 1
 --- !u!225 &2079888256
 CanvasGroup:
