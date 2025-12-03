@@ -13,10 +13,11 @@ public class LoadingScene : MonoBehaviour {
         Debug.Log("Exit");
     }
 
-    public void StartTime(float time) {
-        StartCoroutine(WaitSecond(time));
+    public void StartGame(string nameMap) {
+        StartCoroutine(WaitSecond(2, nameMap));
     }
-    private IEnumerator WaitSecond(float time) {
+    private IEnumerator WaitSecond(float time, string nameMap) {
         yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(nameMap);
     }
 }
