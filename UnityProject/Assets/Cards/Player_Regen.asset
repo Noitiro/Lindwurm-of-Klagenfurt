@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCardSO
   cardName: Draconic Blood
   description: 'our wounds heal with supernatural speed. [+2 HP/sec Regen]'
-  icon: {fileID: -3517128069861543798, guid: a6b9aa32319ff4c40b56dc974dc071df, type: 3}
+  icon: {fileID: 21300000, guid: 7e52eebf039963e41a25f8f616654cbb, type: 3}
   cost: 3
   maxPurchases: 1
   target: 4

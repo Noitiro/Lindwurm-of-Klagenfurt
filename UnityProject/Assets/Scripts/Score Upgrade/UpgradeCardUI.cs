@@ -22,7 +22,7 @@ public class UpgradeCardUI : MonoBehaviour {
 
         nameText.text = card.cardName;
         descText.text = card.description;
-        costText.text = card.cost + " Gold";
+        costText.text = card.cost.ToString();
         iconImage.sprite = card.icon;
 
         // --- DIAGNOSTYKA ---

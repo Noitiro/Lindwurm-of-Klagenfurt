@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCardSO
   cardName: Titan Smash
   description: 'Crush them with the weight of a mountain. [+20% Damage]'
-  icon: {fileID: -1991066106, guid: 0209ddf28b679814a91d7311351d41b7, type: 3}
+  icon: {fileID: -982240106782292001, guid: c557cae3e9dbfea4991abbd6f86beeeb, type: 3}
   cost: 3
   maxPurchases: 1
   target: 3
