@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbebc20505ffc410dbc6c7a05eada55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemiesFollowsAI
-  useAnimationFlip: 1
+  useAnimationFlip: 0
   spriteFacesLeft: 1
 --- !u!114 &3648838895693049661
 MonoBehaviour:

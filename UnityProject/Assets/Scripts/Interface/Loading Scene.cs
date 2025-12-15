@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScene : MonoBehaviour {
 
+
     public void LoadMap(string nameMap) {
         SceneManager.LoadScene(nameMap);
         Time.timeScale = 1;
@@ -20,4 +21,7 @@ public class LoadingScene : MonoBehaviour {
         yield return new WaitForSeconds(time);
         SceneManager.LoadScene(nameMap);
     }
+
+
+
 }

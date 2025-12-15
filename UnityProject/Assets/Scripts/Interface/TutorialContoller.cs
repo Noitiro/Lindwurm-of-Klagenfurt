@@ -12,6 +12,9 @@ public class TutorialContoller : MonoBehaviour {
 
     [SerializeField] GameObject barrierTutorial;
     [SerializeField] FadingScript fadingScript;
+    [SerializeField] GameObject enemyWalk;
+    [SerializeField] GameObject introCanvas;
+    [SerializeField] GameObject audioAmbience;
 
     [SerializeField] WaveSpawn waveSpawn;
 
@@ -30,22 +33,20 @@ public class TutorialContoller : MonoBehaviour {
             showInfo(sprintInfo);
             state++;
         }
-        if (anim.GetBool("isSprint") == true && state == 1) {
-            hideInfo(wsadInfo);
-            hideInfo(sprintInfo);
-            state++;
-        }
-        if (state == 2 && areaAttack) {
+
+        if (state == 1 && areaAttack) {
             showInfo(attackInfo);
+            enemyWalk.SetActive(true);
             state++;
         }
-        if (state == 3 && waveSpawn.CurrentWaveNumber == 2) {
+        if (state == 2 && waveSpawn.CurrentWaveNumber == 2) {
             hideInfo(attackInfo);
             showInfo(changeAttackInfo);
             state++;
         }
-        if (state == 4 && waveSpawn.CurrentWaveNumber != 2) {
+        if (state == 3 && waveSpawn.CurrentWaveNumber != 2) {
             barrierTutorial.SetActive(false);
+            destroyHouseInfo.SetActive(true) ;
         }
     }
     public void showInfo(GameObject whatInfo) {
@@ -62,15 +63,18 @@ public class TutorialContoller : MonoBehaviour {
         }
 
         if (collision.gameObject.name.Equals("EndCollider")) {
-            fadingScript.FadeOut();
-            StartCoroutine(WaitLoad());
+            //  fadingScript.FadeOut();
+            //StartCoroutine(WaitLoad());
+            audioAmbience.SetActive(false) ;
+            CursorManager.ShowCursor();
+            introCanvas.SetActive(true);
         }
 
         Debug.Log(collision.gameObject.name);
     }
 
-    private IEnumerator WaitLoad() {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(2);
-    }
+    //private IEnumerator WaitLoad() {
+        //yield return new WaitForSeconds(2f);
+       // SceneManager.LoadScene(2);
+   // }
 }
